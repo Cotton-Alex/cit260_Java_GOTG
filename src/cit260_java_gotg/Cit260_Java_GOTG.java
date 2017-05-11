@@ -17,7 +17,7 @@ public class Cit260_Java_GOTG {
         playerOne.setName("Groot");
        
         String playerInfo = playerOne.toString();
-        System.out.printIn(playerInfo);
+        System.out.println(playerInfo);
     }
     public static void cottonClassTest(){
         
