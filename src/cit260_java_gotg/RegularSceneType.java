@@ -12,8 +12,8 @@ import java.util.Objects;
  *
  * @author plex
  */
-public class RegularSceneType {
-    public class RegularSceneType implements Serializable{
+public class RegularSceneType implements Serializable {
+    
     private String description;
     private String blocked;
     private String symbol;
