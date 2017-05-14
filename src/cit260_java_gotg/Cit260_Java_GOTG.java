@@ -26,13 +26,6 @@ public class Cit260_Java_GOTG {
     public static void wilkeyClassTest(){
         
         
-                Stature stature = new Stature();
-                
-                stature.setName("Twenty");
-                String playerStature = stature.toString();
-                System.out.println(stature);
-        
-        
     }
     public static void thielClassTest(){
         
