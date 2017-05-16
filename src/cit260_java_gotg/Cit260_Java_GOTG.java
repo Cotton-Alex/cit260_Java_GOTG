@@ -21,7 +21,7 @@ public class Cit260_Java_GOTG {
         
         Game gameOne = new Game();
         
-         gameOne.setNoPeople(2);
+        gameOne.setNoPeople(2);
         gameOne.setTotalTime(4);
         
         Map mapOne = new Map();
@@ -58,9 +58,19 @@ public class Cit260_Java_GOTG {
         String sceneOneInfo = sceneOne.toString();
         System.out.println(sceneOneInfo);
         
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
+        
+        String timeInfo = timeOne.toString();
+        System.out.println(timeInfo);
+        
+        String fuelInfo = fuelOne.toString();
+        System.out.println(fuelInfo);
+        
     }
     public static void cottonClassTest(){
         
+
     }
     public static void minassianClassTest(){
     
