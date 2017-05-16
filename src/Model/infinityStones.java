@@ -1,7 +1,7 @@
 /*
  *Infinity Stones class
  */
-package cit260_java_gotg;
+package Model;
 
 import java.io.Serializable;
 import java.util.Objects;

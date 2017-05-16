@@ -3,6 +3,11 @@
  */
 package cit260_java_gotg;
 
+import Model.Game;
+import Model.Question;
+import Model.QuestionSceneType;
+import Model.Map;
+
 /**
  *
  * @author alexcotton
