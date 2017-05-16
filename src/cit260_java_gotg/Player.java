@@ -18,8 +18,6 @@ public class Player implements Serializable{
 
     public Player() {
     }
-
-    
     
     public String getName() {
         return name;
