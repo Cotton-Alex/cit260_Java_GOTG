@@ -29,4 +29,34 @@ public class Time implements Serializable{
         public void setTimeRemaining (int timeRemaining) {
             this.timeRemaining = timeRemaining;
         }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 23 * hash + this.timeRemaining;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Time other = (Time) obj;
+        return this.timeRemaining == other.timeRemaining;
+    }
+
+    @Override
+    public String toString() {
+        return "Time{" + "timeRemaining=" + timeRemaining + '}';
+    }
+        
+        
+        
 }

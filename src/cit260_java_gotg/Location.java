@@ -6,7 +6,7 @@
 package cit260_java_gotg;
 
 import java.io.Serializable;
-import java.util.Objects;
+//import java.util.Objects;
 
 /**
  *
@@ -38,7 +38,7 @@ public class Location implements Serializable {
         return column;
     }
 
-    public void setCount(int Column) {
+    public void setColumn(int Column) {
         this.column = column;
     }
 
@@ -57,8 +57,18 @@ public class Location implements Serializable {
     public void setAmountRemaining(int AmountRemaining) {
         this.amountRemaining = amountRemaining;
     }
-        
-   @Override
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 29 * hash + this.row;
+        hash = 29 * hash + this.column;
+        hash = 29 * hash + this.visited;
+        hash = 29 * hash + this.amountRemaining;
+        return hash;
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -79,23 +89,17 @@ public class Location implements Serializable {
         if (this.visited != other.visited) {
             return false;
         }
-        return this.amountRemaining == other.amountRemaining;
+        if (this.amountRemaining != other.amountRemaining) {
+            return false;
+        }
+        return true;
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 89 * hash + this.row;
-        hash = 89 * hash + this.column;
-        hash = 89 * hash + this.visited;
-        hash = 89 * hash + this.amountRemaining;
-        return hash;
-    }
-    
-    //toString fuctions
 
     @Override
     public String toString() {
         return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + '}';
-    }     
+    }
+        
+    
+    
 }

@@ -42,6 +42,20 @@ public class Cit260_Java_GOTG {
         sceneOne.setNoToAnswer(1);
         sceneOne.setBonus(1);
         
+        Location locationOne = new Location();
+        
+        locationOne.setRow(1);
+        locationOne.setColumn(1);
+        locationOne.setVisited(1);
+        locationOne.setAmountRemaining(1);
+        
+        Time timeOne = new Time();
+        
+        timeOne.setTimeRemaining(1);
+        
+        Fuel fuelOne = new Fuel();
+        
+        fuelOne.setFuelRemaining(1);
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
@@ -69,15 +83,13 @@ public class Cit260_Java_GOTG {
         
     }
     public static void cottonClassTest(){
-        
-
+       
     }
     public static void minassianClassTest(){
     
     }
     public static void wilkeyClassTest(){
-        
-        
+          
     }
     public static void thielClassTest(){
         
