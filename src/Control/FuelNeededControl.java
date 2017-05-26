@@ -7,7 +7,7 @@ package Control;
  *
  * @author Mike Minassian
  */
-public class fuelNeeded {
+public class FuelNeededControl {
     
     public int getFuelNeeded(int quadrantCount, int sectorCount){
         
