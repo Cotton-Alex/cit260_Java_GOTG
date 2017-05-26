@@ -20,8 +20,7 @@ public class fuelNeeded {
         else if (sectorCount > 6)
             return -4; //sector count is too high
         else
-            
-         fuelNeeded = (quadrantCount * 5)+(secotorCount * 1);
+           fuelNeeded = (quadrantCount * 5)+(secotorCount * 1);
             return fuelNeeded;
     }
 }
