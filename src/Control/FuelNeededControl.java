@@ -9,6 +9,8 @@ package Control;
  */
 public class FuelNeededControl {
     
+    int fuelNeeded;
+    
     public int getFuelNeeded(int quadrantCount, int sectorCount){
         
         if (quadrantCount < 0)
@@ -20,7 +22,7 @@ public class FuelNeededControl {
         else if (sectorCount > 6)
             return -4; //sector count is too high
         else
-           fuelNeeded = (quadrantCount * 5)+(secotorCount * 1);
+           fuelNeeded = (quadrantCount * 5)+(sectorCount * 1);
             return fuelNeeded;
     }
 }
