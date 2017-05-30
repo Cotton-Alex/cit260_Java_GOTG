@@ -82,10 +82,10 @@ public class Cit260_Java_GOTG {
         System.out.println(fuelInfo);
         
     }
-    public static void cottonClassTest(){
+    public static void alexcottonClassTest(){
        
     }
-    public static void minassianClassTest(){
+    public static void MinassianClassTest(){
     
     }
     public static void wilkeyClassTest(){
@@ -100,8 +100,8 @@ public class Cit260_Java_GOTG {
     public static void main(String[] args) {
         // TODO code application logic here
         teamClassTest();
-        cottonClassTest();
-        minassianClassTest();
+        alexcottonClassTest();
+        MinassianClassTest();
         wilkeyClassTest();
         thielClassTest();
     }
