@@ -10,15 +10,15 @@
     * @author alexcotton
     */
     
-    public class fuelCostSpeedControl {
+    public class timeCostSpeedControl {
         
-        double fuelCostSpeed;
+        double timeCostSpeed;
 
-    public double fuelCostSpeed(double fuelRemaining, double currentLocation, double nextLocation, double speed, double fuelMpg) {
+    public double timeCostSpeed(double timeRemaining, double currentLocation, double nextLocation, double speed, double fuelMpg) {
 
-        if (fuelRemaining > 100) // fuel tank can only hold 100 units of fuel
+        if (timeRemaining <= 0)
             return -1;
-        else if (fuelRemaining <= 0)
+        else if (timeRemaining > 240)
             return -2;
         else if (currentLocation == nextLocation)
             return -3;
@@ -27,11 +27,11 @@
         else if (speed < 1 || speed > 3) // speed adjustments are 1-3
             return -5;
         else
-            fuelCostSpeed = (Math.abs(currentLocation - nextLocation) / fuelMpg * speed);
+            timeCostSpeed = (Math.abs(currentLocation - nextLocation) / speed);
         
-        if (fuelRemaining < fuelCostSpeed)
+        if (timeRemaining < timeCostSpeed)
             return -6;
         else
-            return fuelCostSpeed;
+            return timeCostSpeed;
         }
     }
