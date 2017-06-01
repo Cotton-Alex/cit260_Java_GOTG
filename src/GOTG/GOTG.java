@@ -19,10 +19,28 @@ import cit260_java_gotg.Time;
  */
 public class GOTG {
     
+    /**
+     * @param args the command line arguments
+     */
+    
+    private static Game currentGame = null;
+    private static Player player = null;
+    
+    public static void main(String[] args) {
+       StartProgramView startProgramView = new StartProgramView();
+       startProgramView.displayStartProgramView();
+    }
+
+    public static void setPlayer(Player player) {
+        System.out.println("\nsetPlayer() function called");
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     public static void teamClassTest() {
         Player playerOne = new Player();
         
-        playerOne.setName("Groot");
+        playerOne.setName();
         
         Game gameOne = new Game();
         
@@ -96,22 +114,32 @@ public class GOTG {
     public static void wilkeyClassTest(){
           
     }
+    
     public static void thielClassTest(){
         
     }
-    /**
-     * @param args the command line arguments
-     */
     
-    
-    public static void main(String[] args) {
-       StartProgramView startProgramView = new StartProgramView();
-       startProgramView.displayStartProgramView();
+    public static Game getCurrentGame(Game currentGame) {
+        return currentGame;
     }
+    
+    public static void setCurrentGame(Game currentGame) {
+        GOTG.currentGame= currentGame;
+    }
+        
+    public static Player getPlayer() {
+        return player;
+    }
+            
+    public static void setPlayer(Player player);
+        GOTG.player = player;
+    }
+    
 
-    public static void setPlayer(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
+    
+    
+    
 }
 
-//***************************************** PAGE 30 of the Team Assignment PDF
+//***************************************** PAGE 32 of the Team Assignment PDF
