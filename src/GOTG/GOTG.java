@@ -1,7 +1,7 @@
 /*
 
  */
-package cit260_java_gotg;
+package GOTG;
 
 import Model.Player;
 import Model.Game;
@@ -9,12 +9,15 @@ import Model.Question;
 import Model.QuestionSceneType;
 import Model.Map;
 import View.StartProgramView;
+import cit260_java_gotg.Fuel;
+import cit260_java_gotg.Location;
+import cit260_java_gotg.Time;
 
 /**
  *
  * @author alexcotton
  */
-public class Cit260_Java_GOTG {
+public class GOTG {
     
     public static void teamClassTest() {
         Player playerOne = new Player();
@@ -99,8 +102,16 @@ public class Cit260_Java_GOTG {
     /**
      * @param args the command line arguments
      */
+    
+    
     public static void main(String[] args) {
        StartProgramView startProgramView = new StartProgramView();
        startProgramView.displayStartProgramView();
     }
+
+    public static void setPlayer(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
+
+//***************************************** PAGE 30 of the Team Assignment PDF
