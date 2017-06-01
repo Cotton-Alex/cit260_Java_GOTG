@@ -9,7 +9,7 @@ package Control;
  *
  * @author Justin
  */
-public class calcTimeRemaining {
+public class CalcTimeRemaining {
     
     public int CalcTimeRemaining(int timeUsed, int timeRemaining){
    

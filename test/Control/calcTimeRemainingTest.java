@@ -38,7 +38,7 @@ public class calcTimeRemainingTest {
     }
 
     /**
-     * Test of CalcTimeRemaining method, of class calcTimeRemaining.
+     * Test of CalcTimeRemaining method, of class CalcTimeRemaining.
      */
     @Test
     public void testCalcTimeRemaining() {
@@ -48,7 +48,7 @@ public class calcTimeRemainingTest {
         
         int timeUsed = 5;
         int timeRemaining = 100;
-        calcTimeRemaining instance = new calcTimeRemaining();
+        CalcTimeRemaining instance = new CalcTimeRemaining();
         int expResult = 95;
         int result = instance.CalcTimeRemaining(timeUsed, timeRemaining);
         assertEquals(expResult, result);

@@ -22,7 +22,7 @@ public class fuelCostSpeedControlTest {
     public static void tearDownClass() {}
 
     /**
-     * Test of fuelCostSpeed method, of class fuelCostSpeedControl.
+     * Test of fuelCostSpeed method, of class FuelCostSpeedControl.
      */
     @Test
     public void testFuelCostSpeed() {
@@ -37,7 +37,7 @@ public class fuelCostSpeedControlTest {
         double               nextLocation    = 6;
         double               speed           = 2;
         double               fuelMpg         = 1;
-        fuelCostSpeedControl instance        = new fuelCostSpeedControl();
+        FuelCostSpeedControl instance        = new FuelCostSpeedControl();
         double               expResult       = 6;
         double               result          = instance.fuelCostSpeed(fuelRemaining,
                                                                       currentLocation,

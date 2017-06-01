@@ -3,10 +3,12 @@
  */
 package cit260_java_gotg;
 
+import Control.Player;
 import Model.Game;
 import Model.Question;
 import Model.QuestionSceneType;
 import Model.Map;
+import View.StartProgramView;
 
 /**
  *
@@ -98,11 +100,7 @@ public class Cit260_Java_GOTG {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        teamClassTest();
-        alexcottonClassTest();
-        MinassianClassTest();
-        wilkeyClassTest();
-        thielClassTest();
+       StartProgramView startProgramView = new StartProgramView();
+       startProgramView.displayStartProgramView();
     }
 }

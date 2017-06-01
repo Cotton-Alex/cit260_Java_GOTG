@@ -1,7 +1,7 @@
 /*
  * Player class as shown in reading
  */
-package cit260_java_gotg;
+package Control;
 
 import java.io.Serializable;
 import java.util.Objects;

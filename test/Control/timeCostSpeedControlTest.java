@@ -22,7 +22,7 @@ public class timeCostSpeedControlTest {
     public static void tearDownClass() {}
 
     /**
-     * Test of timeCostSpeed method, of class timeCostSpeedControl.
+     * Test of timeCostSpeed method, of class TimeCostSpeedControl.
      */
     @Test
     public void testTimeCostSpeed() {
@@ -35,7 +35,7 @@ public class timeCostSpeedControlTest {
         double nextLocation = 6;
         double speed = 2;
         double fuelMpg = 0.0;
-        timeCostSpeedControl instance = new timeCostSpeedControl();
+        TimeCostSpeedControl instance = new TimeCostSpeedControl();
         double expResult = 1.5;
         double result = instance.timeCostSpeed(timeRemaining, currentLocation, nextLocation, speed, fuelMpg);
         assertEquals(expResult, result, 0.0);
