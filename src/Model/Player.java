@@ -1,7 +1,7 @@
 /*
  * Player class as shown in reading
  */
-package Control;
+package Model;
 
 import java.io.Serializable;
 import java.util.Objects;

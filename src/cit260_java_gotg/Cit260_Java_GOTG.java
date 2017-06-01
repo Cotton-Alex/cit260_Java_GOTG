@@ -3,7 +3,7 @@
  */
 package cit260_java_gotg;
 
-import Control.Player;
+import Model.Player;
 import Model.Game;
 import Model.Question;
 import Model.QuestionSceneType;

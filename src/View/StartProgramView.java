@@ -5,6 +5,7 @@
  */
 package View;
 
+import Model.Player;
 import java.util.Scanner;
 
 /**
@@ -57,10 +58,10 @@ private String getPlayersName() {
 
 private boolean doAction(String playersName) {
     
-    if (playersName.length()<2) { //if the players name is less than 2 characters
+    if (playersName.length() < 2) { //if the players name is less than 2 characters
         System.out.println("\nInvalid players name: " 
                 + "The name must be more than 1 character in length");
-     return false;
+        return false;
     }   
     
     //call createPlayer() control function
