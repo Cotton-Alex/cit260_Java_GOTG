@@ -34,7 +34,6 @@ public void displayStartProgramView() {
 }
 
 private String getPlayersName() {
-
     Scanner keyboard = new Scanner(System.in); // get infile for keyboard
     String value = ""; // value to be returned
     boolean valid = false; //initialize to not valid
@@ -49,43 +48,32 @@ private String getPlayersName() {
             System.out.println("\nInvalid value: value can not be blank");
             continue;
         }
-        
         break; // end the loop
     }
-
     return value; // return the value entered
 }
 
+
 private boolean doAction(String playersName) {
-    
     if (playersName.length() < 2) { //if the players name is less than 2 characters
         System.out.println("\nInvalid players name: " 
                 + "The name must be more than 1 character in length");
         return false;
     }   
-    
     //call createPlayer() control function
+    //****************** GameControl is not happy in Control, it wants to be in View ************************
     Player player = GameControl.createPlayer(playersName);
     
     if (player == null) { // unsuccessful
-        System.out.println("\nEerror creating the player.");
+        System.out.println("\nError creating the player.");
         return false;
     }
-    
-    
-//
-//
-//
-// Left off here - page 24 of the Team Assignment PDF
-//
-//
-//
-
     //display next view
     this.displayNextView(player);
     
     return true; //success!
 }
+
 
 
 private String promptMessage;
@@ -133,5 +121,9 @@ public void displaybanner() {
 + "\n+                                                            +"
 + "\n+*************************************************************"
         );
+    }
+
+    private void displayNextView(Player player) {
+        System.out.println("\n** displayNextView() function called***");
     }
 }
