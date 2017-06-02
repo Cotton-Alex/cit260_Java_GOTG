@@ -5,6 +5,7 @@
  */
 package View;
 
+import Control.GameControl;
 import Model.Player;
 import java.util.Scanner;
 
@@ -24,8 +25,7 @@ public void displayStartProgramView() {
             return; //exit the game
 //        else if (playesName.toUpperCase().equals("GROOT"))
 //           System.out.println("\nGroot... nice choice. We're gonna get along.");
-//        else
-//            
+//        else            
 
         //do requested action and display next view
         done = this.doAction(playersName);
@@ -124,7 +124,19 @@ public void displaybanner() {
 }
 
     private void displayNextView(Player player) {
-        System.out.println("\n** displayNextView() function called***");
+        System.out.println(
+             "\n=========================================================="
+            +"\nWelcome to Guardians of the Galaxy " + player.getName()
+            +"\nBuckle up, it's gonna be a bumpy ride."
+            +"\n=========================================================="
+        );
+        // Create MainMenuObject
+        MainMenuView mainMenuView = new MainMenuView();
+                
+        // Display the main menu view
+        mainMenuView.displayMainMenuView();     
+        
+        
     }
 }
   

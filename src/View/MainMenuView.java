@@ -10,5 +10,9 @@ package View;
  * @author alexcotton
  */
 public class MainMenuView {
+
+    void displayMainMenuView() {
+        System.out.println("\ndisplayMenu() function called ***");
+    }
     
 }

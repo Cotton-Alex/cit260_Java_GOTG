@@ -58,15 +58,19 @@ public class Player implements Serializable{
         if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
+//        if (!Objects.equals(this.name, other.name)) {
+//            return false;
+//        }
         return true;
     }
 
     @Override
     public String toString() {
         return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
+    }
+
+    public void setName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

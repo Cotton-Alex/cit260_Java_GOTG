@@ -28,10 +28,10 @@ public class GOTG {
        startProgramView.displayStartProgramView();
     }
 
-    public static void setPlayer(Player player) {
-        System.out.println("\nsetPlayer() function called");
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    public static void setPlayer(Player player) {
+//        System.out.println("\nsetPlayer() function called");
+//          throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
     
     
     public static void teamClassTest() {
@@ -128,14 +128,15 @@ public class GOTG {
     public static Player getPlayer() {
         return player;
     }      
+
     public static void setPlayer(Player player);
         GOTG.player = player;
-    }
-    
 
-    
-    
-    
+    private static class player {
+
+        public player() {
+        }
+    }
 }
 
 //***************************************** PAGE 32 of the Team Assignment PDF
