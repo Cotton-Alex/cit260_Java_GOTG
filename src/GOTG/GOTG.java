@@ -23,9 +23,6 @@ public class GOTG {
      * @param args the command line arguments
      */
     
-    private static Game currentGame = null;
-    private static Player player = null;
-    
     public static void main(String[] args) {
        StartProgramView startProgramView = new StartProgramView();
        startProgramView.displayStartProgramView();
@@ -114,29 +111,28 @@ public class GOTG {
     public static void wilkeyClassTest(){
           
     }
-    
     public static void thielClassTest(){
         
     }
     
+    private static Game currentGame = null;
+    private static Player player = null;
+  
+    
     public static Game getCurrentGame(Game currentGame) {
         return currentGame;
     }
-    
     public static void setCurrentGame(Game currentGame) {
         GOTG.currentGame= currentGame;
-    }
-        
+    }   
     public static Player getPlayer() {
         return player;
-    }
-            
+    }      
     public static void setPlayer(Player player);
         GOTG.player = player;
     }
     
 
-  
     
     
     

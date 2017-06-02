@@ -53,29 +53,6 @@ private String getPlayersName() {
     return value; // return the value entered
 }
 
-
-private boolean doAction(String playersName) {
-    if (playersName.length() < 2) { //if the players name is less than 2 characters
-        System.out.println("\nInvalid players name: " 
-                + "The name must be more than 1 character in length");
-        return false;
-    }   
-    //call createPlayer() control function
-    //****************** GameControl is not happy in Control, it wants to be in View ************************
-    Player player = GameControl.createPlayer(playersName);
-    
-    if (player == null) { // unsuccessful
-        System.out.println("\nError creating the player.");
-        return false;
-    }
-    //display next view
-    this.displayNextView(player);
-    
-    return true; //success!
-}
-
-
-
 private String promptMessage;
 
 public StartProgramView() {
@@ -125,6 +102,26 @@ public void displaybanner() {
 + "\n*****************************************************************"
         );
     }
+
+    private boolean doAction(String playersName) {
+    if (playersName.length() < 2) { //if the players name is less than 2 characters
+        System.out.println("\nInvalid players name: " 
+                + "The name must be more than 1 character in length");
+        return false;
+    }   
+    //call createPlayer() control function
+    //****************** GameControl is not happy in Control, it wants to be in View ************************
+    Player player = GameControl.createPlayer(playersName);
+    
+    if (player == null) { // unsuccessful
+        System.out.println("\nError creating the player.");
+        return false;
+    }
+    //display next view
+    this.displayNextView(player);
+    
+    return true; //success!
+}
 
     private void displayNextView(Player player) {
         System.out.println("\n** displayNextView() function called***");

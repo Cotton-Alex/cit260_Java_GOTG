@@ -12,6 +12,7 @@ import GOTG.GOTG;
  *
  * @author alexcotton
  */
+
 public class GameControl {
 
     public static Player createPlayer(String name) {
