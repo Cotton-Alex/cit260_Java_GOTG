@@ -23,10 +23,11 @@ public class StartProgramView {
             //prompt for and get playersName
             String playersName = this.getPlayersName();
             if (playersName.toUpperCase().equals("Q")) // user wants to quit
+                //add time delayed lyrics - "Ooh-oo child Things are gonna get easier. Ooh-oo child Things'll get brighter"
                 return; //exit the game
-    //        else if (playesName.toUpperCase().equals("GROOT"))
-    //           System.out.println("\nGroot... nice choice. We're gonna get along.");
-    //        else            
+//            else if (playesName.toUpperCase().equals("GROOT"))
+//               System.out.println("\nGroot... nice choice. We're gonna get along.");
+//            else            
 
             //do requested action and display next view
             done = this.doAction(playersName);
@@ -110,8 +111,7 @@ public void displaybanner() {
                 + "The name must be more than 1 character in length");
         return false;
     }   
-    //call createPlayer() control function
-    //****************** GameControl is not happy in Control, it wants to be in View ************************
+    
     Player player = GameControl.createPlayer(playersName);
     
     if (player == null) { // unsuccessful
@@ -127,7 +127,7 @@ public void displaybanner() {
     private void displayNextView(Player player) {
         System.out.println(
              "\n=========================================================="
-            +"\nWelcome to Guardians of the Galaxy " + player.getName()
+            +"\nWelcome to Guardians of the Galaxy " + player.getName() + "."
             +"\nBuckle up, it's gonna be a bumpy ride."
             +"\n=========================================================="
         );

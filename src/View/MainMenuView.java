@@ -9,9 +9,9 @@ package View;
 import java.util.Scanner;
 
 /**
- *
  * @author alexcotton
  */
+
 public class MainMenuView {
     private String menu;
     private String promptMessage;
@@ -22,7 +22,7 @@ public class MainMenuView {
                          + "\n----------------------------------"
                          + "\nN - Start new game"
                          + "\nG - Get and start saved game"
-                         + "\nH - Get help on how to play"
+                         + "\nH - How to play"
                          + "\nS - Save game"
                          + "\nQ - Quit"
                          + "\n----------------------------------";
