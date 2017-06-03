@@ -27,7 +27,27 @@ public class MainMenuView {
     }
 
     void displayMainMenuView() {
-        System.out.println("\ndisplayMenu() function called ***");
+        
+        boolean done = false; //set flag to not done
+        do{
+            // prompt for and get players name
+            String menuOption = this.getMenuOption();
+            if (menuOption.toUpperCase().equals("Q")) //user want to quit
+                return; //exit the game
+            
+            // do the requested action and display the next view
+            done = this.doAction(menuOption);
+        } while(!done);
+    }
+
+    private String getMenuOption() {
+        System.out.println("\n*** getMenuOption() function called ***");
+        return "N";
+    }
+
+    private boolean doAction(String menuOption) {
+        System.out.println("\n*** doAction() function called ***");
+        return true;
     }
     
 }
