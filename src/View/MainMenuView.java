@@ -64,9 +64,10 @@ public class MainMenuView {
     
     private String promptMessage;
 
-   
-    public  getMenuOption() {
-   
+    /**
+     *Prompt message 
+     */
+    public getMenuOption() {
         this.promptMessage = "\nPlease enter your menu selection: ";
 }
 
