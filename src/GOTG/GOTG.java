@@ -113,7 +113,7 @@ public class GOTG {
     public static void MinassianClassTest(){
     
     }
-    public static void wilkeyClassTest(){
+    public static void wilkeyClassTest(){ //dropped
           
     }
     public static void thielClassTest(){

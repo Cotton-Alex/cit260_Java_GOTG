@@ -27,7 +27,7 @@ public class MainMenuView {
                    +"\n----------------------------------";
     }
 
-    void displayMainMenuView() {
+    public void displayMainMenuView() {
         
         boolean done = false; //set flag to not done
         do{
@@ -40,8 +40,8 @@ public class MainMenuView {
             done = this.doAction(menuOption);
         } while(!done);
     }
-
-    private String getMenuOption() {
+    
+    public String getMenuOption() {
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
     String value = ""; // value to be returned
     boolean valid = false; //initialize to not valid
@@ -62,18 +62,17 @@ public class MainMenuView {
     }
     
     private String promptMessage;
-
+    
     /**
      *Prompt message 
      */
     private String getMenuOption() {
-        this.promptMessage = ("\nPlease enter your menu selection: ");
-            return null;
+        //this.promptMessage = ("\nPlease enter your menu selection: ");
+            return "N";
 }
 
     private boolean doAction(String menuOption) {
         System.out.println("\n*** doAction() function called ***");
         return true;
     }
-    
 }
