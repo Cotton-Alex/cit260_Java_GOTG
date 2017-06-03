@@ -133,12 +133,8 @@ public class GOTG {
         return player;
     }      
 
-    public static void setPlayer(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-//    public static void setPlayer(Player player);
-//        GOTG.player = player;
+    public static void setPlayer(Player player);
+        GOTG.player = player;
 
     private static class player {
 
