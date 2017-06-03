@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.util.Scanner;
+
 /**
  *
  * @author alexcotton
@@ -41,8 +43,23 @@ public class MainMenuView {
     }
 
     private String getMenuOption() {
-        System.out.println("\n*** getMenuOption() function called ***");
-        return "N";
+        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+    String value = ""; // value to be returned
+    boolean valid = false; //initialize to not valid
+
+    while (!valid) {
+        System.out.println("\n" + this.promptMessage);
+
+        value = keyboard.nextLine(); //get next line typed on keyboard
+        value = value.trim(); //trim off leading and trailing blanks
+
+        if (value.length() < 1) {
+            System.out.println("\nInvalid value: value can not be blank");
+            continue;
+        }
+        break; // end the loop
+    }
+    return value; // return the value entered
     }
 
     private boolean doAction(String menuOption) {
