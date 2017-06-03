@@ -61,6 +61,14 @@ public class MainMenuView {
     }
     return value; // return the value entered
     }
+    
+    private String promptMessage;
+
+   
+    public  getMenuOption() {
+   
+        this.promptMessage = "\nPlease enter your menu selection: ";
+}
 
     private boolean doAction(String menuOption) {
         System.out.println("\n*** doAction() function called ***");
