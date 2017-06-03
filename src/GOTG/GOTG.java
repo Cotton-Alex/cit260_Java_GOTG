@@ -23,6 +23,11 @@ public class GOTG {
      * @param args the command line arguments
      */
     
+    
+//********************************************************************************************************************
+//     01 MAIN - the start
+//********************************************************************************************************************
+    
     public static void main(String[] args) {
        StartProgramView startProgramView = new StartProgramView();
        startProgramView.displayStartProgramView();
@@ -114,7 +119,6 @@ public class GOTG {
     public static void thielClassTest(){
         
     }
-    
     private static Game currentGame = null;
     private static Player player = null;
   
@@ -129,8 +133,12 @@ public class GOTG {
         return player;
     }      
 
-    public static void setPlayer(Player player);
-        GOTG.player = player;
+    public static void setPlayer(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+//    public static void setPlayer(Player player);
+//        GOTG.player = player;
 
     private static class player {
 
@@ -139,4 +147,3 @@ public class GOTG {
     }
 }
 
-//***************************************** PAGE 32 of the Team Assignment PDF

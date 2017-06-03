@@ -13,24 +13,25 @@ import java.util.Scanner;
  *
  * @author alexcotton
  */
+
 public class StartProgramView {
 
-public void displayStartProgramView() {
+    public void displayStartProgramView() {
 
-    boolean done = false; // set flag to not done
-    do {
-        //prompt for and get playersName
-        String playersName = this.getPlayersName();
-        if (playersName.toUpperCase().equals("Q")) // user wants to quit
-            return; //exit the game
-//        else if (playesName.toUpperCase().equals("GROOT"))
-//           System.out.println("\nGroot... nice choice. We're gonna get along.");
-//        else            
+        boolean done = false; // set flag to not done
+        do {
+            //prompt for and get playersName
+            String playersName = this.getPlayersName();
+            if (playersName.toUpperCase().equals("Q")) // user wants to quit
+                return; //exit the game
+    //        else if (playesName.toUpperCase().equals("GROOT"))
+    //           System.out.println("\nGroot... nice choice. We're gonna get along.");
+    //        else            
 
-        //do requested action and display next view
-        done = this.doAction(playersName);
+            //do requested action and display next view
+            done = this.doAction(playersName);
 
-    } while (!done);
+        } while (!done);
 }
 
 private String getPlayersName() {
