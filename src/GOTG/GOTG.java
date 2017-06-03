@@ -133,8 +133,9 @@ public class GOTG {
         return player;
     }      
 
-    public static void setPlayer(Player player);
+    public static void setPlayer(Player player) {
         GOTG.player = player;
+    }
 
     private static class player {
 

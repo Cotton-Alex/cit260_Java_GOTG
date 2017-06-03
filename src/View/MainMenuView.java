@@ -14,7 +14,7 @@ public class MainMenuView {
     
     private String menu;
     
-    public MainMenuView(){
+    public MainMenuView() {
         this.menu = "\n"
                    +"\n----------------------------------"
                    +"\n|  Main Menu                     |"
@@ -66,8 +66,9 @@ public class MainMenuView {
     /**
      *Prompt message 
      */
-    public getMenuOption() {
-        this.promptMessage = "\nPlease enter your menu selection: ";
+    private String getMenuOption() {
+        this.promptMessage = ("\nPlease enter your menu selection: ");
+            return null;
 }
 
     private boolean doAction(String menuOption) {
