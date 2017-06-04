@@ -63,7 +63,7 @@ public class MainMenuView {
         return value;    // return the value entered
     }
     
-    public boolean doaction(String choice){
+    public boolean doAction(String choice){
         
         choice = choice.toUpperCase(); // convert choice to upper case
         
