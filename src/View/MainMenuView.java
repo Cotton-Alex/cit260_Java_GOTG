@@ -62,6 +62,31 @@ public class MainMenuView {
 
         return value;    // return the value entered
     }
+    
+    public boolean doaction(String choice){
+        
+        choice = choice.toUpperCase(); // convert choice to upper case
+        
+        switch (choice) {
+            case "N": // create and start a new game
+                this.startNewGame();
+                break;
+            case "G": // get and start an existing game
+                this.startExistingGame();
+                break;
+            case "H": //display the help menu
+                this.displayHelpMenu();
+                break;
+            case "S": // save the current game
+                this.saveGame();
+                break;
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;
+        }
+        
+        return false;
+    }
 
     /**
      * Prompt message
