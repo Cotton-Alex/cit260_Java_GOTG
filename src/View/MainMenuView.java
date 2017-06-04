@@ -101,4 +101,20 @@ public class MainMenuView {
         System.out.println("\n*** doAction() function called ***");
         return true;
     }
+
+    private void startNewGame() {
+        System.out.println("*** startNewGame function called ***");
+    }
+
+    private void startExistingGame() {
+        System.out.println("*** startExistingGame function called ***"); 
+    }
+
+    private void displayHelpMenu() {
+        System.out.println("*** displayHelpMenu function called ***");
+    }
+
+    private void saveGame() {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
 }
