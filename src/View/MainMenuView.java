@@ -117,4 +117,15 @@ public class MainMenuView {
     private void saveGame() {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
+    
+    private void startNewGame() {
+                // create a new game
+        GameControl.createNewGame(GOTG.getPlayer());
+        
+        //display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
+    }
+    
+    
 }
