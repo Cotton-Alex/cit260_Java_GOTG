@@ -6,6 +6,9 @@
  */
 package View;
 
+import Control.GameControl;
+import GOTG.GOTG;
+import Model.GameMenuView;
 import java.util.Scanner;
 
 /**
