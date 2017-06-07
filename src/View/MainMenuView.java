@@ -50,7 +50,7 @@ public class MainMenuView {
         boolean valid    = false;                     // initialize to not valid
 
         while (!valid) {
-            System.out.println("\n" + this.promptMessage);
+            System.out.println("\n" + this.menu);
             value = keyboard.nextLine();    // get next line typed on keyboard
             value = value.trim();           // trim off leading and trailing blanks
 
@@ -99,14 +99,14 @@ public class MainMenuView {
 //        System.out.println("\n*** doction() function called ***");
 //        return "N";
 //    }
-    
-    private boolean doAction(String menuOption) {
-        System.out.println("\n*** doAction() function called ***");
-        return true;
-    }
 
     private void startNewGame() {
-        System.out.println("*** startNewGame function called ***");
+             // create a new game
+            GameControl.createNewGame(GOTG.getPlayer());
+        
+             //display the game menu
+             GameMenuView gameMenu = new GameMenuView();
+             gameMenu.displayMenu();
     }
 
     private void startExistingGame() {
@@ -119,16 +119,5 @@ public class MainMenuView {
 
     private void saveGame() {
         throw new UnsupportedOperationException("Not supported yet."); 
-    }
-    
-    private void startNewGame() {
-                // create a new game
-        GameControl.createNewGame(GOTG.getPlayer());
-        
-        //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-    }
-    
-    
+    }    
 }

@@ -47,7 +47,7 @@ public class HelpMenuView {
         boolean valid    = false;                     // initialize to not valid
 
         while (!valid) {
-            System.out.println("\n" + this.promptMessage);
+            System.out.println("\n" + this.menu);
             value = keyboard.nextLine();    // get next line typed on keyboard
             value = value.trim();           // trim off leading and trailing blanks
 
