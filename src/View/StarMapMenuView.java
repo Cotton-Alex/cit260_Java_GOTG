@@ -9,6 +9,6 @@ package View;
  *
  * @author Mike Minassian
  */
-public class MapMenuView {
+public class StarMapMenuView {
     
 }
