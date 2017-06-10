@@ -8,7 +8,6 @@ package View;
 
 import Control.GameControl;
 import GOTG.GOTG;
-import Model.GameMenuView;
 import java.util.Scanner;
 
 /**
@@ -106,7 +105,8 @@ public class MainMenuView {
         
              //display the game menu
              GameMenuView gameMenu = new GameMenuView();
-             gameMenu.displayMenu();
+             gameMenu.displayGameMenuView();
+             
     }
 
     private void startExistingGame() {
