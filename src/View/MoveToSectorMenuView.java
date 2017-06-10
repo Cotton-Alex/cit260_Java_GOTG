@@ -9,26 +9,27 @@ import java.util.Scanner;
 
 /**
  *
- * @author Mike Minassian
+ * @author alexcotton
  */
-public class StarMapMenuView {   
+public class MoveToSectorMenuView {   
    
     
     private String menu;
     private String promptMessage;
     
-    public StarMapMenuView() {
+    public MoveToSectorMenuView() {
         this.menu = "\n" + "\n----------------------------------"
-                         + "\n|  Star Map                      |"
+                         + "\n|  Sector Map                    |"
                          + "\n----------------------------------"
-                         + "\nY - You are here"
-                         + "\nM - Move to Sector"
-                         + "\nD - Display Star Map"
-                         + "\nF - Fuel and Time amount"
+                         + "\nH - Hala"
+                         + "\nX - Xandar"
+                         + "\nK - The Kyln"
+                         + "\nW - Knowhere"
+                         + "\nM - Morag IV"
                          + "\nQ - Quit"
                          + "\n----------------------------------";
     }
-    public void displayStarMapMenuView() {
+    public void displayMoveToSectorMenuView() {
         boolean done = false;    // set flag to not done
         do {
             // prompt for and get players name
@@ -68,17 +69,20 @@ public class StarMapMenuView {
         choice = choice.toUpperCase(); // convert choice to upper case
         
         switch (choice) {
-            case "Y": // create and start a new game
-                this.youAreHere();
+            case "H":
+                this.moveToHala();
                 break;
-            case "M": // get and start an existing game
-                this.moveToSector();
+            case "X":
+                this.moveToXandar();
                 break;
-            case "D": //display the help menu
-                this.displayStarMap();
+            case "K":
+                this.moveToTheKyln();
                 break;
-            case "F":
-                this.fuelAndTimeAmount();
+            case "W":
+                this.moveToKnowhere();
+                break;
+            case "M":
+                this.moveToMoragIV();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -87,27 +91,25 @@ public class StarMapMenuView {
         
         return false;
     }
-    
-     
 
-    private void youAreHere() {
-        System.out.println(
-                "*** Display position on Star Map ***");
+
+    private void moveToHala() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void moveToSector() {
-        MoveToSectorMenuView moveToSectorMenu = new MoveToSectorMenuView();
-        moveToSectorMenu.displayMoveToSectorMenuView();
-        
-//        System.out.println(
-//                "*** Input the coordianates you wish to travel to. ***"); 
+    private void moveToXandar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void displayStarMap() {
-        System.out.println("*** Display the entire Star Map ***");
+    private void moveToKnowhere() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    private void fuelAndTimeAmount() {
-        System.out.println("*** Display the current level of fuel"
-                          +"\n and time that is left.***");
+
+    private void moveToTheKyln() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void moveToMoragIV() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
