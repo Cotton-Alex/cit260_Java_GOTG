@@ -95,6 +95,7 @@ public class GameMenuView {
     private void gameMap() {
        System.out.println("this will display the map");
         StarMapMenuView starMap = new StarMapMenuView();
+        starMap.displayStarMapMenuView();
         
     }
 

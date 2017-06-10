@@ -96,8 +96,8 @@ public class StarMapMenuView {
     }
 
     private void moveToSector() {
-        System.out.println(
-                "*** Input the coordianates you wish to travel to. ***"); 
+        MoveCharacter move = new MoveCharacter();
+        move.moveCharacter();
     }
 
     private void displayStarMap() {
