@@ -13,21 +13,21 @@ import java.util.Scanner;
 /**
  * @author alexcotton
  */
-
 public class MainMenuView {
+
     private String menu;
     private String promptMessage;
 
     public MainMenuView() {
         this.menu = "\n" + "\n----------------------------------"
-                         + "\n|  Main Menu                     |"
-                         + "\n----------------------------------"
-                         + "\nN - Start new game"
-                         + "\nG - Get and start saved game"
-                         + "\nH - How to play"
-                         + "\nS - Save game"
-                         + "\nQ - Quit"
-                         + "\n----------------------------------";
+                + "\n|  Main Menu                     |"
+                + "\n----------------------------------"
+                + "\nN - Start new game"
+                + "\nG - Get and start saved game"
+                + "\nH - How to play"
+                + "\nS - Save game"
+                + "\nQ - Quit"
+                + "\n----------------------------------";
     }
 
     public void displayMainMenuView() {
@@ -35,9 +35,10 @@ public class MainMenuView {
         do {
             // prompt for and get players name
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))      // user want to quit
+            if (menuOption.toUpperCase().equals("Q")) // user want to quit
+            {
                 return;                                    // exit the game
-
+            }
             // do the requested action and display the next view
             done = this.doAction(menuOption);
         } while (!done);
@@ -45,8 +46,8 @@ public class MainMenuView {
 
     public String getMenuOption() {
         Scanner keyboard = new Scanner(System.in);    // get infile for keyboard
-        String  value    = "";                        // value to be returned
-        boolean valid    = false;                     // initialize to not valid
+        String value = "";                        // value to be returned
+        boolean valid = false;                     // initialize to not valid
 
         while (!valid) {
             System.out.println("\n" + this.menu);
@@ -64,11 +65,11 @@ public class MainMenuView {
 
         return value;    // return the value entered
     }
-    
-    public boolean doAction(String choice){
-        
+
+    public boolean doAction(String choice) {
+
         choice = choice.toUpperCase(); // convert choice to upper case
-        
+
         switch (choice) {
             case "N": // create and start a new game
                 this.startNewGame();
@@ -86,7 +87,7 @@ public class MainMenuView {
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        
+
         return false;
     }
 
@@ -98,28 +99,27 @@ public class MainMenuView {
 //        System.out.println("\n*** doction() function called ***");
 //        return "N";
 //    }
-
     private void startNewGame() {
-             // create a new game
-            GameControl.createNewGame(GOTG.getPlayer());
-        
-             //display the game menu
-             GameMenuView gameMenu = new GameMenuView();
-             gameMenu.displayGameMenuView();
-             
+        // create a new game
+        GameControl.createNewGame(GOTG.getPlayer());
+
+        //display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayGameMenuView();
+
     }
 
     private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***"); 
+        System.out.println("*** startExistingGame function called ***");
     }
 
     private void displayHelpMenu() {
-      HelpMenuView helpMenu = new HelpMenuView();
-      helpMenu.displayHelpMenuView();
-      
-      
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayHelpMenuView();
+
     }
+
     private void saveGame() {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }    
+        System.out.println("*** saveGame function called ***");
+    }
 }

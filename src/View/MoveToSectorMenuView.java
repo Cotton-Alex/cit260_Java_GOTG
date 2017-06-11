@@ -94,22 +94,21 @@ public class MoveToSectorMenuView {
 
 
     private void moveToHala() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** Display halaDockMenu***");
     }
 
     private void moveToXandar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         System.out.println("*** Display xandarDockMenu***");
     }
-
     private void moveToKnowhere() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         System.out.println("*** Display knowhereDockMenu***");
     }
 
     private void moveToTheKyln() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         System.out.println("*** Display theKylnDockMenu***");
     }
 
     private void moveToMoragIV() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         System.out.println("*** Display moragIVDockMenu***");
     }
 }
