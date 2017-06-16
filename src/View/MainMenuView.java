@@ -84,4 +84,9 @@ public class MainMenuView extends View{
     private void saveGame() {
         System.out.println("*** saveGame function called ***");
     }
+
+    @Override
+    public String getIntput() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -13,6 +13,7 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    private String menu;
     
     public View(){
     }
@@ -36,7 +37,7 @@ public abstract class View implements ViewInterface {
     }
     
     @Override
-     public String getInput() {
+    public String getInput() {
         Scanner keyboard = new Scanner(System.in);    // get infile for keyboard
         String  value    = "";                        // value to be returned
         boolean valid    = false;                     // initialize to not valid
@@ -58,7 +59,7 @@ public abstract class View implements ViewInterface {
         return value;    // return the value entered
     }
      
-     @Override
+    @Override
      public boolean doAction(String choice) {
 
         choice = choice.toUpperCase(); // convert choice to upper case
