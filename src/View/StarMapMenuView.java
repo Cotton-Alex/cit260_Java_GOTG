@@ -11,14 +11,14 @@ import java.util.Scanner;
  *
  * @author Mike Minassian
  */
-public class StarMapMenuView {   
+public class StarMapMenuView extends View{   
    
     
     private String menu;
     private String promptMessage;
     
     public StarMapMenuView() {
-        this.menu = "\n" + "\n----------------------------------"
+        super("\n" + "\n----------------------------------"
                          + "\n|  Star Map                      |"
                          + "\n----------------------------------"
                          + "\nY - You are here"
@@ -26,43 +26,44 @@ public class StarMapMenuView {
                          + "\nD - Display Star Map"
                          + "\nF - Fuel and Time amount"
                          + "\nQ - Back"
-                         + "\n----------------------------------";
+                         + "\n----------------------------------");
     }
-    public void displayStarMapMenuView() {
-        boolean done = false;    // set flag to not done
-        do {
-            // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))      // user want to quit
-                return;                                    // exit the game
-
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-
-    public String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);    // get infile for keyboard
-        String  value    = "";                        // value to be returned
-        boolean valid    = false;                     // initialize to not valid
-
-        while (!valid) {
-            System.out.println("\n" + this.menu);
-            value = keyboard.nextLine();    // get next line typed on keyboard
-            value = value.trim();           // trim off leading and trailing blanks
-
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
-
-                continue;
-            }
-
-            break;                          // end the loop
-        }
-
-        return value;    // return the value entered
-    }
+//    public void displayStarMapMenuView() {
+//        boolean done = false;    // set flag to not done
+//        do {
+//            // prompt for and get players name
+//            String menuOption = this.getMenuOption();
+//            if (menuOption.toUpperCase().equals("Q"))      // user want to quit
+//                return;                                    // exit the game
+//
+//            // do the requested action and display the next view
+//            done = this.doAction(menuOption);
+//        } while (!done);
+//    }
+//
+//    public String getMenuOption() {
+//        Scanner keyboard = new Scanner(System.in);    // get infile for keyboard
+//        String  value    = "";                        // value to be returned
+//        boolean valid    = false;                     // initialize to not valid
+//
+//        while (!valid) {
+//            System.out.println("\n" + this.menu);
+//            value = keyboard.nextLine();    // get next line typed on keyboard
+//            value = value.trim();           // trim off leading and trailing blanks
+//
+//            if (value.length() < 1) {
+//                System.out.println("\nInvalid value: value can not be blank");
+//
+//                continue;
+//            }
+//
+//            break;                          // end the loop
+//        }
+//
+//        return value;    // return the value entered
+//    }
     
+    @Override
     public boolean doAction(String choice){
         
         choice = choice.toUpperCase(); // convert choice to upper case

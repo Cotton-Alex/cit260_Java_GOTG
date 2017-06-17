@@ -25,7 +25,8 @@ public class GameMenuView extends View {
                          + "\nQ - Main Menu"
                          + "\n----------------------------------");
     }
-   
+
+    @Override
     public boolean doAction(String choice){
         
         choice = choice.toUpperCase(); // convert choice to upper case
@@ -58,7 +59,7 @@ public class GameMenuView extends View {
     private void gameMap() {
        System.out.println("this will display the map");
         StarMapMenuView starMap = new StarMapMenuView();
-        starMap.displayStarMapMenuView();
+        starMap.display();
         
     }
 
@@ -68,7 +69,7 @@ public class GameMenuView extends View {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-      helpMenu.displayHelpMenuView();
+      helpMenu.display();
     }
 
     private void saveGame() {
