@@ -8,13 +8,12 @@ package View;
 
 import Control.GameControl;
 import GOTG.GOTG;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  * @author alexcotton
  */
-public class MainMenuView extends View{
-
+public class MainMenuView extends View {
 
     public MainMenuView() {
         super("\n" + "\n----------------------------------"
@@ -27,7 +26,7 @@ public class MainMenuView extends View{
                 + "\nQ - Quit"
                 + "\n----------------------------------");
     }
-
+    @Override
     public boolean doAction(String choice) {
 
         choice = choice.toUpperCase(); // convert choice to upper case
@@ -68,7 +67,6 @@ public class MainMenuView extends View{
         //display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayGameMenuView();
-
     }
 
     private void startExistingGame() {
@@ -78,15 +76,9 @@ public class MainMenuView extends View{
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayHelpMenuView();
-
     }
 
     private void saveGame() {
         System.out.println("*** saveGame function called ***");
-    }
-
-    @Override
-    public String getIntput() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

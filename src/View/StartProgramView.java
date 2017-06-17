@@ -135,7 +135,7 @@ public void displaybanner() {
         MainMenuView mainMenuView = new MainMenuView();
                 
         // Display the main menu view
-        mainMenuView.displayMainMenuView();     
+        mainMenuView.display();     
         
         
     }
