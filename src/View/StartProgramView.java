@@ -127,7 +127,7 @@ public void displaybanner() {
     private void displayNextView(Player player) {
         System.out.println(
              "\n=========================================================="
-            +"\nWelcome to Guardians of the Galaxy " + player.getName() + "."
+            +"\nWelcome to Guardians of the Galaxy, " + player.getName() + "."
             +"\nBuckle up, it's gonna be a bumpy ride."
             +"\n=========================================================="
         );
@@ -135,9 +135,7 @@ public void displaybanner() {
         MainMenuView mainMenuView = new MainMenuView();
                 
         // Display the main menu view
-        mainMenuView.display();     
-        
-        
+        mainMenuView.display();
     }
 }
   

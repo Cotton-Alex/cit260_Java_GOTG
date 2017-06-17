@@ -26,6 +26,7 @@ public class MainMenuView extends View {
                 + "\nQ - Quit"
                 + "\n----------------------------------");
     }
+
     @Override
     public boolean doAction(String choice) {
 
