@@ -13,14 +13,14 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface {
 
-    protected String displayMessage;
+    protected String display;
     private String menu;
 
     public View() {
     }
 
     public View(String message) {
-        this.displayMessage = message;
+        this.display= message;
     }
 
 //    @Override
@@ -64,7 +64,7 @@ public abstract class View implements ViewInterface {
         String value = null;                                                    // initialize to not valid
 
         while (!valid) {
-            System.out.println("\n" + this.menu);
+            System.out.println("\n" + this.display);
             value = keyboard.nextLine();                                        // get next line typed on keyboard
             value = value.trim();                                               // trim off leading and trailing blanks
 

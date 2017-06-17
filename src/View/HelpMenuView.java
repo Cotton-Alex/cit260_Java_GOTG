@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Justin
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
     
    
     
@@ -19,7 +19,7 @@ public class HelpMenuView {
     private String promptMessage;
     
     public HelpMenuView() {
-        this.menu = "\n" + "\n----------------------------------"
+        super("\n" + "\n----------------------------------"
                          + "\n|  Getting Help                     |"
                          + "\n----------------------------------"
                          + "\nG - What is the goal of the game"
@@ -28,7 +28,7 @@ public class HelpMenuView {
                          + "\nH - Gathering Infinity Stones"
                          + "\nT - Fuel and Time"
                          + "\nQ - Quit"
-                         + "\n----------------------------------";
+                         + "\n----------------------------------");
     }
     public void displayHelpMenuView() {
         boolean done = false;    // set flag to not done
