@@ -25,7 +25,7 @@ public class StarMapMenuView {
                          + "\nM - Move to Sector"
                          + "\nD - Display Star Map"
                          + "\nF - Fuel and Time amount"
-                         + "\nQ - Quit"
+                         + "\nQ - Back"
                          + "\n----------------------------------";
     }
     public void displayStarMapMenuView() {

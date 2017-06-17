@@ -27,7 +27,7 @@ public class HelpMenuView extends View {
                          + "\nE - Gathering Items"
                          + "\nH - Gathering Infinity Stones"
                          + "\nT - Fuel and Time"
-                         + "\nQ - Quit"
+                         + "\nQ - Back"
                          + "\n----------------------------------");
     }
     public void displayHelpMenuView() {
