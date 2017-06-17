@@ -97,7 +97,7 @@ public class StarMapMenuView {
 
     private void moveToSector() {
         MoveToSectorMenuView moveToSectorMenu = new MoveToSectorMenuView();
-        moveToSectorMenu.displayMoveToSectorMenuView();
+        moveToSectorMenu.display();
         
 //        System.out.println(
 //                "*** Input the coordianates you wish to travel to. ***"); 
