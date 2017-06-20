@@ -36,7 +36,7 @@ public class GameMenuView extends View {
                 this.gameMap();
                 break;
             case "I": // get and start an existing game
-                this.inventory();
+                this.inventoryMenuView();
                 break;
             case "H": //display the help menu
                 this.displayHelpMenu();
@@ -63,8 +63,9 @@ public class GameMenuView extends View {
         
     }
 
-    private void inventory() {
-        System.out.println("this will display the users inventory");
+    private void inventoryMenuView() {
+        InventoryMenuView helpMenu = new HelpMenuView();
+      helpMenu.display();
     }
 
     private void displayHelpMenu() {

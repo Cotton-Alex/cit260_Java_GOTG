@@ -48,6 +48,9 @@ public class InfinityStonesView extends View {
             case "P": // Power Stone
                 this.powerStone();
                 break;
+            case "O": // Soul Stone
+                this.soulStone();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
