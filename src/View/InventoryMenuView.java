@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Mike Minassian
+ * @author alexcotton
  */
 public class InventoryMenuView extends View{   
        

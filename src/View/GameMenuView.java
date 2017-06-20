@@ -64,8 +64,8 @@ public class GameMenuView extends View {
     }
 
     private void inventoryMenuView() {
-        InventoryMenuView helpMenu = new HelpMenuView();
-      helpMenu.display();
+        InventoryMenuView inventoryMenu = new InventoryMenuView();
+      inventoryMenu.display();
     }
 
     private void displayHelpMenu() {
