@@ -7,6 +7,8 @@ package Control;
 
 import Model.Player;
 import GOTG.GOTG;
+import Model.Game;
+import Model.Inventory;
 
 /**
  *
@@ -17,7 +19,25 @@ public class GameControl {
     
     public static void createNewGame(Player player){
         
-        System.out.println("\n*** createNewGame stub function called ***");
+        Game game = new Game();  //create new game
+        GOTG.setCurrentGame(game);  // save in GOTG
+        
+        game.setPlayer(player);  //save player in game
+        
+        //create the inventory list and save in the game
+        Inventory[] inventory = GameControl.createInventory();
+        game.setInventory(inventory);
+        
+        Map map = MapControl.createMap();  //create and initialize new map
+        game.setMap(map);  //save map in game
+        
+        // move actors to starting position in the map
+        MapControl.moveActorsToStartingLocation(map);
+    }
+    
+    public static Inventory[] createInventory(){
+        System.out.println("*** called createInventory() in GameControl ***");
+        return null;
     }
 
     public static Player createPlayer(String name) {

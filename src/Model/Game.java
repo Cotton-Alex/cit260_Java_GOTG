@@ -5,14 +5,20 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Justin
  */
-public class Game {
+public class Game implements Serializable {
     
   private double totalTime;
   private int noPeople;
+  private Player player;
+  private Ship ship;
+  
+  private Inventory[] inventory;
   
   //constructer functions
 
@@ -34,6 +40,30 @@ public class Game {
 
     public void setNoPeople(int noPeople) {
         this.noPeople = noPeople;
+    }
+
+    public Ship getShip() {
+        return ship;
+    }
+
+    public void setShip(Ship ship) {
+        this.ship = ship;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Inventory[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory[] inventory) {
+        this.inventory = inventory;
     }
     
    //hash and equals funcitons
@@ -72,7 +102,5 @@ public class Game {
     @Override
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
-    }
-    
-    
+    }   
 }
