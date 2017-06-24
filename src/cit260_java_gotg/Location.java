@@ -6,6 +6,7 @@
 package cit260_java_gotg;
 
 import java.io.Serializable;
+import javafx.scene.Scene;
 //import java.util.Objects;
 
 /**
@@ -98,6 +99,10 @@ public class Location implements Serializable {
     @Override
     public String toString() {
         return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + '}';
+    }
+
+    public void setScene(Scene scene) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
         
     

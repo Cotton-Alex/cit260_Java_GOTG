@@ -10,6 +10,7 @@ import GOTG.GOTG;
 import Model.Game;
 import Model.Inventory;
 import Model.Map;
+import cit260_java_gotg.Location;
 import javafx.scene.Scene;
 
 /**
@@ -137,6 +138,13 @@ public class GameControl {
         scenes[SceneType.finish.ordinal()] = finishScene;
         
         return scenes;
+    }
+    
+    private static void assignScenesTolocations(Map map, Scene[] scenes) {
+        Location[][] locations = map.getLocations();
+        
+        //start point
+        locations[0][0].setScene(scenes[SceneType.Earth.ordinal()]);  
     }
 
     public static Player createPlayer(String name) {
