@@ -23,6 +23,19 @@ public class Map implements Serializable {
     private int currentRow;
     private int currentColumn;
     private Location[][] locations;
+    
+    private static Map createMap() {
+        //create the map
+        Map map = new Map(20, 20);
+
+        //create the scenes for the game
+        Scene[] scenes = createScenes();
+
+        // assign scense to locations
+        GameControl.assignScenesToLocations(map, scenes);
+
+        return map;
+    }
 
     // constructer function
     public Map() {

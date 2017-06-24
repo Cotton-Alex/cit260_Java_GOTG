@@ -10,6 +10,7 @@ import GOTG.GOTG;
 import Model.Game;
 import Model.Inventory;
 import Model.Map;
+import javafx.scene.Scene;
 
 /**
  *
@@ -89,6 +90,53 @@ public class GameControl {
         
         
         return inventory;
+    }
+    
+    public enum SceneType {
+        start,
+        ship,
+        RealityStone,
+        SpaceStone,
+        MindStone,
+        TimeStone,
+        PowerStone,
+        SoulStone,
+        Earth,
+        Knowwhere,
+        NovaPrime,
+        instructions,
+        finish;
+    }
+    
+    private static Scene[] createScenes() {
+        
+        Scene[] scenes - new Scene[SceneType.values().length];
+        
+        Scene startingScene = new Scene();
+        startingScene.setDescription(
+                        "Guradians, come in Guardians.  This is IronMan, we have urgent intel,"
+                       +"Thanos has sent a broadcast across all the known universe.  He will "
+                       +"wipe out half of the known universe to apease Death unless we can get "
+                       +"to the Infinity Stones first.  I have every other superhero and Avenger "
+                       +"out looking for them as we speak! "
+                       +"We could really use your help on this one Starlord.");
+        startingScene.setMapSymbol(" ST ");
+        startingScene.setBlocked(false);
+        startingScene.setTravelTime(300);
+        scenes[SceneType.start.ordinal()] = startingScene;
+        
+        
+        Scene finishScene = new Scene();
+        finishScene.setDescription(
+                    "Congratulations team!  All the Inifinity Stones have been found and collected. "
+                   +"and we were able to defeat Thanos before something terrible happened! "
+                   +"That's one for the record books!");
+        finishScene.setMapSymbol(" FN ");
+        finishScene.setBlocked(false);
+        finishScene.setTravelTime(Double.POSITIVE_INFINITY);
+        scenes[SceneType.finish.ordinal()] = finishScene;
+        
+        return scenes;
     }
 
     public static Player createPlayer(String name) {

@@ -61,16 +61,4 @@ public class Location implements Serializable {
     public void setActors(ArrayList<Actor> actors) {
         this.actors = actors;
     }
-    private static Map createMap() {
-        //create the map
-        Map map = new Map(20, 20);
-
-        //create the scenes for the game
-        Scene[] scenes = createScenes();
-
-        // assign scense to locations
-        GameControl.assignScenesToLocations(map, scenes);
-
-        return map;
-    }
 }
