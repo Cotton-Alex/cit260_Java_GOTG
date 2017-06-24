@@ -5,6 +5,7 @@
  */
 package Model;
 
+import cit260_java_gotg.Location;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -19,6 +20,7 @@ public class Map implements Serializable {
     private int columnCount;
     private int currentRow;
     private int currentColumn;
+    private Location[][] locations;
     
     // constructer function
 

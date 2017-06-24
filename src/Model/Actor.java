@@ -13,14 +13,14 @@ import java.util.Objects;
 
 public enum Actor implements Serializable{
     
-    Starklord(""),
+    Starlord(""),
     Gamora(""),
     Drax(""),
     Rocket(""),
     Groot(""),
     Yondu(""),
-    Thanos(""),
-    
+    Thanos("")
+}
     
 //class instance variables
     

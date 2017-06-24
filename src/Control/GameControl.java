@@ -9,6 +9,7 @@ import Model.Player;
 import GOTG.GOTG;
 import Model.Game;
 import Model.Inventory;
+import Model.Map;
 
 /**
  *
