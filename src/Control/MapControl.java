@@ -6,6 +6,7 @@
 package Control;
 
 import Model.Map;
+import javafx.scene.Scene;
 
 /**
  *
@@ -18,6 +19,19 @@ public class MapControl {
         
         System.out.println("\n*** createMap() called ***");
         
+        return map;
+    }
+    
+    private static Map createMap() {
+        //create the map
+        Map map = new Map(20, 20);
+
+        //create the scenes for the game
+        Scene[] scenes = createScenes();
+
+        // assign scense to locations
+        GameControl.assignScenesToLocations(map, scenes);
+
         return map;
     }
     

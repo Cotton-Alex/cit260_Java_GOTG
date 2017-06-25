@@ -93,6 +93,70 @@ public class GameControl {
         return inventory;
     }
     
+    public class QuickSort {
+
+        private Inventory[] inventory;
+        
+        private int array[];
+        private int length;
+        
+        public void sort(int[] inputArr) {
+            
+            if (inputArr == null || inputArr.length == 0) {
+                return;
+            }
+           this.array = inputArr;
+           length = inputArr.length;
+           quickSort(0, length - 1);
+        }
+        
+        private void quickSort(int lowerIndex, int higherIndex) {
+            
+            int i = lowerIndex;
+            int j = higherIndex;
+            // calcualte pivot number, Pivot is middle index number
+            int pivot = array[lowerIndex+(higherIndex-lowerIndex)/2];
+            // divide into 2 arrays
+            while (i <= j) {
+                while (array[i] < pivot) {
+                    i++;
+                }
+                while (array[j] > pivot){
+                    j--;
+                }
+                if (i <= j) {
+                    exchangeNumbers(i,j);
+                    //move index to next position on both sides
+                    i++;
+                    j--;
+                }
+            }
+            // call quickSort() method recursively
+            if (lowerIndex < j)
+                quickSort(lowerIndex, j);
+            if (i < higherIndex)
+                quickSort(i, higherIndex);
+        }
+        
+        private void exchangeNumbers(int i, int j) {
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+
+        
+        public class QuickSort(String a[]){
+            
+            QuickSort sorter = new QuickSort();
+            sorter.sort(inventory);
+            for(int i:inventory){
+               System.out.print(i);
+               System.out.print(" ");
+            }
+            
+        }
+    }
+    
     public enum SceneType {
         start,
         ship,
