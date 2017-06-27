@@ -12,19 +12,18 @@ import java.io.Serializable;
  * @author Justin
  */
 public class Game implements Serializable {
-    
-  private double totalTime;
-  private int noPeople;
-  private Player player;
-  private Ship ship;
-  
-  private Inventory[] inventory;
-  
-  //constructer functions
 
+    private double totalTime;
+    private int noPeople;
+    private Player player;
+    private Ship ship;
+
+    private Inventory[] inventory;
+
+    //constructer functions
     public Game() {
     }
-  //getter and setter functions
+    //getter and setter functions
 
     public double getTotalTime() {
         return totalTime;
@@ -65,9 +64,8 @@ public class Game implements Serializable {
     public void setInventory(Inventory[] inventory) {
         this.inventory = inventory;
     }
-    
-   //hash and equals funcitons
 
+    //hash and equals funcitons
     @Override
     public int hashCode() {
         int hash = 7;
@@ -96,11 +94,14 @@ public class Game implements Serializable {
         }
         return true;
     }
-    
-    //toString function
 
+    //toString function
     @Override
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
-    }   
+    }
+
+    public void setMap(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

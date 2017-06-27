@@ -13,15 +13,16 @@ import javafx.scene.Scene;
  * @author Mike Minassian
  */
 public class MapControl {
-    public static Map createMap() {
-        //create the map
-        Map map = null;
-        
-        System.out.println("\n*** createMap() called ***");
-        
-        return map;
-    }
-    
+//    public static Map createMap() {
+//        //create the map
+//        Map map = null;
+//        
+//        System.out.println("\n*** createMap() called ***");
+//        
+//        return map;
+//    }
+
+//  ********* Commented out above code - new code was created below ************
     private static Map createMap() {
         //create the map
         Map map = new Map(20, 20);
@@ -34,5 +35,9 @@ public class MapControl {
 
         return map;
     }
-    
+
+    static void moveActorsToStartingLocation(Map map) {
+        System.out.println("\n*** moveActorsToStartingLocation() called ***");
+    }
+
 }

@@ -1,5 +1,5 @@
 /*
- *The Actor Class
+ *The Stone Class
  */
 package Model;
 
@@ -8,23 +8,22 @@ import java.util.Objects;
 
 /**
  *
- * @author Mike Minassian
+ * @author alexcotton
  */
-public enum Actor implements Serializable {
+public enum Stone implements Serializable {
 
-    Starlord(""),
-    Gamora(""),
-    Drax(""),
-    Rocket(""),
-    Groot(""),
-    Yondu(""),
-    Thanos("");
+    RealityStone(""),
+    SpaceStone(""),
+    MindStone(""),
+    TimeStone(""),
+    PowerStone(""),
+    SoulStone("");
 
     private final String description;
     private final Point coordinates;
 }
 
-Actor(String description) {
+Stone(String description) {
         this.description = description;
         coordinates = new Point(1,1);
     }

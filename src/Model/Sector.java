@@ -1,5 +1,5 @@
 /*
- *The Actor Class
+ *The Sector Class
  */
 package Model;
 
@@ -8,23 +8,23 @@ import java.util.Objects;
 
 /**
  *
- * @author Mike Minassian
+ * @author alexcotton
  */
-public enum Actor implements Serializable {
+public enum Sector implements Serializable {
 
-    Starlord(""),
-    Gamora(""),
-    Drax(""),
-    Rocket(""),
-    Groot(""),
-    Yondu(""),
+    Earth(""),
+    Hala(""),
+    Xandar(""),
+    TheKyln(""),
+    Knowhere(""),
+    MoragIV(""),
     Thanos("");
 
     private final String description;
     private final Point coordinates;
 }
 
-Actor(String description) {
+Sector(String description) {
         this.description = description;
         coordinates = new Point(1,1);
     }
