@@ -6,7 +6,8 @@
 package Control;
 
 import Model.Map;
-import javafx.scene.Scene;
+import Model.Scene;
+import Model.SceneType;
 
 /**
  *
@@ -23,9 +24,9 @@ public class MapControl {
 //    }
 
 //  ********* Commented out above code - new code was created below ************
-    private static Map createMap() {
+    public static Map createMap() {
         //create the map
-        Map map = new Map(20, 20);
+        Map map = new Map(7, 4);
 
         //create the scenes for the game
         Scene[] scenes = createScenes();
@@ -38,6 +39,29 @@ public class MapControl {
 
     static void moveActorsToStartingLocation(Map map) {
         System.out.println("\n*** moveActorsToStartingLocation() called ***");
+    }
+    //TODO add create sceens function
+    public static Scene[] createScenes() {
+    Scene[] scenes= new Scene[28];
+    
+    Scene newScene = new Scene();
+    newScene.setName(SceneType.Earth.name());
+    newScene.setDescription("Starlords home planet");
+    newScene.setSector(true);
+    newScene.setSymbol("SE");
+    scenes[SceneType.Earth.ordinal()] = newScene;
+    
+    newScene = new Scene();
+    newScene.setName(SceneType.Home.name());
+    newScene.setDescription("");
+    newScene.setSector(true);
+    newScene.setSymbol("EH");
+    scenes[SceneType.Home.ordinal()] = newScene;
+    
+ 
+    
+    
+    return scenes;
     }
 
 }

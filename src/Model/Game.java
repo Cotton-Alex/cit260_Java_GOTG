@@ -18,7 +18,7 @@ public class Game implements Serializable {
     private Player player;
     private Ship ship;
 
-    private Inventory[] inventory;
+    private Item[] inventory;
 
     //constructer functions
     public Game() {
@@ -57,11 +57,11 @@ public class Game implements Serializable {
         this.player = player;
     }
 
-    public Inventory[] getInventory() {
+    public Item[] getInventory() {
         return inventory;
     }
 
-    public void setInventory(Inventory[] inventory) {
+    public void setInventory(Item[] inventory) {
         this.inventory = inventory;
     }
 

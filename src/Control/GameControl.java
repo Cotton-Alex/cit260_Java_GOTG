@@ -8,7 +8,8 @@ package Control;
 import Model.Player;
 import GOTG.GOTG;
 import Model.Game;
-import Model.Inventory;
+import Model.Item;
+import Model.ItemType;
 import Model.Map;
 import cit260_java_gotg.Location;
 import javafx.scene.Scene;
@@ -27,75 +28,72 @@ public class GameControl {
         game.setPlayer(player);  //save player in game
 
         //create the inventory list and save in the game
-        Inventory[] inventory = GameControl.createInventory();
+        Item[] inventory = GameControl.createInventory();
         game.setInventory(inventory);
 
-        Ship ship = new Ship();// create new ship
-        game.setShip(ship);// save ship in game
+//        Ship ship = new Ship();// create new ship
+//        game.setShip(ship);// save ship in game
 
         Map map = MapControl.createMap();  //create and initialize new map
         game.setMap(map);  //save map in game
 
         // move actors to starting position in the map
-        MapControl.moveActorsToStartingLocation(map);
+        MapControl.moveActorsToStartingLocation(map);//TODO:get sample code movePlayersToStartingLocation and movePlayer
     }
-
-    public enum Item {
-        mindStone,
-        tesseract,
-        aether,
-        orb,
-        soulStone,
-        timeStone;
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        //TODO: assign every location
+        Location locations[][] = map.getLocations();
+        locations[0][0].setScene(scenes[SceneType.Earth.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.Home.ordinal()]);
     }
-
-    public static Inventory[] createInventory() {
+    
+    public static Item[] createInventory() {
 
         //array(list) for inventory
-        Inventory[] inventory = new Inventory[5];
+        Item[] inventory = new Item[ItemType.values().length];
 
-        Inventory mindStone = new Inventory();
-        mindStone.setInventoryType("Mind Stone");
+        Item mindStone = new Item();
+        mindStone.setItemType("Mind Stone");
         mindStone.setQuantityInStock(0);
         mindStone.setRequiredAmount(0);
-        inventory[Item.mindStone.ordinal()] = mindStone;
+        inventory[ItemType.mindStone.ordinal()] = mindStone;
 
-        Inventory tesseract = new Inventory();
-        tesseract.setInventoryType("Tesseract");
+        Item tesseract = new Item();
+        tesseract.setItemType("Tesseract");
         tesseract.setQuantityInStock(0);
         tesseract.setRequiredAmount(0);
-        inventory[Item.tesseract.ordinal()] = tesseract;
+        inventory[ItemType.tesseract.ordinal()] = tesseract;
 
-        Inventory aether = new Inventory();
-        aether.setInventoryType("Aether");
+        Item aether = new Item();
+        aether.setItemType("Aether");
         aether.setQuantityInStock(0);
         aether.setRequiredAmount(0);
-        inventory[Item.aether.ordinal()] = aether;
+        inventory[ItemType.aether.ordinal()] = aether;
 
-        Inventory orb = new Inventory();
-        orb.setInventoryType("Orb");
+        Item orb = new Item();
+        orb.setItemType("Orb");
         orb.setQuantityInStock(0);
         orb.setRequiredAmount(0);
-        inventory[Item.orb.ordinal()] = orb;
+        inventory[ItemType.orb.ordinal()] = orb;
 
-        Inventory soulStone = new Inventory();
-        soulStone.setInventoryType("Soul Stone");
+        Item soulStone = new Item();
+        soulStone.setItemType("Soul Stone");
         soulStone.setQuantityInStock(0);
         soulStone.setRequiredAmount(0);
-        inventory[Item.soulStone.ordinal()] = soulStone;
+        inventory[ItemType.soulStone.ordinal()] = soulStone;
 
-        Inventory timeStone = new Inventory();
-        timeStone.setInventoryType("Time Stone");
+        Item timeStone = new Item();
+        timeStone.setItemType("Time Stone");
         timeStone.setQuantityInStock(0);
         timeStone.setRequiredAmount(0);
-        inventory[Item.timeStone.ordinal()] = timeStone;
+        inventory[ItemType.timeStone.ordinal()] = timeStone;
 
         return inventory;
     }
 
     public class QuickSort {
 
-        private Inventory[] inventory;
+        private Item[] inventory;
 
         private int array[];
         private int length;
@@ -146,7 +144,7 @@ public class GameControl {
             array[j] = temp;
         }
 
-        public class QuickSort
+        public class QuickSort 
         
         (String a[]
 
@@ -173,7 +171,7 @@ public class GameControl {
         PowerStone,
         SoulStone,
         Earth,
-        Knowwhere,
+        KnowWhere,
         NovaPrime,
         instructions,
         finish;
