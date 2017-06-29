@@ -3,6 +3,7 @@
  */
 package Model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -21,7 +22,7 @@ public enum Stone implements Serializable {
 
     private final String description;
     private final Point coordinates;
-}
+
 
 Stone(String description) {
         this.description = description;

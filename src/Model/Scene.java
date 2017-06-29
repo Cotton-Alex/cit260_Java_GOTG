@@ -96,7 +96,7 @@ public class Scene implements Serializable {
 
     @Override
     public String toString() {
-        return "RegularSceneType{" + "description=" + description + ", blocked=" + blocked + ", symbol=" + symbol + '}';
+        return "RegularSceneType{" + "description=" + description +   ", symbol=" + symbol + '}';
     }
 
 }

@@ -13,6 +13,7 @@ import Model.ItemType;
 import Model.Map;
 import cit260_java_gotg.Location;
 import javafx.scene.Scene;
+import Model.SceneType;
 
 /**
  *
@@ -41,10 +42,36 @@ public class GameControl {
         MapControl.moveActorsToStartingLocation(map);//TODO:get sample code movePlayersToStartingLocation and movePlayer
     }
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
-        //TODO: assign every location
+       
         Location locations[][] = map.getLocations();
         locations[0][0].setScene(scenes[SceneType.Earth.ordinal()]);
-        locations[0][1].setScene(scenes[SceneType.Home.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.Starlords_Home.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.Earth_Bar.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.Avengers_HQ.ordinal()]);
+        locations[1][0].setScene(scenes[SceneType.Hala.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.Hala_Bar.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.Skrull_Palace.ordinal()]);
+        locations[1][3].setScene(scenes[SceneType.Skrull_House.ordinal()]);
+        locations[2][0].setScene(scenes[SceneType.Xandar.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.Nova_Prime.ordinal()]);
+        locations[2][2].setScene(scenes[SceneType.Nova_Command.ordinal()]);
+        locations[2][3].setScene(scenes[SceneType.Mechanic.ordinal()]);
+        locations[3][0].setScene(scenes[SceneType.TheKyln.ordinal()]);
+        locations[3][1].setScene(scenes[SceneType.Boss_Quarters.ordinal()]);
+        locations[3][2].setScene(scenes[SceneType.Prison_Cell.ordinal()]);
+        locations[3][3].setScene(scenes[SceneType.Stockpile.ordinal()]);
+        locations[4][0].setScene(scenes[SceneType.Knowhere.ordinal()]);
+        locations[4][1].setScene(scenes[SceneType.Command_Center.ordinal()]);
+        locations[4][2].setScene(scenes[SceneType.Knowhere_Bar.ordinal()]);
+        locations[4][3].setScene(scenes[SceneType.Mining_Bay.ordinal()]);
+        locations[5][0].setScene(scenes[SceneType.MoragIV.ordinal()]);
+        locations[5][1].setScene(scenes[SceneType.Prison.ordinal()]);
+        locations[5][2].setScene(scenes[SceneType.The_Collectors_Shop.ordinal()]);
+        locations[5][3].setScene(scenes[SceneType.The_Temple.ordinal()]);
+        locations[6][0].setScene(scenes[SceneType.Asgard.ordinal()]);
+        locations[6][1].setScene(scenes[SceneType.Hall_of_Relics.ordinal()]);
+        locations[6][2].setScene(scenes[SceneType.Throne_Room.ordinal()]);
+        locations[6][3].setScene(scenes[SceneType.Bifrost.ordinal()]);
     }
     
     public static Item[] createInventory() {
@@ -161,25 +188,11 @@ public class GameControl {
         }
     }
 
-    public enum SceneType {
-        start,
-        ship,
-        RealityStone,
-        SpaceStone,
-        MindStone,
-        TimeStone,
-        PowerStone,
-        SoulStone,
-        Earth,
-        KnowWhere,
-        NovaPrime,
-        instructions,
-        finish;
-    }
+   
 
     private static Scene[] createScenes() {
 
-        Scene[] scenes - new Scene[SceneType.values().length];
+        Scene[] scenes = new Scene[SceneType.values().length];
 
         Scene startingScene = new Scene();
         startingScene.setDescription(
@@ -190,7 +203,7 @@ public class GameControl {
                 + "out looking for them as we speak! "
                 + "We could really use your help on this one Starlord.");
         startingScene.setMapSymbol(" ST ");
-        startingScene.setBlocked(false);
+       
         startingScene.setTravelTime(300);
         scenes[SceneType.start.ordinal()] = startingScene;
 
@@ -207,12 +220,7 @@ public class GameControl {
         return scenes;
     }
 
-    private static void assignScenesTolocations(Map map, Scene[] scenes) {
-        Location[][] locations = map.getLocations();
-
-        //start point
-        locations[0][0].setScene(scenes[SceneType.Earth.ordinal()]);
-    }
+    
 
     public static Player createPlayer(String name) {
 
