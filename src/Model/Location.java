@@ -8,7 +8,7 @@ package Model;
 import Control.GameControl;
 import java.io.Serializable;
 import java.util.ArrayList;
-import javafx.scene.Scene;
+
 
 /**
  *
@@ -18,9 +18,9 @@ public class Location implements Serializable {
    
     private int row;
     private int column;
-    private boolean visited;
     private Scene scene;
     private ArrayList<Actor> actors;
+    private Boolean visited;
 
     public int getRow() {
         return row;
@@ -28,6 +28,14 @@ public class Location implements Serializable {
 
     public void setRow(int row) {
         this.row = row;
+    }
+
+    public Boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(Boolean visited) {
+        this.visited = visited;
     }
 
     public int getColumn() {
@@ -38,13 +46,9 @@ public class Location implements Serializable {
         this.column = column;
     }
 
-    public boolean isVisited() {
-        return visited;
-    }
+    
 
-    public void setVisited(boolean visited) {
-        this.visited = visited;
-    }
+   
 
     public Scene getScene() {
         return scene;

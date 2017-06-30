@@ -17,6 +17,7 @@ public class Game implements Serializable {
     private int noPeople;
     private Player player;
     private Ship ship;
+    private Map map;
 
     private Item[] inventory;
 
@@ -65,6 +66,15 @@ public class Game implements Serializable {
         this.inventory = inventory;
     }
 
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
+
     //hash and equals funcitons
     @Override
     public int hashCode() {
@@ -101,7 +111,5 @@ public class Game implements Serializable {
         return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
     }
 
-    public void setMap(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }

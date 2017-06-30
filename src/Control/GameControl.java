@@ -10,9 +10,9 @@ import GOTG.GOTG;
 import Model.Game;
 import Model.Item;
 import Model.ItemType;
+import Model.Location;
 import Model.Map;
-import cit260_java_gotg.Location;
-import javafx.scene.Scene;
+import Model.Scene;
 import Model.SceneType;
 
 /**
@@ -39,7 +39,7 @@ public class GameControl {
         game.setMap(map);  //save map in game
 
         // move actors to starting position in the map
-        MapControl.moveActorsToStartingLocation(map);//TODO:get sample code movePlayersToStartingLocation and movePlayer
+        MapControl.movePlayerToStartingLocation(map);//TODO:get sample code movePlayersToStartingLocation and movePlayer
     }
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
        
@@ -166,107 +166,104 @@ public class GameControl {
         return inventory;
     }
 
-    public class QuickSort {
-
-        private Item[] inventory;
-
-        private int array[];
-        private int length;
-
-        public void sort(int[] inputArr) {
-
-            if (inputArr == null || inputArr.length == 0) {
-                return;
-            }
-            this.array = inputArr;
-            length = inputArr.length;
-            quickSort(0, length - 1);
-        }
-
-        private void quickSort(int lowerIndex, int higherIndex) {
-
-            int i = lowerIndex;
-            int j = higherIndex;
-            // calcualte pivot number, Pivot is middle index number
-            int pivot = array[lowerIndex + (higherIndex - lowerIndex) / 2];
-            // divide into 2 arrays
-            while (i <= j) {
-                while (array[i] < pivot) {
-                    i++;
-                }
-                while (array[j] > pivot) {
-                    j--;
-                }
-                if (i <= j) {
-                    exchangeNumbers(i, j);
-                    //move index to next position on both sides
-                    i++;
-                    j--;
-                }
-            }
-            // call quickSort() method recursively
-            if (lowerIndex < j) {
-                quickSort(lowerIndex, j);
-            }
-            if (i < higherIndex) {
-                quickSort(i, higherIndex);
-            }
-        }
-
-        private void exchangeNumbers(int i, int j) {
-            int temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
-        }
-
-        public class QuickSort 
-        
-        (String a[]
-
-        
-            ){
-            
-            QuickSort sorter = new QuickSort();
-            sorter.sort(inventory);
-            for (int i : inventory) {
-                System.out.print(i);
-                System.out.print(" ");
-            }
-
-        }
-    }
+//    public class QuickSort {
+//
+//        private Item[] inventory;
+//
+//        private int array[];
+//        private int length;
+//
+//        public void sort(int[] inputArr) {
+//
+//            if (inputArr == null || inputArr.length == 0) {
+//                return;
+//            }
+//            this.array = inputArr;
+//            length = inputArr.length;
+//            quickSort(0, length - 1);
+//        }
+//
+//        private void quickSort(int lowerIndex, int higherIndex) {
+//
+//            int i = lowerIndex;
+//            int j = higherIndex;
+//            // calcualte pivot number, Pivot is middle index number
+//            int pivot = array[lowerIndex + (higherIndex - lowerIndex) / 2];
+//            // divide into 2 arrays
+//            while (i <= j) {
+//                while (array[i] < pivot) {
+//                    i++;
+//                }
+//                while (array[j] > pivot) {
+//                    j--;
+//                }
+//                if (i <= j) {
+//                    exchangeNumbers(i, j);
+//                    //move index to next position on both sides
+//                    i++;
+//                    j--;
+//                }
+//            }
+//            // call quickSort() method recursively
+//            if (lowerIndex < j) {
+//                quickSort(lowerIndex, j);
+//            }
+//            if (i < higherIndex) {
+//                quickSort(i, higherIndex);
+//            }
+//        }
+//
+//        private void exchangeNumbers(int i, int j) {
+//            int temp = array[i];
+//            array[i] = array[j];
+//            array[j] = temp;
+//        }
+//
+////        public class QuickSort 
+//        
+//        (String a[]){
+//            
+//            QuickSort sorter = new QuickSort();
+//            sorter.sort(inventory);
+//            for (int i : inventory) {
+//                System.out.print(i);
+//                System.out.print(" ");
+//            }
+//
+//        }
+//    }
 
    
 
-    private static Scene[] createScenes() {
-
-        Scene[] scenes = new Scene[SceneType.values().length];
-
-        Scene startingScene = new Scene();
-        startingScene.setDescription(
-                "Guradians, come in Guardians.  This is IronMan, we have urgent intel,"
-                + "Thanos has sent a broadcast across all the known universe.  He will "
-                + "wipe out half of the known universe to apease Death unless we can get "
-                + "to the Infinity Stones first.  I have every other superhero and Avenger "
-                + "out looking for them as we speak! "
-                + "We could really use your help on this one Starlord.");
-        
-       
-        startingScene.setTravelTime(300);
-        scenes[SceneType.Earth.ordinal()] = startingScene;
-
-        Scene finishScene = new Scene();
-        finishScene.setDescription(
-                "Congratulations team!  All the Inifinity Stones have been found and collected. "
-                + "and we were able to defeat Thanos before something terrible happened! "
-                + "That's one for the record books!");
-        finishScene.setMapSymbol(" FN ");
-        finishScene.setBlocked(false);
-        finishScene.setTravelTime(Double.POSITIVE_INFINITY);
-        scenes[SceneType.finish.ordinal()] = finishScene;
-
-        return scenes;
-    }
+//    private static Scene[] createScenes() {
+//
+//        Scene[] scenes = new Scene[SceneType.values().length];
+//
+//        Scene startingScene = new Scene();
+//        startingScene.setDescription(
+//                "Guradians, come in Guardians.  This is IronMan, we have urgent intel,"
+//                + "Thanos has sent a broadcast across all the known universe.  He will "
+//                + "wipe out half of the known universe to apease Death unless we can get "
+//                + "to the Infinity Stones first.  I have every other superhero and Avenger "
+//                + "out looking for them as we speak! "
+//                + "We could really use your help on this one Starlord.");
+//        
+//       
+//       // startingScene.setTravelTime(300);
+//        scenes[SceneType.Earth.ordinal()] = startingScene;
+//
+//        Scene finishScene = new Scene();
+//        finishScene.setDescription(
+//                "Congratulations team!  All the Inifinity Stones have been found and collected. "
+//                + "and we were able to defeat Thanos before something terrible happened! "
+//                + "That's one for the record books!");
+//        finishScene.setMapSymbol(" FN ");
+//        finishScene.setBlocked(false);
+//        finishScene.setTravelTime(Double.POSITIVE_INFINITY);
+//        scenes[SceneType.finish.ordinal()] = finishScene;
+//
+//        return scenes;
+//    }
 
     
 

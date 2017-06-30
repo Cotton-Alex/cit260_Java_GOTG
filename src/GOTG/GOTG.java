@@ -22,7 +22,9 @@ public class GOTG {
     /**
      * @param args the command line arguments
      */
+    private static Game currentGame = null;
     
+    private static Player player = null;
     
 //********************************************************************************************************************
 //     01 MAIN - the start
@@ -37,6 +39,9 @@ public class GOTG {
 //        System.out.println("\nsetPlayer() function called");
 //          //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //    }
+
+   
+    
     
     
     public static void teamClassTest() {
@@ -119,11 +124,9 @@ public class GOTG {
     public static void wilkeyClassTest(){ //dropped
           
     }
-    private static Game currentGame = null;
-    
-    private static Player player = null;
+   
   
-    public static Game getCurrentGame(Game currentGame) {
+    public static Game getCurrentGame() {
         return currentGame;
     }
     public static void setCurrentGame(Game currentGame) {

@@ -6,10 +6,9 @@
 package Model;
 
 import Control.GameControl;
-import cit260_java_gotg.Location;
 import java.io.Serializable;
 import java.util.Objects;
-import javafx.scene.Scene;
+//import javafx.scene.Scene;
 
 /**
  *
@@ -23,6 +22,7 @@ public class Map implements Serializable {
     private int currentRow;
     private int currentColumn;
     private Location[][] locations;
+    private Location currentLocation;
 
     // constructer function
     public Map() {
@@ -55,6 +55,7 @@ public class Map implements Serializable {
         }
     }
 
+    
     //getter and setter funcgions
     public String getDescription() {
         return description;
@@ -95,6 +96,28 @@ public class Map implements Serializable {
     public void setCurrentColumn(int currentColumn) {
         this.currentColumn = currentColumn;
     }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+    public Scene getCurrentScene() {
+       
+       return currentLocation.getScene();
+        
+    }
+    
 
     //hash and equals functions
     @Override
@@ -144,8 +167,6 @@ public class Map implements Serializable {
         return "Map{" + "description=" + description + ", rowCount=" + rowCount + ", columnCount=" + columnCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + '}';
     }
 
-    public Location[][] getLocations() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
 }
