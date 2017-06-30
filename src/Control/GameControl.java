@@ -81,72 +81,83 @@ public class GameControl {
 
         Item mindStone = new Item();
         mindStone.setItemType("Mind Stone");
+        mindStone.setWeight(0);
         mindStone.setQuantityInStock(0);
         mindStone.setRequiredAmount(0);
         inventory[ItemType.mindStone.ordinal()] = mindStone;
 
         Item tesseract = new Item();
         tesseract.setItemType("Tesseract");
+        tesseract.setWeight(0);
         tesseract.setQuantityInStock(0);
         tesseract.setRequiredAmount(0);
         inventory[ItemType.tesseract.ordinal()] = tesseract;
 
         Item aether = new Item();
         aether.setItemType("Aether");
+        aether.setWeight(0);
         aether.setQuantityInStock(0);
         aether.setRequiredAmount(0);
         inventory[ItemType.aether.ordinal()] = aether;
 
         Item orb = new Item();
         orb.setItemType("Orb");
+        orb.setWeight(0);
         orb.setQuantityInStock(0);
         orb.setRequiredAmount(0);
         inventory[ItemType.orb.ordinal()] = orb;
 
         Item soulStone = new Item();
         soulStone.setItemType("Soul Stone");
+        soulStone.setWeight(0);
         soulStone.setQuantityInStock(0);
         soulStone.setRequiredAmount(0);
         inventory[ItemType.soulStone.ordinal()] = soulStone;
 
         Item eye_of_Agamotto = new Item();
         eye_of_Agamotto.setItemType("Eye of Agamotto");
+        eye_of_Agamotto.setWeight(0);
         eye_of_Agamotto.setQuantityInStock(0);
         eye_of_Agamotto.setRequiredAmount(0);
         inventory[ItemType.Eye_of_Agamotto.ordinal()] = eye_of_Agamotto;
         
         Item yondus_Headpiece = new Item();
         yondus_Headpiece.setItemType("Yondu's Headpiece");
+        yondus_Headpiece.setWeight(5);
         yondus_Headpiece.setQuantityInStock(0);
         yondus_Headpiece.setRequiredAmount(0);
         inventory[ItemType.yondus_Headpiece.ordinal()] = yondus_Headpiece;
         
          Item eco_Boost = new Item();
         eco_Boost.setItemType("Eco-boost");
+        eco_Boost.setWeight(0);
         eco_Boost.setQuantityInStock(0);
         eco_Boost.setRequiredAmount(0);
         inventory[ItemType.eco_Boost.ordinal()] = eco_Boost;
         
-        Item knowledge_of_the_soul_stone = new Item();
-        knowledge_of_the_soul_stone.setItemType("Eco-boost");
-        knowledge_of_the_soul_stone.setQuantityInStock(0);
-        knowledge_of_the_soul_stone.setRequiredAmount(0);
-        inventory[ItemType.knowledge_of_the_soul_stone.ordinal()] = knowledge_of_the_soul_stone;
+        Item knowledge_of_the_soulstone = new Item();
+        knowledge_of_the_soulstone.setItemType("Knowledge of the Soul Stone");
+        knowledge_of_the_soulstone.setWeight(0);
+        knowledge_of_the_soulstone.setQuantityInStock(0);
+        knowledge_of_the_soulstone.setRequiredAmount(0);
+        inventory[ItemType.knowledge_of_the_soulstone.ordinal()] = knowledge_of_the_soulstone;
         
         Item drax_Knives = new Item();
-        drax_Knives.setItemType("Eco-boost");
-        drax_Knives.setQuantityInStock(0);
+        drax_Knives.setItemType("Drax's Knives");
+        drax_Knives.setQuantityInStock(10);
         drax_Knives.setRequiredAmount(0);
         inventory[ItemType.drax_Knives.ordinal()] = drax_Knives;
         
         Item vault_Key = new Item();
-        vault_Key.setItemType("Eco-boost");
+        vault_Key.setItemType("Vault Key");
+        vault_Key.setWeight(2);
         vault_Key.setQuantityInStock(0);
         vault_Key.setRequiredAmount(0);
         inventory[ItemType.vault_Key.ordinal()] = vault_Key;
         
         Item walkman = new Item();
-        walkman.setItemType("Eco-boost");
+        walkman.setItemType("Walkman");
+        walkman.setWeight(3);
         walkman.setQuantityInStock(0);
         walkman.setRequiredAmount(0);
         inventory[ItemType.walkman.ordinal()] = walkman;

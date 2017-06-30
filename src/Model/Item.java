@@ -17,7 +17,7 @@ public class Item implements Serializable {
     // class instance variables
     private String itemType;
     private String name;
-    //TODO: add all properties/attributes
+    private int    weight;
     private int    quantityInStock;
     private int    requiredAmount;
 
@@ -77,6 +77,14 @@ public class Item implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
     public String getItemType() {

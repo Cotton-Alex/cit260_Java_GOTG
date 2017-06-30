@@ -18,7 +18,7 @@ public enum ItemType {
     Eye_of_Agamotto,
     yondus_Headpiece,
     eco_Boost,
-    knowledge_of_the_soul_stone,
+    knowledge_of_the_soulstone,
     drax_Knives,
     vault_Key,
     walkman;
