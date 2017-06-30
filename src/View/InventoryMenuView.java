@@ -6,6 +6,7 @@
 package View;
 
 import java.util.Scanner;
+import Control.GameControl;
 
 /**
  *
@@ -54,8 +55,9 @@ public class InventoryMenuView extends View{
      
 
     private void grootsInventory() {
-        System.out.println(
-                "*** List the items that Groot is carrying ***");
+       GameControl inventory = new GameControl();
+//        inventory.inventoryPrint();
+                
     }
     private void shipsInventory() {
         System.out.println(
