@@ -239,10 +239,10 @@ public class GameControl {
                 + "to the Infinity Stones first.  I have every other superhero and Avenger "
                 + "out looking for them as we speak! "
                 + "We could really use your help on this one Starlord.");
-        startingScene.setMapSymbol(" ST ");
+        
        
         startingScene.setTravelTime(300);
-        scenes[SceneType.start.ordinal()] = startingScene;
+        scenes[SceneType.Earth.ordinal()] = startingScene;
 
         Scene finishScene = new Scene();
         finishScene.setDescription(
