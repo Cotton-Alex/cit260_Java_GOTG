@@ -109,11 +109,48 @@ public class GameControl {
         soulStone.setRequiredAmount(0);
         inventory[ItemType.soulStone.ordinal()] = soulStone;
 
-        Item timeStone = new Item();
-        timeStone.setItemType("Time Stone");
-        timeStone.setQuantityInStock(0);
-        timeStone.setRequiredAmount(0);
-        inventory[ItemType.timeStone.ordinal()] = timeStone;
+        Item eye_of_Agamotto = new Item();
+        eye_of_Agamotto.setItemType("Eye of Agamotto");
+        eye_of_Agamotto.setQuantityInStock(0);
+        eye_of_Agamotto.setRequiredAmount(0);
+        inventory[ItemType.Eye_of_Agamotto.ordinal()] = eye_of_Agamotto;
+        
+        Item yondus_Headpiece = new Item();
+        yondus_Headpiece.setItemType("Yondu's Headpiece");
+        yondus_Headpiece.setQuantityInStock(0);
+        yondus_Headpiece.setRequiredAmount(0);
+        inventory[ItemType.yondus_Headpiece.ordinal()] = yondus_Headpiece;
+        
+         Item eco_Boost = new Item();
+        eco_Boost.setItemType("Eco-boost");
+        eco_Boost.setQuantityInStock(0);
+        eco_Boost.setRequiredAmount(0);
+        inventory[ItemType.eco_Boost.ordinal()] = eco_Boost;
+        
+        Item knowledge_of_the_soul_stone = new Item();
+        knowledge_of_the_soul_stone.setItemType("Eco-boost");
+        knowledge_of_the_soul_stone.setQuantityInStock(0);
+        knowledge_of_the_soul_stone.setRequiredAmount(0);
+        inventory[ItemType.knowledge_of_the_soul_stone.ordinal()] = knowledge_of_the_soul_stone;
+        
+        Item drax_Knives = new Item();
+        drax_Knives.setItemType("Eco-boost");
+        drax_Knives.setQuantityInStock(0);
+        drax_Knives.setRequiredAmount(0);
+        inventory[ItemType.drax_Knives.ordinal()] = drax_Knives;
+        
+        Item vault_Key = new Item();
+        vault_Key.setItemType("Eco-boost");
+        vault_Key.setQuantityInStock(0);
+        vault_Key.setRequiredAmount(0);
+        inventory[ItemType.vault_Key.ordinal()] = vault_Key;
+        
+        Item walkman = new Item();
+        walkman.setItemType("Eco-boost");
+        walkman.setQuantityInStock(0);
+        walkman.setRequiredAmount(0);
+        inventory[ItemType.walkman.ordinal()] = walkman;
+        
 
         return inventory;
     }

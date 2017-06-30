@@ -15,5 +15,13 @@ public enum ItemType {
     aether,
     orb,
     soulStone,
-    timeStone;
+    Eye_of_Agamotto,
+    yondus_Headpiece,
+    eco_Boost,
+    knowledge_of_the_soul_stone,
+    drax_Knives,
+    vault_Key,
+    walkman;
+    
+    
 }
