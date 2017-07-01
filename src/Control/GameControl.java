@@ -31,6 +31,8 @@ public class GameControl {
         //create the inventory list and save in the game
         Item[] inventory = GameControl.createInventory();
         game.setInventory(inventory);
+        
+        
 
 //        Ship ship = new Ship();// create new ship
 //        game.setShip(ship);// save ship in game
@@ -165,6 +167,23 @@ public class GameControl {
 
         return inventory;
     }
+    
+//    public void inventoryPrint() {
+//        int j = 0;
+//        
+//         Item[] check = game.getInventory();
+//        
+//        for (int i = 0; i <ItemType.values().length; i++) {
+//            if(check[i].Item.QuantityInStock() >= 1){
+//                System.out.println(check[i].Item.ItemType());
+//                j++;
+//            }
+//            
+//        }
+//       if(j == 0){
+//           System.out.println("you have no items in your inventory");
+//           }
+//    }
 
 //    public class QuickSort {
 //
