@@ -5,27 +5,29 @@
  */
 package Control;
 
+import Exceptions.CalcTimeRemainingException;
+
 /**
  *
  * @author Justin
  */
 public class CalcTimeRemaining {
-    
-    public int CalcTimeRemaining(int timeUsed, int timeRemaining){
-   
-        int timeLeft = 0;
 
-    if (timeRemaining <0 || timeUsed < 0 ) 
-    return -999;
-    else if (timeRemaining - timeUsed <0)
-    return -999;        
-    else        
-timeLeft = timeRemaining - timeUsed;
+    public int CalcTimeRemaining(int timeUsed, int timeRemaining)
+            throws CalcTimeRemainingException {
 
-timeRemaining = timeLeft;
+        int timeLeft = 0; //placeholder varaible
 
-return timeRemaining;
+        if (timeRemaining - timeUsed < 0) {
+            throw new CalcTimeRemainingException("That would take" + timeUsed + " hours, but you only have "
+                    + timeRemaining + " hours left before Thanos arrives.");
+        } else {
+            timeLeft = timeRemaining - timeUsed;
+        }
 
+        timeRemaining = timeLeft;
 
+        return timeRemaining;
     }
+
 }
