@@ -21,7 +21,7 @@ public enum ItemType {
     knowledge_of_the_soulstone,
     drax_Knives,
     vault_Key,
-    walkman;
-    
+    walkman,
+    fuel;
     
 }
