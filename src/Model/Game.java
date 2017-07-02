@@ -18,6 +18,7 @@ public class Game implements Serializable {
     private Player player;
     private Ship ship;
     private Map map;
+    private Time time;
 
     private Item[] inventory;
 
@@ -72,6 +73,14 @@ public class Game implements Serializable {
 
     public void setMap(Map map) {
         this.map = map;
+    }
+
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
     }
     
 

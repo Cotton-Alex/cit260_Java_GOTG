@@ -14,6 +14,7 @@ import Model.Location;
 import Model.Map;
 import Model.Scene;
 import Model.SceneType;
+import Model.Time;
 
 /**
  *
@@ -31,6 +32,9 @@ public class GameControl {
         //create the inventory list and save in the game
         Item[] inventory = GameControl.createInventory();
         game.setInventory(inventory);
+        
+        Time timeRemaning = new Time();
+        game.setTime(timeRemaning);
         
         
 
@@ -174,8 +178,8 @@ public class GameControl {
 //         Item[] check = game.getInventory();
 //        
 //        for (int i = 0; i <ItemType.values().length; i++) {
-//            if(check[i].Item.QuantityInStock() >= 1){
-//                System.out.println(check[i].Item.ItemType());
+//            if(check[i].Item.getQuantityInStock() >= 1){
+//                System.out.println(check[i].Item.getItemType());
 //                j++;
 //            }
 //            
