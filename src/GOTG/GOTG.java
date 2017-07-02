@@ -5,9 +5,6 @@ package GOTG;
 
 import Model.Player;
 import Model.Game;
-import Model.Question;
-import Model.QuestionSceneType;
-import Model.Map;
 import View.StartProgramView;
 
 /**
@@ -29,7 +26,14 @@ public class GOTG {
     
     public static void main(String[] args) {
        StartProgramView startProgramView = new StartProgramView();
+       try {
        startProgramView.displayStartProgramView();
+       } catch (Throwable te) {
+           System.out.println(te.getMessage());
+           te.printStackTrace();
+           startProgramView.displayStartProgramView();
+       }
+       
     }
 
     public static Game getCurrentGame() {
