@@ -150,7 +150,7 @@ public class GameControl {
         
         Item drax_Knives = new Item();
         drax_Knives.setItemType("Drax's Knives");
-        drax_Knives.setQuantityInStock(10);
+        drax_Knives.setQuantityInStock(0);
         drax_Knives.setRequiredAmount(0);
         inventory[ItemType.drax_Knives.ordinal()] = drax_Knives;
         
@@ -168,26 +168,32 @@ public class GameControl {
         walkman.setRequiredAmount(0);
         inventory[ItemType.walkman.ordinal()] = walkman;
         
+        Item fuel = new Item();
+        fuel.setItemType("fuel");
+        fuel.setWeight(0);
+        fuel.setQuantityInStock(100); //Todo: set staring fuel
+        fuel.setRequiredAmount(0);
+        inventory[ItemType.fuel.ordinal()] = fuel;
 
         return inventory;
     }
     
-//    public void inventoryPrint() {
-//        int j = 0;
-//        
-//         Item[] check = game.getInventory();
-//        
-//        for (int i = 0; i <ItemType.values().length; i++) {
-//            if(check[i].Item.getQuantityInStock() >= 1){
-//                System.out.println(check[i].Item.getItemType());
-//                j++;
-//            }
-//            
-//        }
-//       if(j == 0){
-//           System.out.println("you have no items in your inventory");
-//           }
-//    }
+    public void inventoryPrint() {
+        int j = 0;
+        Game game = GOTG.getCurrentGame();
+         Item[] items = game.getInventory();
+        
+        for (int i = 0; i <ItemType.values().length; i++) {
+            if(items[i].getQuantityInStock() >= 1){
+                System.out.println(items[i].getItemType());
+                j++;
+            }
+            
+        }
+       if(j == 0){
+           System.out.println("you have no items in your inventory");
+           }
+    }
 
 //    public class QuickSort {
 //

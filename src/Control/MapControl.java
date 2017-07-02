@@ -5,9 +5,11 @@
  */
 package Control;
 
+import Exceptions.MapControlExceptions;
 import Model.Map;
 import Model.Scene;
 import Model.SceneType;
+
 
 /**
  *
@@ -39,10 +41,23 @@ public class MapControl {
 
     public static void movePlayerToStartingLocation(Map map) {
         // If starting location is not supposed to be 0,0 then use the correct values here.
+        try {
         movePlayer(map, 0, 0); // or instead of 0,0 you can select a different starting location
+        }
+        catch(MapControlExceptions mce){
+            //we are not going to do anything here
+        }
     }
 
-    public static void movePlayer(Map map, int row, int column) {
+    public static void movePlayer(Map map, int row, int column) 
+                    throws MapControlExceptions{
+        if(map == null){
+            throw new MapControlExceptions("You dont have a map initialized.");
+        }
+        if(row < 0 || row >= map.getRowCount() || column < 0 || column >= map.getColumnCount()){
+            throw new MapControlExceptions("You are trying to fly off the edge of the Galaxy.");
+        }
+        
         map.setCurrentLocation(map.getLocations()[row][column]);
         map.getCurrentLocation().setVisited(true);
         map.setCurrentRow(row);

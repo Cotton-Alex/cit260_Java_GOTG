@@ -56,7 +56,7 @@ public class InventoryMenuView extends View{
 
     private void grootsInventory() {
        GameControl inventory = new GameControl();
-//        inventory.inventoryPrint();
+        inventory.inventoryPrint();
                 
     }
     private void shipsInventory() {
