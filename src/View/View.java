@@ -5,6 +5,9 @@
  */
 package View;
 
+import GOTG.GOTG;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -15,6 +18,9 @@ public abstract class View implements ViewInterface {
 
     protected String display;
     private String menu;
+    
+    protected final BufferedReader keyboard = GOTG.getInFile();
+    protected final PrintWriter console = GOTG.getOutFile();
 
     public View() {
     }

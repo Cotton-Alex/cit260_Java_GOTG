@@ -27,6 +27,8 @@ public class GOTG {
 
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
 
 //********************************************************************************************************************
 //     01 MAIN - the start
@@ -36,6 +38,10 @@ public class GOTG {
         try {
             GOTG.inFile = new BufferedReader(new InputStreamReader(System.in));
             GOTG.outFile = new PrintWriter(System.out, true);
+            
+            // open log file
+            String filePath= "log.txt";
+            GOTG.logFile = new PrintWriter(filePath);
 
             //StartProgramView startProgramView = new StartProgramView();
             startProgramView.displayStartProgramView();
@@ -52,6 +58,9 @@ public class GOTG {
                 
                 if (GOTG.outFile != null)
                     GOTG.outFile.close();
+                
+                if (GOTG.logFile != null)
+                    GOTG.logFile.close();
             } catch (IOException ex) {
                 System.out.println("Error closing files");
                 return;
@@ -93,6 +102,15 @@ public class GOTG {
         GOTG.inFile = inFile;
     }
 
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        GOTG.logFile = logFile;
+    }
+
+    
     private static class player {
 
         public player() {
