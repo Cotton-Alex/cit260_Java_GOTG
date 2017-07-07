@@ -33,7 +33,7 @@ public class FuelStation extends View {
                 break;
            
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -42,7 +42,7 @@ public class FuelStation extends View {
     }
 
     private void gainFuel() {
-        System.out.println("this will add 100 gallons of fuel to the "
+        this.console.println("this will add 100 gallons of fuel to the "
                 + "users fuel stash");
     }
 

@@ -48,7 +48,7 @@ public class GameMenuView extends View {
                 this.saveGame();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -57,7 +57,7 @@ public class GameMenuView extends View {
 }
 
     private void gameMap() {
-       System.out.println("this will display the map");
+       
         StarMapMenuView starMap = new StarMapMenuView();
         starMap.display();
         

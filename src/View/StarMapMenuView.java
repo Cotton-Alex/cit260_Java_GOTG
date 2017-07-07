@@ -89,7 +89,7 @@ public class StarMapMenuView extends View {
                 this.fuelAndTimeAmount();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
         }
 
@@ -97,7 +97,7 @@ public class StarMapMenuView extends View {
     }
 
     private void youAreHere() {
-        System.out.println(
+        this.console.println(
                 "*** Display position on Star Map ***");
     }
 
@@ -129,15 +129,15 @@ public class StarMapMenuView extends View {
         Map map = game.getMap(); // retreive the map from game
         Location[][] locations = map.getLocations(); // retreive the locations from map
         // Build the heading of the map
-        System.out.print("  |");
+        this.console.print("  |");
         for (int column = 0; column < locations[0].length; column++) {
             // print col numbers to side of map
-            System.out.print("  " + column + " |");
+            this.console.print("  " + column + " |");
         }
         // Now build the map.  For each row, show the column information
-        System.out.println();
+        this.console.println();
         for (int row = 0; row < locations.length; row++) {
-            System.out.print(row + " "); // print row numbers to side of map
+            this.console.print(row + " "); // print row numbers to side of map
             for (int column = 0; column < locations[row].length; column++) {
                 // set default indicators as blanks
                 leftIndicator = " ";
@@ -151,20 +151,20 @@ public class StarMapMenuView extends View {
                     leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
                     rightIndicator = "<"; // same as above
                 }
-                System.out.print("|"); // start map with a |
+                this.console.print("|"); // start map with a |
                 if (locations[row][column].getScene() == null) {
                     // No scene assigned here so use ?? for the symbol
-                    System.out.print(leftIndicator + "??" + rightIndicator);
+                    this.console.print(leftIndicator + "??" + rightIndicator);
                 } else {
-                    System.out.print(leftIndicator
+                    this.console.print(leftIndicator
                             + locations[row][column].getScene().getSymbol()
                             + rightIndicator);
                 }
             }
-            System.out.println("|");
+            this.console.println("|");
         }
-        System.out.println("You are currently on "+map.getCurrentScene().getName());
-        System.out.println(map.getCurrentScene().getDescription());
+        this.console.println("You are currently on "+map.getCurrentScene().getName());
+        this.console.println(map.getCurrentScene().getDescription());
     }
 
     

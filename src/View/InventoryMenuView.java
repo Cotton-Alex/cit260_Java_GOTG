@@ -7,6 +7,7 @@ package View;
 
 import java.util.Scanner;
 import Control.GameControl;
+import Exceptions.GameControlException;
 
 /**
  *
@@ -45,7 +46,7 @@ public class InventoryMenuView extends View{
                 this.friendsInventory();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -56,9 +57,14 @@ public class InventoryMenuView extends View{
 
     private void grootsInventory() {
        GameControl inventory = new GameControl();
+       try{
         inventory.inventoryPrint();
-                
-    }
+       }
+       catch(GameControlException gce){
+           //we are not going to put anyting here
+       }
+       }
+    
     private void shipsInventory() {
         System.out.println(
                 "*** List the items that are stored on the Groot's ship ***");

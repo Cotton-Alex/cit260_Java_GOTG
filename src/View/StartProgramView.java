@@ -40,19 +40,19 @@ public class StartProgramView extends View {
         boolean valid = false; //initialize to not valid
         try {
         while (!valid) {
-            System.out.println("\n" + this.promptMessage);
+            this.console.println("\n" + this.promptMessage);
 
             value = this.keyboard.readLine(); //get next line typed on keyboard
             value = value.trim(); //trim off leading and trailing blanks
 
             if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value: value can not be blank");
                 continue;
             }
             break; // end the loop
         }
         } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),"Error reading input: " + e.getMessage());
         }
         return value; // return the value entered
     }
@@ -65,7 +65,7 @@ public class StartProgramView extends View {
     }
 
     public void displaybanner() {
-        System.out.println(
+        this.console.println(
                 "\n*****************************************************************"
                 + "\n+                                                               +"
                 + "\n+                          * /         /                        +"
@@ -110,7 +110,7 @@ public class StartProgramView extends View {
 
     public boolean doAction(String playersName) {  //originally was public
         if (playersName.length() < 2) { //if the players name is less than 2 characters
-            System.out.println("\nInvalid players name: "
+            ErrorView.display(this.getClass().getName(),"\nInvalid players name: "
                     + "The name must be more than 1 character in length");
             return false;
         }
@@ -118,7 +118,7 @@ public class StartProgramView extends View {
         Player player = GameControl.createPlayer(playersName);
 
         if (player == null) { // unsuccessful
-            System.out.println("\nError creating the player.");
+            ErrorView.display(this.getClass().getName(),"\nError creating the player.");
             return false;
         }
         //display next view
@@ -128,7 +128,7 @@ public class StartProgramView extends View {
     }
 
     private void displayNextView(Player player) {
-        System.out.println(
+        this.console.println(
              "\n=========================================================="
             +"\nWelcome to Guardians of the Galaxy, " + player.getName() + "."
             +"\nBuckle up, it's gonna be a bumpy ride."

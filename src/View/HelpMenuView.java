@@ -48,12 +48,12 @@ public class HelpMenuView extends View {
         boolean valid    = false;                     // initialize to not valid
         try{
         while (!valid) {
-            System.out.println("\n" + this.menu);
+            this.console.println("\n" + this.menu);
             value = this.keyboard.readLine();    // get next line typed on keyboard
             value = value.trim();           // trim off leading and trailing blanks
 
             if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value: value can not be blank");
 
                 continue;
             }
@@ -88,7 +88,7 @@ public class HelpMenuView extends View {
                 this.fuelAndTime();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -98,7 +98,7 @@ public class HelpMenuView extends View {
      
 
     private void goalOfTheGame() {
-        System.out.println(
+        this.console.println(
                 "*** The goal of the game is to travel the"
                 + " realms as baby groot in search of the 5"
                 + " infinity stones to beat Thantos before"
@@ -107,7 +107,7 @@ public class HelpMenuView extends View {
     }
 
     private void howToMove() {
-        System.out.println(
+        this.console.println(
                 "*** you move by using the map to travel between realms."
                 + " You do this by entering a sector and a quadrant "
                 + " in the map to travel, traveling takes fuel and "
@@ -116,7 +116,7 @@ public class HelpMenuView extends View {
     }
 
     private void gatheringItems() {
-        System.out.println("*** You will need to gather items throught the game."
+        this.console.println("*** You will need to gather items throught the game."
                 + " these items can be used to get different infinity stones"
                 + " or give you an edge in your quest. Search sectors to"
                 + " find different items. When you find one, there will"
@@ -124,13 +124,13 @@ public class HelpMenuView extends View {
     }
 
     private void gatheringInfinityStones() {
-        System.out.println("*** You will find the infinity stones throught the"
+        this.console.println("*** You will find the infinity stones throught the"
                 + "galaxy. When you come accross one, you will add it to"
                 + "your collection that you have so far. find all 5 and"
                 + "you win. ***"); 
     }
     private void fuelAndTime() {
-        System.out.println("*** Fuel and time and used throught the game for"
+        this.console.println("*** Fuel and time and used throught the game for"
                 + "traveling and different actions. You can replenish your"
                 + "fuel by visiting a fuel station but time is limited. you"
                 + "cannot get time back after it has been spent. if you run"
