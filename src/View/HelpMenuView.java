@@ -44,13 +44,12 @@ public class HelpMenuView extends View {
     }
 
     public String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);    // get infile for keyboard
         String  value    = "";                        // value to be returned
         boolean valid    = false;                     // initialize to not valid
-
+        try{
         while (!valid) {
             System.out.println("\n" + this.menu);
-            value = keyboard.nextLine();    // get next line typed on keyboard
+            value = this.keyboard.readLine();    // get next line typed on keyboard
             value = value.trim();           // trim off leading and trailing blanks
 
             if (value.length() < 1) {
@@ -60,6 +59,9 @@ public class HelpMenuView extends View {
             }
 
             break;                          // end the loop
+        }
+        }catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
         }
 
         return value;    // return the value entered

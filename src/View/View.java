@@ -18,7 +18,7 @@ public abstract class View implements ViewInterface {
 
     protected String display;
     private String menu;
-    
+
     protected final BufferedReader keyboard = GOTG.getInFile();
     protected final PrintWriter console = GOTG.getOutFile();
 
@@ -26,7 +26,7 @@ public abstract class View implements ViewInterface {
     }
 
     public View(String message) {
-        this.display= message;
+        this.display = message;
     }
 
 //    @Override
@@ -42,12 +42,10 @@ public abstract class View implements ViewInterface {
 //            done = this.doAction(menuOption);
 //        } while (!done);
 //    }
-    
 //  AC 06-17-17 -   I commented out the function above and added the the function
 //                  below. The top one uses menuOption and the bottom uses getInput
 //                  the bottom is copied from teh assignment but I'm wasn't sure
 //                  it'd work... I kept the top one in case we need to go back.
-    
     @Override
     public void display() {
         boolean done = false;    // set flag to not done
@@ -64,21 +62,23 @@ public abstract class View implements ViewInterface {
     }
 
     @Override
-    public String getInput() {
-        Scanner keyboard = new Scanner(System.in);                              // get infile for keyboard
+    public String getInput() {                              // get infile for keyboard
         boolean valid = false;                                                  // value to be returned
-        String value = null;                                                    // initialize to not valid
+        String value = null;  // initialize to not valid
+        try {
+            while (!valid) {
+                System.out.println("\n" + this.display);
+                value = this.keyboard.readLine();                                        // get next line typed on keyboard
+                value = value.trim();                                               // trim off leading and trailing blanks
 
-        while (!valid) {
-            System.out.println("\n" + this.display);
-            value = keyboard.nextLine();                                        // get next line typed on keyboard
-            value = value.trim();                                               // trim off leading and trailing blanks
-
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
+                if (value.length() < 1) {
+                    System.out.println("\nInvalid value: value can not be blank");
+                    continue;
+                }
+                break;                                                              // end the loop
             }
-            break;                                                              // end the loop
+        } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
         }
         return value;                                                           // return the value entered
     }
@@ -88,8 +88,6 @@ public abstract class View implements ViewInterface {
 //
 //        choice = choice.toUpperCase();                                          // convert choice to upper case
 //    }
-    
 //  AC 06-17-17 -   I commented out the function above and added @Override to the
 //                  doAction function in the MainMenuView class.
-    
 }

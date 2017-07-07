@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Justin
  */
-public class MoveCharacter {
+public abstract class MoveCharacter extends View{  //was not abstract
     
     public void moveCharacter() {
         boolean done = false;    // set flag to not done
@@ -30,14 +30,13 @@ public class MoveCharacter {
     }
 
     public String getUserInput() {
-        Scanner keyboard = new Scanner(System.in);    // get infile for keyboard
         String  value    = "";// value to be returned
         String value2 = "";
         boolean valid    = false;                     // initialize to not valid
-
+        try{
         while (!valid) {
             System.out.println("\n Enter Row # " + "/n Enter Q to cansel" );
-            value = keyboard.nextLine();    // get next line typed on keyboard
+            value = this.keyboard.readLine();    // get next line typed on keyboard
             value = value.trim(); // trim off leading and trailing blanks 
             
             if (value.length() < 1 || value.length() > 1 ) {
@@ -48,22 +47,23 @@ public class MoveCharacter {
 
             break;                          // end the loop
         }
+        }catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
+        }
 
         return value;    // return the value entered
     
 }
     
-       public String getUserInput2() {
-        Scanner keyboard = new Scanner(System.in);    // get infile for keyboard
-       
+       public String getUserInput2() {      
         String value2 = "";
         boolean valid    = false;                     // initialize to not valid
-
+        try{
         while (!valid) {
             
             
             System.out.println("\n Enter Column # " + "/n Enter Q to cansel");
-            value2 = keyboard.nextLine();
+            value2 = this.keyboard.readLine();
             value2 = value2.trim();
 
             if (value2.length() < 1 || value2.length() > 1) {
@@ -73,6 +73,9 @@ public class MoveCharacter {
             }
 
             break;                          // end the loop
+        }
+        }catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
         }
 
         return value2;    // return the value entered
