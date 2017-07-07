@@ -52,7 +52,7 @@ public class InfinityStonesView extends View {
                 this.soulStone();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
         }
 
@@ -61,26 +61,26 @@ public class InfinityStonesView extends View {
     }
     
     private void realityStone() {
-       System.out.println("Will tell you if you have obtainted the Reality Stone.");        
+       this.console.println("Will tell you if you have obtainted the Reality Stone.");        
     }
 
     private void spaceStone() {
-        System.out.println("Will tell you if you have obtainted the Space Stone.");
+        this.console.println("Will tell you if you have obtainted the Space Stone.");
     }
 
     private void mindStone() {
-        System.out.println("Will tell you if you have obtainted the Mind Stone.");
+        this.console.println("Will tell you if you have obtainted the Mind Stone.");
     }
 
     private void timeStone() {
-       System.out.println("Will tell you if you have obtainted the Time Stone."); 
+       this.console.println("Will tell you if you have obtainted the Time Stone."); 
     }
     
     private void powerStone() {
-       System.out.println("Will tell you if you have obtainted the Power Stone."); 
+       this.console.println("Will tell you if you have obtainted the Power Stone."); 
     }
 
     private void soulStone() {
-        System.out.println("Will tell you if you have obtainted the Soul Stone.");
+        this.console.println("Will tell you if you have obtainted the Soul Stone.");
     }
 }
