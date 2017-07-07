@@ -34,7 +34,7 @@ public class MapView extends View {
         Map map = game.getMap(); // retreive the map from game
         Location[][] locations = map.getLocations(); // retreive the locations from map
         if (sectorJump && map.getCurrentColumn() != 0) {
-            System.out.println("You can't jump sectors without being at a dock");
+            ErrorView.display(this.getClass().getName(),"You can't jump sectors without being at a dock");
             return;
         }
 
@@ -52,25 +52,25 @@ public class MapView extends View {
                 if (locations[row][column].getScene() != null) {
                     if (mapOption.equals(locations[row][column].getScene().getSymbol())) {
                         if (sectorJump && column != 0) {
-                            System.out.println("You can't land your ship here, you must land at a sector dock.");
+                            ErrorView.display(this.getClass().getName(),"You can't land your ship here, you must land at a sector dock.");
                             return false;
                         }
                         if (!sectorJump && map.getCurrentRow() != row) {
-                            System.out.println("You must stay in the same sector. ");
+                            ErrorView.display(this.getClass().getName(),"You must stay in the same sector. ");
                             return false;
                         }
                         try {
                             MapControl.movePlayer(map, row, column);
                             return true;
                         } catch (MapControlExceptions mce) {
-                            System.out.println(mce.getMessage());
+                            this.console.println(mce.getMessage());
                         }
                     }
 
                 }
             }
         }
-        System.out.println("\n*** Invalid selection *** Try Again later");
+        ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try Again later");
         return false;
     }
 

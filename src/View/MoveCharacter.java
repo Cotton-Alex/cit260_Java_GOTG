@@ -35,12 +35,12 @@ public abstract class MoveCharacter extends View{  //was not abstract
         boolean valid    = false;                     // initialize to not valid
         try{
         while (!valid) {
-            System.out.println("\n Enter Row # " + "/n Enter Q to cansel" );
+            this.console.println("\n Enter Row # " + "/n Enter Q to cansel" );
             value = this.keyboard.readLine();    // get next line typed on keyboard
             value = value.trim(); // trim off leading and trailing blanks 
             
             if (value.length() < 1 || value.length() > 1 ) {
-                System.out.println("\nInvalid value: please try again");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value: please try again");
 
                 continue;
             }
@@ -62,12 +62,12 @@ public abstract class MoveCharacter extends View{  //was not abstract
         while (!valid) {
             
             
-            System.out.println("\n Enter Column # " + "/n Enter Q to cansel");
+            this.console.println("\n Enter Column # " + "/n Enter Q to cansel");
             value2 = this.keyboard.readLine();
             value2 = value2.trim();
 
             if (value2.length() < 1 || value2.length() > 1) {
-                System.out.println("\nInvalid value: please try again");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value: please try again");
 
                 continue;
             }
