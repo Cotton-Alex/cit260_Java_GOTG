@@ -42,7 +42,7 @@ public class MapControl {
     public static void movePlayerToStartingLocation(Map map) {
         // If starting location is not supposed to be 0,0 then use the correct values here.
         try {
-        movePlayer(map, 0, 0); // or instead of 0,0 you can select a different starting location
+        movePlayer(map, 0, 0); // TODO: maybe instead of 0,0 you can select a different starting location
         }
         catch(MapControlExceptions mce){
             //we are not going to do anything here
@@ -71,6 +71,7 @@ public class MapControl {
 
         Scene newScene = new Scene();
         newScene.setName(SceneType.Earth.name());
+//        newScene.setTitle("Starlord's Home");
         newScene.setDescription("Starlords home planet");
         newScene.setSector(true);
         newScene.setSymbol("SE");

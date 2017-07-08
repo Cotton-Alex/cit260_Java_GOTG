@@ -99,4 +99,8 @@ public class Scene implements Serializable {
         return "RegularSceneType{" + "description=" + description +   ", symbol=" + symbol + '}';
     }
 
+//    public void setTitle(String starlords_Home) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
 }

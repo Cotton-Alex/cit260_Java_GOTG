@@ -117,7 +117,7 @@ public class StarMapMenuView extends View {
      }
 
     private void fuelAndTimeAmount() {
-        System.out.println("*** Display the current level of fuel"
+        this.console.println("*** Display the current level of fuel"
                 + "\n and time that is left.***");
     }
 

@@ -35,7 +35,7 @@ public abstract class MoveCharacter extends View{  //was not abstract
         boolean valid    = false;                     // initialize to not valid
         try{
         while (!valid) {
-            this.console.println("\n Enter Row # " + "/n Enter Q to cansel" );
+            this.console.println("\n Enter Row # " + "/n Enter Q to cancel" );
             value = this.keyboard.readLine();    // get next line typed on keyboard
             value = value.trim(); // trim off leading and trailing blanks 
             
