@@ -180,30 +180,10 @@ public class GameControl {
         return inventory;
     }
     
-    public void inventoryPrint() 
-                throws GameControlException{
-        
-        
-        int j = 0;
-        Game game = GOTG.getCurrentGame();
-        
-        if(game.getInventory() == null){
-            throw new GameControlException("inventory has not yet been initialized");
-        }
-        
-         Item[] items = game.getInventory();
-        
-        for (int i = 0; i <ItemType.values().length; i++) {
-            if(items[i].getQuantityInStock() >= 1){
-             System.out.println(items[i].getItemType()); // Fix Output
-                j++;
-            }
-            
-        }
-       if(j == 0){
-           System.out.println("you have no items in your inventory"); //Fix Error
-           }
-    }
+    
+    
+       
+    
 
 //    public class QuickSort {
 //

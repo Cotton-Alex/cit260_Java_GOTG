@@ -36,18 +36,18 @@ public class StartProgramView extends View {
     }
 
     private String getPlayersName() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+       ; // get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; //initialize to not valid
         try {
         while (!valid) {
-            System.out.println("\n" + this.promptMessage);
+            this.console.println("\n" + this.promptMessage);
 
-            value = keyboard.nextLine(); //get next line typed on keyboard
+            value = keyboard.readLine(); //get next line typed on keyboard
             value = value.trim(); //trim off leading and trailing blanks
 
             if (value.length() < 1) {
-                System.out.println("\nInvalid value: value can not be blank");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value: value can not be blank");
                 continue;
             }
             break; // end the loop
@@ -66,7 +66,7 @@ public class StartProgramView extends View {
     }
 
     public void displaybanner() {
-        System.out.println(
+        this.console.println(
                 "\n*****************************************************************"
                 + "\n+                                                               +"
                 + "\n+                          * /         /                        +"
@@ -129,7 +129,7 @@ public class StartProgramView extends View {
     }
 
     private void displayNextView(Player player) {
-        System.out.println(
+        this.console.println(
              "\n=========================================================="
             +"\nWelcome to Guardians of the Galaxy, " + player.getName() + "."
             +"\nBuckle up, it's gonna be a bumpy ride."

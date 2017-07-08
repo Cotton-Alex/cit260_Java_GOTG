@@ -34,7 +34,7 @@ public class GOTG {
 //     01 MAIN - the start
 //********************************************************************************************************************
     public static void main(String[] args) {
-        StartProgramView startProgramView = new StartProgramView();
+        
         try {
             GOTG.inFile = new BufferedReader(new InputStreamReader(System.in));
             GOTG.outFile = new PrintWriter(System.out, true);
@@ -44,6 +44,7 @@ public class GOTG {
             GOTG.logFile = new PrintWriter(filePath);
 
             //StartProgramView startProgramView = new StartProgramView();
+            StartProgramView startProgramView = new StartProgramView();
             startProgramView.displayStartProgramView();
             return;
         } catch (Throwable te) {
@@ -67,7 +68,7 @@ public class GOTG {
             }
             
         }
-        startProgramView.displayStartProgramView();
+        
     }
 
     public static Game getCurrentGame() {

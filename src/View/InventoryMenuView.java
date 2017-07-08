@@ -8,6 +8,10 @@ package View;
 import java.util.Scanner;
 import Control.GameControl;
 import Exceptions.GameControlException;
+import GOTG.GOTG;
+import Model.Game;
+import Model.Item;
+import Model.ItemType;
 
 /**
  *
@@ -56,14 +60,30 @@ public class InventoryMenuView extends View{
      
 
     private void grootsInventory() {
-       GameControl inventory = new GameControl();
-       try{
-        inventory.inventoryPrint();
-       }
-       catch(GameControlException gce){
-           //we are not going to put anyting here
-       }
-       }
+                
+        
+        
+        int j = 0;
+        Game game = GOTG.getCurrentGame();
+        
+        if(game.getInventory() == null){
+            ErrorView.display(this.getClass().getName(),"inventory has not yet been initialized");
+        }
+        
+         Item[] items = game.getInventory();
+        
+        for (int i = 0; i <ItemType.values().length; i++) {
+            if(items[i].getQuantityInStock() >= 1){
+             System.out.println(items[i].getItemType()); // Fix Output
+                j++;
+            }
+            
+        }
+       if(j == 0){
+          ErrorView.display(this.getClass().getName(),"you have no items in your inventory"); //Fix Error
+           }
+    }
+       
     
     private void shipsInventory() {
         System.out.println(
