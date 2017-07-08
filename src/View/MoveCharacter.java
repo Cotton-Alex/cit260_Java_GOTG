@@ -30,7 +30,7 @@ public abstract class MoveCharacter extends View{  //was not abstract
     }
 
     public String getUserInput() {
-        String  value    = "";// value to be returned
+        String  value = "";// value to be returned
         String value2 = "";
         boolean valid    = false;                     // initialize to not valid
         try{
@@ -48,7 +48,8 @@ public abstract class MoveCharacter extends View{  //was not abstract
             break;                          // end the loop
         }
         }catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + e.getMessage());
         }
 
         return value;    // return the value entered
@@ -75,10 +76,11 @@ public abstract class MoveCharacter extends View{  //was not abstract
             break;                          // end the loop
         }
         }catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + e.getMessage());
         }
 
-        return value2;    // return the value entered
+        return value2;// return the value entered
     
 }
     public boolean doAction(String choice, String choice2){
@@ -96,13 +98,13 @@ public abstract class MoveCharacter extends View{  //was not abstract
     }
 
     private void setCurrentLocation() {
-        System.out.println(" when ready, this function will take the values "
+        this.console.println(" when ready, this function will take the values "
                 + "entered and change the location on the map to the current"
                 + "location  ");
     }
 
     private void calcTimeAndFuelUsed() {
-        System.out.println("this will calculate time and fuel used in travel");
+        this.console.println("this will calculate time and fuel used in travel");
     }
 }
     
