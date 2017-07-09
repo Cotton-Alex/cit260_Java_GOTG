@@ -24,7 +24,7 @@ public class StarMapMenuView extends View {
         super("\n" + "\n----------------------------------"
                 + "\n|  Star Map                      |"
                 + "\n----------------------------------"
-                + "\nY - You are here"
+                //+ "\nY - You are here"
                 + "\nM - Move to Sector"
                 + "\nN - Move to Site"
                 + "\nD - Display Star Map"
@@ -73,9 +73,9 @@ public class StarMapMenuView extends View {
         choice = choice.toUpperCase(); // convert choice to upper case
 
         switch (choice) {
-            case "Y": // create and start a new game
-                this.youAreHere();
-                break;
+//            case "Y": // create and start a new game
+//                this.youAreHere();
+//                break;
             case "M": // get and start an existing game
                 this.moveToSector();
                 break;
@@ -96,10 +96,10 @@ public class StarMapMenuView extends View {
         return false;
     }
 
-    private void youAreHere() {
-        this.console.println(
-                "*** Display position on Star Map ***");
-    }
+//    private void youAreHere() {
+//        this.console.println(
+//                "*** Display position on Star Map ***");
+//    }
 
     private void moveToSector() {
         displayStarMap();
@@ -164,6 +164,7 @@ public class StarMapMenuView extends View {
             this.console.println("|");
         }
         this.console.println("You are currently on "+map.getCurrentScene().getName());
+        this.console.println(map.getCurrentScene().getLocationsList());
         this.console.println(map.getCurrentScene().getDescription());
     }
 

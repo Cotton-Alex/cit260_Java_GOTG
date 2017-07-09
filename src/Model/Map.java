@@ -23,6 +23,7 @@ public class Map implements Serializable {
     private int currentColumn;
     private Location[][] locations;
     private Location currentLocation;
+    private String locationsList;
 
     // constructer function
     public Map() {
@@ -114,10 +115,15 @@ public class Map implements Serializable {
     }
     public Scene getCurrentScene() {
        
-       return currentLocation.getScene();
-        
+       return currentLocation.getScene();        
     }
-    
+    public String getLocationsList() {
+        return locationsList;
+    }
+
+    public void setLocationsList(String locationList) {
+        this.locationsList = locationList;
+    }
 
     //hash and equals functions
     @Override

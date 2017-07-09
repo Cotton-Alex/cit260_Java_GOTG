@@ -87,12 +87,6 @@ public abstract class MoveCharacter extends View{  //was not abstract
         
        this.setCurrentLocation();
        this.calcTimeAndFuelUsed();
-       
-       
-
-        
-        
-       
         
         return false;
     }

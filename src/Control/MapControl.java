@@ -71,7 +71,7 @@ public class MapControl {
 
         Scene newScene = new Scene();
         newScene.setName(SceneType.Earth.name());
-//        newScene.setTitle("Starlord's Home");
+        newScene.setLocationsList("\nSE: Earth Dock\n EH: Starlord's Home\n EB: Bar\n EA: Avenger's HQ");
         newScene.setDescription("Starlords home planet");
         newScene.setSector(true);
         newScene.setSymbol("SE");
@@ -79,6 +79,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Starlords_Home.name());
+        newScene.setLocationsList("\nSE: Earth Dock\n EH: Starlord's Home\n EB: Bar\n EA: Avenger's HQ");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("EH");
@@ -86,6 +87,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Earth_Bar.name());
+        newScene.setLocationsList("\nSE: Earth Dock\n EH: Starlord's Home\n EB: Bar\n EA: Avenger's HQ");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("EB");
@@ -93,6 +95,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Avengers_HQ.name());
+        newScene.setLocationsList("\nSE: Earth Dock\n EH: Starlord's Home\n EB: Bar\n EA: Avenger's HQ");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("EA");
@@ -100,6 +103,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Hala.name());
+        newScene.setLocationsList("\nSH: Hala Dock\n HB: Bar\n HP: Skrull Palace\n HH: Skrull House");
         newScene.setDescription("");
         newScene.setSector(true);
         newScene.setSymbol("SH");
@@ -107,6 +111,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Hala_Bar.name());
+        newScene.setLocationsList("\nSH: Hala Dock\n HB: Bar\n HP: Skrull Palace\n HH: Skrull House");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("HB");
@@ -114,6 +119,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Skrull_Palace.name());
+        newScene.setLocationsList("\nSH: Hala Dock\n HB: Bar\n HP: Skrull Palace\n HH: Skrull House");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("HP");
@@ -121,6 +127,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Skrull_House.name());
+        newScene.setLocationsList("\nSH: Hala Dock\n HB: Bar\n HP: Skrull Palace\n HH: Skrull House");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("HH");
@@ -128,6 +135,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Xandar.name());
+        newScene.setLocationsList("\nSX: Xandar Dock\n XN: Nova Prime\n XC: Nova Command\n XM: Mechanic");
         newScene.setDescription("");
         newScene.setSector(true);
         newScene.setSymbol("SX");
@@ -135,6 +143,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Nova_Prime.name());
+        newScene.setLocationsList("\nSX: Xandar Dock\n XN: Nova Prime\n XC: Nova Command\n XM: Mechanic");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("XN");
@@ -142,6 +151,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Nova_Command.name());
+        newScene.setLocationsList("\nSX: Xandar Dock\n XN: Nova Prime\n XC: Nova Command\n XM: Mechanic");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("XC");
@@ -149,6 +159,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Mechanic.name());
+        newScene.setLocationsList("\nSX: Xandar Dock\n XN: Nova Prime\n XC: Nova Command\n XM: Mechanic");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("XM");
@@ -156,6 +167,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.TheKyln.name());
+        newScene.setLocationsList("\nSX: The Kyln Dock\n KB: Boss Quarters\n KP: Prison Cell\n KS: Stockpile");
         newScene.setDescription("");
         newScene.setSector(true);
         newScene.setSymbol("SK");
@@ -163,6 +175,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Boss_Quarters.name());
+        newScene.setLocationsList("\nSX: The Kyln Dock\n KB: Boss Quarters\n KP: Prison Cell\n KS: Stockpile");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("KB");
@@ -170,6 +183,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Prison_Cell.name());
+        newScene.setLocationsList("\nSX: The Kyln Dock\n KB: Boss Quarters\n KP: Prison Cell\n KS: Stockpile");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("KP");
@@ -177,6 +191,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Stockpile.name());
+        newScene.setLocationsList("\nSX: The Kyln Dock\n KB: Boss Quarters\n KP: Prison Cell\n KS: Stockpile");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("KS");
@@ -184,6 +199,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Knowhere.name());
+        newScene.setLocationsList("\nSW: Knowhere Dock\n WC: Command Center\n WB: Bar\n WM: Mining Bay");
         newScene.setDescription("");
         newScene.setSector(true);
         newScene.setSymbol("SW");
@@ -191,6 +207,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Command_Center.name());
+        newScene.setLocationsList("\nSW: Knowhere Dock\n WC: Command Center\n WB: Bar\n WM: Mining Bay");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("WC");
@@ -198,6 +215,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Knowhere_Bar.name());
+        newScene.setLocationsList("\nSW: Knowhere Dock\n WC: Command Center\n WB: Bar\n WM: Mining Bay");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("WB");
@@ -205,6 +223,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Mining_Bay.name());
+        newScene.setLocationsList("\nSW: Knowhere Dock\n WC: Command Center\n WB: Bar\n WM: Mining Bay");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("WM");
@@ -212,6 +231,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.MoragIV.name());
+        newScene.setLocationsList("\nSM: Morag IV Dock\n MP: Prison\n MS: The Collector's Shop\n MT: The Temple");
         newScene.setDescription("");
         newScene.setSector(true);
         newScene.setSymbol("SM");
@@ -219,6 +239,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Prison.name());
+        newScene.setLocationsList("\nSM: Morag IV Dock\n MP: Prison\n MS: The Collector's Shop\n MT: The Temple");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("MP");
@@ -226,6 +247,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.The_Collectors_Shop.name());
+        newScene.setLocationsList("\nSM: Morag IV Dock\n MP: Prison\n MS: The Collector's Shop\n MT: The Temple");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("MS");
@@ -233,6 +255,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.The_Temple.name());
+        newScene.setLocationsList("\nSM: Morag IV Dock\n MP: Prison\n MS: The Collector's Shop\n MT: The Temple");
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("MT");
@@ -240,6 +263,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Asgard.name());
+        newScene.setLocationsList("\nSA: Asgard Dock\n AH: Hall of Relics\n AT: Throne Room\n AB: Interstellar Portal");
         newScene.setDescription("");
         newScene.setSector(true);
         newScene.setSymbol("SA");
@@ -247,6 +271,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Hall_of_Relics.name());
+        newScene.setLocationsList("\nSA: Asgard Dock\n AH: Hall of Relics\n AT: Throne Room\n AB: Interstellar Portal");
         newScene.setDescription("The Relics of the Asgardians");
         newScene.setSector(false);
         newScene.setSymbol("AH");
@@ -254,6 +279,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Throne_Room.name());
+        newScene.setLocationsList("\nSA: Asgard Dock\n AH: Hall of Relics\n AT: Throne Room\n AB: Interstellar Portal");
         newScene.setDescription("Loki is found here");
         newScene.setSector(false);
         newScene.setSymbol("AT");
@@ -261,6 +287,7 @@ public class MapControl {
 
         newScene = new Scene();
         newScene.setName(SceneType.Bifrost.name());
+        newScene.setLocationsList("\nSA: Asgard Dock\n AH: Hall of Relics\n AT: Throne Room\n AB: Interstellar Portal");
         newScene.setDescription("Interstellar Poral");
         newScene.setSector(false);
         newScene.setSymbol("AB");

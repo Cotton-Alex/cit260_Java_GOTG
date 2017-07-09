@@ -17,6 +17,7 @@ public class Scene implements Serializable {
     private String description;
     private String symbol;
     private String name;
+    private String locationsList;
     private String item;
     private Boolean sector;
 
@@ -42,6 +43,14 @@ public class Scene implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public String getLocationsList() {
+        return locationsList;
+    }
+
+    public void setLocationsList(String locationList) {
+        this.locationsList = locationList;
     }
 
     public String getItem() {
@@ -102,5 +111,4 @@ public class Scene implements Serializable {
 //    public void setTitle(String starlords_Home) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //    }
-
 }
