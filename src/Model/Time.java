@@ -5,11 +5,13 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Justin
  */
-public class Time {
+public class Time implements Serializable {
     
     public int timeRemaining;
 

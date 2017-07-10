@@ -77,15 +77,18 @@ public class GameMenuView extends View {
 
     private void saveGame() {
         //prompt for and get the name of the file to save the game in
-        this.console.println("\n\nEnter the file path for the file where the game is to be saved.");
+        String saveMenu = display;
+        display = ("\n\nEnter the file path for the file where the game is to be saved.");
         String filePath = this.getInput();
         
         try{
             //save the game to the specified file
             GameControl.saveGame(GOTG.getCurrentGame(), filePath);
+            this.console.println("Galaxy Game successfully saved to " + filePath);
         }catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
+        display = saveMenu;
     }
 
     private void timeAndFuel() {
