@@ -67,6 +67,14 @@ public class Game implements Serializable {
         this.inventory = inventory;
     }
 
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+    }
+    
     public Map getMap() {
         return map;
     }
@@ -75,13 +83,7 @@ public class Game implements Serializable {
         this.map = map;
     }
 
-    public Time getTime() {
-        return time;
-    }
-
-    public void setTime(Time time) {
-        this.time = time;
-    }
+    
     
 
     //hash and equals funcitons

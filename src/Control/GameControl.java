@@ -304,7 +304,8 @@ public class GameControl {
         return player;
     }
     
-    public static void saveGame(Game game, String filepath) throws GameControlException{
+    public static void saveGame(Game game, String filepath)
+            throws GameControlException {
         
         try( FileOutputStream fops = new FileOutputStream(filepath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
