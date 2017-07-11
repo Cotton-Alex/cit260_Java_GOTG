@@ -17,7 +17,7 @@ import org.junit.runners.Suite;
  * @author Justin
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({TimeControlTest.class, calcTimeRemainingTest.class, FuelNeededControlTest.class})
+@Suite.SuiteClasses({TimeControlTest.class, FuelNeededControlTest.class})
 public class ControlSuite {
 
     @BeforeClass

@@ -20,7 +20,9 @@ public class Item implements Serializable {
     private int    weight;
     private int    quantityInStock;
     private int    requiredAmount;
-
+    private int    itemLocationCol;
+    private int    itemLocationRow;
+    
     public Item() {}
 
     @Override
@@ -110,5 +112,22 @@ public class Item implements Serializable {
     public void setRequiredAmount(int requiredAmount) {
         this.requiredAmount = requiredAmount;
     }
+
+    public int getItemLocationCol() {
+        return itemLocationCol;
+    }
+    
+    public void setItemLocationCol(int itemLocationCol) {
+        this.itemLocationCol = itemLocationCol;
+    }
+    
+    public int getItemLocationRow() {
+        return itemLocationRow;
+    }
+    
+    public void setItemLocationRow(int itemLocationRow) {
+        this.itemLocationRow = itemLocationRow;
+    }
+    
 }
 

@@ -7,6 +7,7 @@ package View;
 
 import Control.GameControl;
 import GOTG.GOTG;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -90,7 +91,7 @@ public class GameMenuView extends View {
         }
         display = saveMenu;
     }
-
+    
     private void timeAndFuel() {
         System.out.println("this will display the users fuel and time remaining");
     }

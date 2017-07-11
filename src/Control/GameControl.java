@@ -16,7 +16,6 @@ import Model.Scene;
 import Model.SceneType;
 import Model.Time;
 import Exceptions.GameControlException;
-import View.View;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -38,23 +37,21 @@ public class GameControl {
         //create the inventory list and save in the game
         Item[] inventory = GameControl.createInventory();
         game.setInventory(inventory);
-        
+
         Time timeRemaning = new Time();
         game.setTime(timeRemaning);
-        
-        
 
 //        Ship ship = new Ship();// create new ship
 //        game.setShip(ship);// save ship in game
-
         Map map = MapControl.createMap();  //create and initialize new map
         game.setMap(map);  //save map in game
 
         // move actors to starting position in the map
         MapControl.movePlayerToStartingLocation(map);//TODO:get sample code movePlayersToStartingLocation and movePlayer
     }
+
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
-       
+
         Location locations[][] = map.getLocations();
         locations[0][0].setScene(scenes[SceneType.Earth.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.Starlords_Home.ordinal()]);
@@ -85,7 +82,7 @@ public class GameControl {
         locations[6][2].setScene(scenes[SceneType.Throne_Room.ordinal()]);
         locations[6][3].setScene(scenes[SceneType.Bifrost.ordinal()]);
     }
-    
+
     public static Item[] createInventory() {
 
         //array(list) for inventory
@@ -93,6 +90,8 @@ public class GameControl {
 
         Item mindStone = new Item();
         mindStone.setItemType("Mind Stone");
+        mindStone.setItemLocationCol(3);
+        mindStone.setItemLocationRow(03);
         mindStone.setWeight(0);
         mindStone.setQuantityInStock(0);
         mindStone.setRequiredAmount(0);
@@ -100,6 +99,8 @@ public class GameControl {
 
         Item tesseract = new Item();
         tesseract.setItemType("Tesseract");
+        tesseract.setItemLocationCol(1);
+        tesseract.setItemLocationRow(6);
         tesseract.setWeight(0);
         tesseract.setQuantityInStock(0);
         tesseract.setRequiredAmount(0);
@@ -107,6 +108,8 @@ public class GameControl {
 
         Item aether = new Item();
         aether.setItemType("Aether");
+        aether.setItemLocationCol(2);
+        aether.setItemLocationRow(5);
         aether.setWeight(0);
         aether.setQuantityInStock(0);
         aether.setRequiredAmount(0);
@@ -114,6 +117,8 @@ public class GameControl {
 
         Item orb = new Item();
         orb.setItemType("Orb");
+        orb.setItemLocationCol(2);
+        orb.setItemLocationRow(2);
         orb.setWeight(0);
         orb.setQuantityInStock(0);
         orb.setRequiredAmount(0);
@@ -121,6 +126,8 @@ public class GameControl {
 
         Item soulStone = new Item();
         soulStone.setItemType("Soul Stone");
+        soulStone.setItemLocationCol(2);
+        soulStone.setItemLocationRow(1);
         soulStone.setWeight(0);
         soulStone.setQuantityInStock(0);
         soulStone.setRequiredAmount(0);
@@ -128,54 +135,70 @@ public class GameControl {
 
         Item eye_of_Agamotto = new Item();
         eye_of_Agamotto.setItemType("Eye of Agamotto");
+        eye_of_Agamotto.setItemLocationCol(1);
+        eye_of_Agamotto.setItemLocationRow(4);
         eye_of_Agamotto.setWeight(0);
         eye_of_Agamotto.setQuantityInStock(0);
         eye_of_Agamotto.setRequiredAmount(0);
         inventory[ItemType.Eye_of_Agamotto.ordinal()] = eye_of_Agamotto;
-        
+
         Item yondus_Headpiece = new Item();
         yondus_Headpiece.setItemType("Yondu's Headpiece");
+        yondus_Headpiece.setItemLocationCol(1);
+        yondus_Headpiece.setItemLocationRow(5);
         yondus_Headpiece.setWeight(5);
         yondus_Headpiece.setQuantityInStock(0);
         yondus_Headpiece.setRequiredAmount(0);
         inventory[ItemType.yondus_Headpiece.ordinal()] = yondus_Headpiece;
-        
-         Item eco_Boost = new Item();
+
+        Item eco_Boost = new Item();
         eco_Boost.setItemType("Eco-boost");
+        eco_Boost.setItemLocationCol(3);
+        eco_Boost.setItemLocationRow(2);
         eco_Boost.setWeight(0);
         eco_Boost.setQuantityInStock(0);
         eco_Boost.setRequiredAmount(0);
         inventory[ItemType.eco_Boost.ordinal()] = eco_Boost;
-        
+
         Item knowledge_of_the_soulstone = new Item();
         knowledge_of_the_soulstone.setItemType("Knowledge of the Soul Stone");
+        knowledge_of_the_soulstone.setItemLocationCol(1);
+        knowledge_of_the_soulstone.setItemLocationRow(3);
         knowledge_of_the_soulstone.setWeight(0);
         knowledge_of_the_soulstone.setQuantityInStock(0);
         knowledge_of_the_soulstone.setRequiredAmount(0);
         inventory[ItemType.knowledge_of_the_soulstone.ordinal()] = knowledge_of_the_soulstone;
-        
+
         Item drax_Knives = new Item();
         drax_Knives.setItemType("Drax's Knives");
+        drax_Knives.setItemLocationCol(3);
+        drax_Knives.setItemLocationRow(3);
         drax_Knives.setQuantityInStock(0);
         drax_Knives.setRequiredAmount(0);
         inventory[ItemType.drax_Knives.ordinal()] = drax_Knives;
-        
+
         Item vault_Key = new Item();
         vault_Key.setItemType("Vault Key");
+        vault_Key.setItemLocationCol(2);
+        vault_Key.setItemLocationRow(6);
         vault_Key.setWeight(2);
         vault_Key.setQuantityInStock(0);
         vault_Key.setRequiredAmount(0);
         inventory[ItemType.vault_Key.ordinal()] = vault_Key;
-        
+
         Item walkman = new Item();
         walkman.setItemType("Walkman");
+        walkman.setItemLocationCol(2);
+        walkman.setItemLocationRow(0);
         walkman.setWeight(3);
         walkman.setQuantityInStock(0);
         walkman.setRequiredAmount(0);
         inventory[ItemType.walkman.ordinal()] = walkman;
-        
+
         Item fuel = new Item();
         fuel.setItemType("fuel");
+        fuel.setItemLocationCol(0);
+        fuel.setItemLocationRow(0);
         fuel.setWeight(0);
         fuel.setQuantityInStock(100); //Todo: set staring fuel
         fuel.setRequiredAmount(0);
@@ -183,11 +206,6 @@ public class GameControl {
 
         return inventory;
     }
-    
-    
-    
-       
-    
 
 //    public class QuickSort {
 //
@@ -255,9 +273,6 @@ public class GameControl {
 //
 //        }
 //    }
-
-   
-
 //    private static Scene[] createScenes() {
 //
 //        Scene[] scenes = new Scene[SceneType.values().length];
@@ -287,9 +302,6 @@ public class GameControl {
 //
 //        return scenes;
 //    }
-
-    
-
     public static Player createPlayer(String name) {
 
         if (name == null) {
@@ -303,35 +315,52 @@ public class GameControl {
 
         return player;
     }
-    
+
     public static void saveGame(Game game, String filepath)
             throws GameControlException {
-        
-        try( FileOutputStream fops = new FileOutputStream(filepath)) {
+
+        try (FileOutputStream fops = new FileOutputStream(filepath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
-            
+
             output.writeObject(game); //write the game object out to file
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
     }
     
-    public static void getExsistingGame(String filepath) throws GameControlException {
-        
-        Game game = null;
-        
-        try( FileInputStream fips = new FileInputStream(filepath)) {
-            ObjectInputStream input = new ObjectInputStream(fips);
-            
-            game = (Game) input.readObject(); // read the game object from file
-        }
-        catch(Exception e) {
+    public static void saveItemLocationReport(ItemLocationReport report, String filepath)
+            throws GameControlException {
+
+        try (FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+
+            output.writeObject(report); //write the game object out to file
+        } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
-        
+    }
+
+
+    public static void getExsistingGame(String filepath) throws GameControlException {
+
+        Game game = null;
+
+        try (FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+
+            game = (Game) input.readObject(); // read the game object from file
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+
         //close the output file
         GOTG.setCurrentGame(game); // save in GOTG
+    }
+
+    private static class Reports {
+
+        public Reports() {
+        }
     }
 
 }
