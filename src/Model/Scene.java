@@ -18,7 +18,7 @@ public class Scene implements Serializable {
     private String symbol;
     private String name;
     private String locationsList;
-    private String item;
+    private Item item;  //of type item not string
     private Boolean sector;
 
     public String getDescription() {
@@ -53,14 +53,6 @@ public class Scene implements Serializable {
         this.locationsList = locationList;
     }
 
-    public String getItem() {
-        return item;
-    }
-
-    public void setItem(String item) {
-        this.item = item;
-    }
-
     public Boolean getSector() {
         return sector;
     }
@@ -74,7 +66,19 @@ public class Scene implements Serializable {
         this.symbol = symbol;
     }
 
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+    
+
     public Scene() {
+        
+        item = null;
+        
     }
     
     @Override

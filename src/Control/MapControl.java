@@ -6,6 +6,8 @@
 package Control;
 
 import Exceptions.MapControlExceptions;
+import Model.Item;
+import Model.ItemType;
 import Model.Map;
 import Model.Scene;
 import Model.SceneType;
@@ -83,6 +85,12 @@ public class MapControl {
         newScene.setDescription("");
         newScene.setSector(false);
         newScene.setSymbol("EH");
+        Item item = new Item();
+        item.setItemType(ItemType.walkman);
+        item.setName("Walkman");
+        item.setQuantityInStock(1);
+        item.setWeight(2);
+        newScene.setItem(item);
         scenes[SceneType.Starlords_Home.ordinal()] = newScene;
 
         newScene = new Scene();

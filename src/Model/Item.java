@@ -15,13 +15,11 @@ import java.util.Objects;
 public class Item implements Serializable {
 
     // class instance variables
-    private String itemType;
+    private ItemType itemType;
     private String name;
     private int    weight;
     private int    quantityInStock;
     private int    requiredAmount;
-    private int    itemLocationCol;
-    private int    itemLocationRow;
     
     public Item() {}
 
@@ -89,14 +87,6 @@ public class Item implements Serializable {
         this.weight = weight;
     }
 
-    public String getItemType() {
-        return itemType;
-    }
-
-    public void setItemType(String itemType) {
-        this.itemType = itemType;
-    }
-
     public int getQuantityInStock() {
         return quantityInStock;
     }
@@ -113,20 +103,12 @@ public class Item implements Serializable {
         this.requiredAmount = requiredAmount;
     }
 
-    public int getItemLocationCol() {
-        return itemLocationCol;
+    public ItemType getItemType() {
+        return itemType;
     }
-    
-    public void setItemLocationCol(int itemLocationCol) {
-        this.itemLocationCol = itemLocationCol;
-    }
-    
-    public int getItemLocationRow() {
-        return itemLocationRow;
-    }
-    
-    public void setItemLocationRow(int itemLocationRow) {
-        this.itemLocationRow = itemLocationRow;
+
+    public void setItemType(ItemType itemType) {
+        this.itemType = itemType;
     }
     
 }

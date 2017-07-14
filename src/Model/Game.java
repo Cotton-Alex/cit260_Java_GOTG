@@ -6,6 +6,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,13 +20,27 @@ public class Game implements Serializable {
     private Ship ship;
     private Map map;
     private Time time;
-
     private Item[] inventory;
+    private ArrayList<Item> backpack;
 
     //constructer functions
     public Game() {
+        backpack = new ArrayList<Item>();
+        
+        
     }
     //getter and setter functions
+
+    public void addToBackpack(Item item){  //game.addtobackpack adds item to pack
+        backpack.add(item);
+    }
+    public ArrayList<Item> getBackpack() {
+        return backpack;
+    }
+
+    public void setBackpack(ArrayList<Item> backpack) {
+        this.backpack = backpack;
+    }
 
     public double getTotalTime() {
         return totalTime;
