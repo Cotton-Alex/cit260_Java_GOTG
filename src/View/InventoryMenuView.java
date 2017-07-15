@@ -102,10 +102,12 @@ public class InventoryMenuView extends View {
         display = ("\n\nEnter the file path for the file where the report is to be saved.");
         String filePath = this.getInput();
 
+        ItemStartLocationsView itemStartLocations = new ItemStartLocationsView();
+
         try {
             //save the report to the specified file
-            GameControl.saveItemLocationReport(GOTG.getCurrentGame(), filePath);
-            this.console.println("Galaxy Game successfully saved to " + filePath);
+            GameControl.saveReport(itemStartLocations, filePath);
+            this.console.println("Item Locations Report successfully saved to " + filePath);
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
