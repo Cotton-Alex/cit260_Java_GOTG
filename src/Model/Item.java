@@ -111,9 +111,6 @@ public class Item implements Serializable {
     
     public void setItemType(ItemType itemType) {
         this.itemType = itemType;
-
-    public ItemType getItemType() {
-        return itemType;
     }
     
     public int getItemLocationCol() {

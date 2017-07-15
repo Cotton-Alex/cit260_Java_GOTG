@@ -42,17 +42,6 @@ public class Game implements Serializable {
         this.backpack = backpack;
     }
 
-    public void addToBackpack(Item item){  //game.addtobackpack adds item to pack
-        backpack.add(item);
-    }
-    public ArrayList<Item> getBackpack() {
-        return backpack;
-    }
-
-    public void setBackpack(ArrayList<Item> backpack) {
-        this.backpack = backpack;
-    }
-
     public double getTotalTime() {
         return totalTime;
     }
