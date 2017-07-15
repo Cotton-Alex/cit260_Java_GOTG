@@ -9,6 +9,7 @@ import GOTG.GOTG;
 import Model.Game;
 import Model.Location;
 import Model.Map;
+import Model.Scene;
 import java.util.Scanner;
 
 /**
@@ -113,8 +114,26 @@ public class StarMapMenuView extends View {
         MapView mapView = new MapView();
         mapView.setSectorJump(Boolean.FALSE);
         mapView.display();
-        displayStarMap();
+        interactWithCurrentScene();
+        //displayStarMap();
      }
+     
+     private void interactWithCurrentScene() {
+        Scene scene = GOTG.getCurrentGame().getMap().getCurrentScene();
+         console.println("You have arrived at " + scene.getName());
+        if (scene.getItem()!= null){
+             String saveMenu = display;
+        display = ("You look around the room and find " + scene.getItem().getName() + ". \nWould you like to pick it up?  (Y/N)");
+        String response = this.getInput();
+        display = saveMenu;
+        if (response.toUpperCase()=="Y"){
+            GOTG.getCurrentGame().addToBackpack(scene.getItem());
+            scene.setItem(null);
+        }
+            
+        }
+            
+    }
 
     private void fuelAndTimeAmount() {
         this.console.println("*** Display the current level of fuel"

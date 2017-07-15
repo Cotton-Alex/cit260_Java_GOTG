@@ -6,6 +6,7 @@
 package View;
 
 import GOTG.GOTG;
+import Model.Game;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
