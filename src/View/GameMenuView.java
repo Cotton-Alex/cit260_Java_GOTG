@@ -19,22 +19,22 @@ public class GameMenuView extends View {
 
     public GameMenuView() {
         super("\n" + "\n----------------------------------"
-                         + "\n|  Game Menu                     |"
-                         + "\n----------------------------------"
-                         + "\nM - Game Map"
-                         + "\nI - Inventory"
-                         + "\nH - How to play"
-                         + "\nT - Time and Fuel Remaining"
-                         + "\nS - Save game"
-                         + "\nQ - Main Menu"
-                         + "\n----------------------------------");
+                + "\n|  Game Menu                     |"
+                + "\n----------------------------------"
+                + "\nM - Game Map"
+                + "\nI - Inventory"
+                + "\nH - How to play"
+                + "\nT - Time and Fuel Remaining"
+                + "\nS - Save game"
+                + "\nQ - Main Menu"
+                + "\n----------------------------------");
     }
 
     @Override
-    public boolean doAction(String choice){
-        
+    public boolean doAction(String choice) {
+
         choice = choice.toUpperCase(); // convert choice to upper case
-        
+
         switch (choice) {
             case "M": // create and start a new game
                 this.gameMap();
@@ -52,28 +52,28 @@ public class GameMenuView extends View {
                 this.saveGame();
                 break;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
                 break;
         }
-        
+
         return false;
-    
-}
+
+    }
 
     private void gameMap() {
-       
+
         StarMapMenuView starMap = new StarMapMenuView();
         starMap.display();
     }
     
     private void inventoryMenuView() {
         InventoryMenuView inventoryMenu = new InventoryMenuView();
-      inventoryMenu.display();
+        inventoryMenu.display();
     }
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-      helpMenu.display();
+        helpMenu.display();
     }
 
     private void saveGame() {
@@ -81,20 +81,19 @@ public class GameMenuView extends View {
         String saveMenu = display;
         display = ("\n\nEnter the file path for the file where the game is to be saved.");
         String filePath = this.getInput();
-        
-        try{
+
+        try {
             //save the game to the specified file
             GameControl.saveGame(GOTG.getCurrentGame(), filePath);
             this.console.println("Galaxy Game successfully saved to " + filePath);
-        }catch (Exception ex) {
+        } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
         display = saveMenu;
     }
-    
+
     private void timeAndFuel() {
         System.out.println("this will display the users fuel and time remaining");
     }
-    
 
 }
