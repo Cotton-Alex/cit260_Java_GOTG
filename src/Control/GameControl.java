@@ -122,6 +122,7 @@ public class GameControl {
 
         Item soulStone = new Item();
         soulStone.setName("Soul Stone");
+        soulStone.setItemType(ItemType.soulStone);
         soulStone.setWeight(0);
         soulStone.setQuantityInStock(0);
         soulStone.setRequiredAmount(0);
@@ -129,6 +130,7 @@ public class GameControl {
 
         Item eye_of_Agamotto = new Item();
         eye_of_Agamotto.setName("Eye of Agamotto");
+        eye_of_Agamotto.setItemType(ItemType.Eye_of_Agamotto);
         eye_of_Agamotto.setWeight(0);
         eye_of_Agamotto.setQuantityInStock(0);
         eye_of_Agamotto.setRequiredAmount(0);
@@ -136,6 +138,7 @@ public class GameControl {
 
         Item yondus_Headpiece = new Item();
         yondus_Headpiece.setName("Yondu's Headpiece");
+        yondus_Headpiece.setItemType(ItemType.yondus_Headpiece);
         yondus_Headpiece.setWeight(5);
         yondus_Headpiece.setQuantityInStock(0);
         yondus_Headpiece.setRequiredAmount(0);
@@ -143,6 +146,7 @@ public class GameControl {
 
         Item eco_Boost = new Item();
         eco_Boost.setName("Eco-boost");
+        eco_Boost.setItemType(ItemType.eco_Boost);
         eco_Boost.setWeight(0);
         eco_Boost.setQuantityInStock(0);
         eco_Boost.setRequiredAmount(0);
@@ -150,6 +154,7 @@ public class GameControl {
 
         Item knowledge_of_the_soulstone = new Item();
         knowledge_of_the_soulstone.setName("Knowledge of the Soul Stone");
+        knowledge_of_the_soulstone.setItemType(ItemType.knowledge_of_the_soulstone);
         knowledge_of_the_soulstone.setWeight(0);
         knowledge_of_the_soulstone.setQuantityInStock(0);
         knowledge_of_the_soulstone.setRequiredAmount(0);
@@ -157,12 +162,14 @@ public class GameControl {
 
         Item drax_Knives = new Item();
         drax_Knives.setName("Drax's Knives");
+        drax_Knives.setItemType(ItemType.drax_Knives);
         drax_Knives.setQuantityInStock(0);
         drax_Knives.setRequiredAmount(0);
         inventory[ItemType.drax_Knives.ordinal()] = drax_Knives;
 
         Item vault_Key = new Item();
         vault_Key.setName("Vault Key");
+        vault_Key.setItemType(ItemType.vault_Key);
         vault_Key.setWeight(2);
         vault_Key.setQuantityInStock(0);
         vault_Key.setRequiredAmount(0);
