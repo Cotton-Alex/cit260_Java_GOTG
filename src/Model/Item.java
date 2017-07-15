@@ -20,6 +20,8 @@ public class Item implements Serializable {
     private int    weight;
     private int    quantityInStock;
     private int    requiredAmount;
+    private int    itemLocationCol;
+    private int    itemLocationRow;
     
     public Item() {}
 
@@ -87,6 +89,14 @@ public class Item implements Serializable {
         this.weight = weight;
     }
 
+//    public String getItemType() {
+//        return itemType;
+//    }
+
+//    public void setItemType(String itemType) {
+//        this.itemType = itemType;
+//    }
+
     public int getQuantityInStock() {
         return quantityInStock;
     }
@@ -103,8 +113,12 @@ public class Item implements Serializable {
         this.requiredAmount = requiredAmount;
     }
 
-    public ItemType getItemType() {
-        return itemType;
+//    public ItemType getItemType() {
+//        return itemType;
+//    }
+    
+    public int getItemLocationCol() {
+        return itemLocationCol;
     }
 
     public void setItemLocationCol(int itemLocationCol) {
