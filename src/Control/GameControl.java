@@ -91,116 +91,101 @@ public class GameControl {
         Item[] inventory = new Item[ItemType.values().length];
 
         Item mindStone = new Item();
-        mindStone.setItemType("Mind Stone");
-        mindStone.setItemLocationCol(3);
-        mindStone.setItemLocationRow(03);
+        mindStone.setName("Mind Stone");
+        mindStone.setItemType(ItemType.mindStone);
         mindStone.setWeight(0);
         mindStone.setQuantityInStock(0);
         mindStone.setRequiredAmount(0);
         inventory[ItemType.mindStone.ordinal()] = mindStone;
 
         Item tesseract = new Item();
-        tesseract.setItemType("Tesseract");
-        tesseract.setItemLocationCol(1);
-        tesseract.setItemLocationRow(6);
+        tesseract.setName("Tesseract");
+        tesseract.setItemType(ItemType.tesseract);
         tesseract.setWeight(0);
         tesseract.setQuantityInStock(0);
         tesseract.setRequiredAmount(0);
         inventory[ItemType.tesseract.ordinal()] = tesseract;
 
         Item aether = new Item();
-        aether.setItemType("Aether");
-        aether.setItemLocationCol(2);
-        aether.setItemLocationRow(5);
+        aether.setName("Aether");
+        aether.setItemType(ItemType.aether);
         aether.setWeight(0);
         aether.setQuantityInStock(0);
         aether.setRequiredAmount(0);
         inventory[ItemType.aether.ordinal()] = aether;
 
         Item orb = new Item();
-        orb.setItemType("Orb");
-        orb.setItemLocationCol(2);
-        orb.setItemLocationRow(2);
+        orb.setName("Orb");
+        orb.setItemType(ItemType.orb); //finish the rest
         orb.setWeight(0);
         orb.setQuantityInStock(0);
         orb.setRequiredAmount(0);
         inventory[ItemType.orb.ordinal()] = orb;
 
         Item soulStone = new Item();
-        soulStone.setItemType("Soul Stone");
-        soulStone.setItemLocationCol(2);
-        soulStone.setItemLocationRow(1);
+        soulStone.setName("Soul Stone");
+        soulStone.setItemType(ItemType.soulStone);
         soulStone.setWeight(0);
         soulStone.setQuantityInStock(0);
         soulStone.setRequiredAmount(0);
         inventory[ItemType.soulStone.ordinal()] = soulStone;
 
         Item eye_of_Agamotto = new Item();
-        eye_of_Agamotto.setItemType("Eye of Agamotto");
-        eye_of_Agamotto.setItemLocationCol(1);
-        eye_of_Agamotto.setItemLocationRow(4);
+        eye_of_Agamotto.setName("Eye of Agamotto");
+        eye_of_Agamotto.setItemType(ItemType.Eye_of_Agamotto);
         eye_of_Agamotto.setWeight(0);
         eye_of_Agamotto.setQuantityInStock(0);
         eye_of_Agamotto.setRequiredAmount(0);
         inventory[ItemType.Eye_of_Agamotto.ordinal()] = eye_of_Agamotto;
 
         Item yondus_Headpiece = new Item();
-        yondus_Headpiece.setItemType("Yondu's Headpiece");
-        yondus_Headpiece.setItemLocationCol(1);
-        yondus_Headpiece.setItemLocationRow(5);
+        yondus_Headpiece.setName("Yondu's Headpiece");
+        yondus_Headpiece.setItemType(ItemType.yondus_Headpiece);
         yondus_Headpiece.setWeight(5);
         yondus_Headpiece.setQuantityInStock(0);
         yondus_Headpiece.setRequiredAmount(0);
         inventory[ItemType.yondus_Headpiece.ordinal()] = yondus_Headpiece;
 
         Item eco_Boost = new Item();
-        eco_Boost.setItemType("Eco-boost");
-        eco_Boost.setItemLocationCol(3);
-        eco_Boost.setItemLocationRow(2);
+        eco_Boost.setName("Eco-boost");
+        eco_Boost.setItemType(ItemType.eco_Boost);
         eco_Boost.setWeight(0);
         eco_Boost.setQuantityInStock(0);
         eco_Boost.setRequiredAmount(0);
         inventory[ItemType.eco_Boost.ordinal()] = eco_Boost;
 
         Item knowledge_of_the_soulstone = new Item();
-        knowledge_of_the_soulstone.setItemType("Knowledge of the Soul Stone");
-        knowledge_of_the_soulstone.setItemLocationCol(1);
-        knowledge_of_the_soulstone.setItemLocationRow(3);
+        knowledge_of_the_soulstone.setName("Knowledge of the Soul Stone");
+        knowledge_of_the_soulstone.setItemType(ItemType.knowledge_of_the_soulstone);
         knowledge_of_the_soulstone.setWeight(0);
         knowledge_of_the_soulstone.setQuantityInStock(0);
         knowledge_of_the_soulstone.setRequiredAmount(0);
         inventory[ItemType.knowledge_of_the_soulstone.ordinal()] = knowledge_of_the_soulstone;
 
         Item drax_Knives = new Item();
-        drax_Knives.setItemType("Drax's Knives");
-        drax_Knives.setItemLocationCol(3);
-        drax_Knives.setItemLocationRow(3);
+        drax_Knives.setName("Drax's Knives");
+        drax_Knives.setItemType(ItemType.drax_Knives);
         drax_Knives.setQuantityInStock(0);
         drax_Knives.setRequiredAmount(0);
         inventory[ItemType.drax_Knives.ordinal()] = drax_Knives;
 
         Item vault_Key = new Item();
-        vault_Key.setItemType("Vault Key");
-        vault_Key.setItemLocationCol(2);
-        vault_Key.setItemLocationRow(6);
+        vault_Key.setName("Vault Key");
+        vault_Key.setItemType(ItemType.vault_Key);
         vault_Key.setWeight(2);
         vault_Key.setQuantityInStock(0);
         vault_Key.setRequiredAmount(0);
         inventory[ItemType.vault_Key.ordinal()] = vault_Key;
 
         Item walkman = new Item();
-        walkman.setItemType("Walkman");
-        walkman.setItemLocationCol(2);
-        walkman.setItemLocationRow(0);
+        walkman.setName("Walkman");
         walkman.setWeight(3);
         walkman.setQuantityInStock(0);
         walkman.setRequiredAmount(0);
         inventory[ItemType.walkman.ordinal()] = walkman;
 
         Item fuel = new Item();
-        fuel.setItemType("fuel");
-        fuel.setItemLocationCol(0);
-        fuel.setItemLocationRow(0);
+        fuel.setName("fuel");
         fuel.setWeight(0);
         fuel.setQuantityInStock(100); //Todo: set staring fuel
         fuel.setRequiredAmount(0);
