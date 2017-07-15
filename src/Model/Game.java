@@ -74,7 +74,7 @@ public class Game implements Serializable {
     public void setTime(Time time) {
         this.time = time;
     }
-    
+
     public Map getMap() {
         return map;
     }
@@ -82,9 +82,6 @@ public class Game implements Serializable {
     public void setMap(Map map) {
         this.map = map;
     }
-
-    
-    
 
     //hash and equals funcitons
     @Override
@@ -122,5 +119,4 @@ public class Game implements Serializable {
         return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
     }
 
-    
 }
