@@ -16,10 +16,12 @@ import Model.Scene;
 import Model.SceneType;
 import Model.Time;
 import Exceptions.GameControlException;
+import View.ItemStartLocationsView;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 
 /**
  *
@@ -91,6 +93,8 @@ public class GameControl {
         Item mindStone = new Item();
         mindStone.setName("Mind Stone");
         mindStone.setItemType(ItemType.mindStone);
+        mindStone.setItemLocationCol(3);
+        mindStone.setItemLocationRow(03);
         mindStone.setWeight(0);
         mindStone.setQuantityInStock(0);
         mindStone.setRequiredAmount(0);
@@ -99,6 +103,8 @@ public class GameControl {
         Item tesseract = new Item();
         tesseract.setName("Tesseract");
         tesseract.setItemType(ItemType.tesseract);
+        tesseract.setItemLocationCol(1);
+        tesseract.setItemLocationRow(6);
         tesseract.setWeight(0);
         tesseract.setQuantityInStock(0);
         tesseract.setRequiredAmount(0);
@@ -107,6 +113,8 @@ public class GameControl {
         Item aether = new Item();
         aether.setName("Aether");
         aether.setItemType(ItemType.aether);
+        aether.setItemLocationCol(2);
+        aether.setItemLocationRow(5);
         aether.setWeight(0);
         aether.setQuantityInStock(0);
         aether.setRequiredAmount(0);
@@ -115,6 +123,8 @@ public class GameControl {
         Item orb = new Item();
         orb.setName("Orb");
         orb.setItemType(ItemType.orb); //finish the rest
+        orb.setItemLocationCol(2);
+        orb.setItemLocationRow(2);
         orb.setWeight(0);
         orb.setQuantityInStock(0);
         orb.setRequiredAmount(0);
@@ -123,6 +133,8 @@ public class GameControl {
         Item soulStone = new Item();
         soulStone.setName("Soul Stone");
         soulStone.setItemType(ItemType.soulStone);
+        soulStone.setItemLocationCol(2);
+        soulStone.setItemLocationRow(1);
         soulStone.setWeight(0);
         soulStone.setQuantityInStock(0);
         soulStone.setRequiredAmount(0);
@@ -131,6 +143,8 @@ public class GameControl {
         Item eye_of_Agamotto = new Item();
         eye_of_Agamotto.setName("Eye of Agamotto");
         eye_of_Agamotto.setItemType(ItemType.Eye_of_Agamotto);
+        eye_of_Agamotto.setItemLocationCol(1);
+        eye_of_Agamotto.setItemLocationRow(4);
         eye_of_Agamotto.setWeight(0);
         eye_of_Agamotto.setQuantityInStock(0);
         eye_of_Agamotto.setRequiredAmount(0);
@@ -139,6 +153,8 @@ public class GameControl {
         Item yondus_Headpiece = new Item();
         yondus_Headpiece.setName("Yondu's Headpiece");
         yondus_Headpiece.setItemType(ItemType.yondus_Headpiece);
+        yondus_Headpiece.setItemLocationCol(1);
+        yondus_Headpiece.setItemLocationRow(5);
         yondus_Headpiece.setWeight(5);
         yondus_Headpiece.setQuantityInStock(0);
         yondus_Headpiece.setRequiredAmount(0);
@@ -147,6 +163,8 @@ public class GameControl {
         Item eco_Boost = new Item();
         eco_Boost.setName("Eco-boost");
         eco_Boost.setItemType(ItemType.eco_Boost);
+        eco_Boost.setItemLocationCol(3);
+        eco_Boost.setItemLocationRow(2);
         eco_Boost.setWeight(0);
         eco_Boost.setQuantityInStock(0);
         eco_Boost.setRequiredAmount(0);
@@ -155,6 +173,8 @@ public class GameControl {
         Item knowledge_of_the_soulstone = new Item();
         knowledge_of_the_soulstone.setName("Knowledge of the Soul Stone");
         knowledge_of_the_soulstone.setItemType(ItemType.knowledge_of_the_soulstone);
+        knowledge_of_the_soulstone.setItemLocationCol(1);
+        knowledge_of_the_soulstone.setItemLocationRow(3);
         knowledge_of_the_soulstone.setWeight(0);
         knowledge_of_the_soulstone.setQuantityInStock(0);
         knowledge_of_the_soulstone.setRequiredAmount(0);
@@ -163,6 +183,8 @@ public class GameControl {
         Item drax_Knives = new Item();
         drax_Knives.setName("Drax's Knives");
         drax_Knives.setItemType(ItemType.drax_Knives);
+        drax_Knives.setItemLocationCol(3);
+        drax_Knives.setItemLocationRow(3);
         drax_Knives.setQuantityInStock(0);
         drax_Knives.setRequiredAmount(0);
         inventory[ItemType.drax_Knives.ordinal()] = drax_Knives;
@@ -170,6 +192,8 @@ public class GameControl {
         Item vault_Key = new Item();
         vault_Key.setName("Vault Key");
         vault_Key.setItemType(ItemType.vault_Key);
+        vault_Key.setItemLocationCol(2);
+        vault_Key.setItemLocationRow(6);
         vault_Key.setWeight(2);
         vault_Key.setQuantityInStock(0);
         vault_Key.setRequiredAmount(0);
@@ -177,6 +201,8 @@ public class GameControl {
 
         Item walkman = new Item();
         walkman.setName("Walkman");
+        walkman.setItemLocationCol(2);
+        walkman.setItemLocationRow(0);
         walkman.setWeight(3);
         walkman.setQuantityInStock(0);
         walkman.setRequiredAmount(0);
@@ -184,6 +210,8 @@ public class GameControl {
 
         Item fuel = new Item();
         fuel.setName("fuel");
+        fuel.setItemLocationCol(0);
+        fuel.setItemLocationRow(0);
         fuel.setWeight(0);
         fuel.setQuantityInStock(100); //Todo: set staring fuel
         fuel.setRequiredAmount(0);
@@ -192,7 +220,87 @@ public class GameControl {
         return inventory;
     }
 
-//    public class QuickSort {
+    public static Player createPlayer(String name) {
+
+        if (name == null) {
+            return null;
+        }
+
+        Player player = new Player();
+        player.setName(name);
+
+        GOTG.setPlayer(player); // save the player
+
+        return player;
+    }
+
+    public static void saveGame(Game game, String filepath)
+            throws GameControlException {
+
+        try (FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+
+            output.writeObject(game); //write the game object out to file
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+//    public static void saveReport(ReportInterface report, String filePath)
+//            throws GameControlException {
+//
+//        try (PrintWriter writer = new PrintWriter(filePath)) {
+//            report.display(writer);
+//        } catch (Exception e) {
+//            throw new GameControlException(e.getMessage());
+//        }
+//        
+//    }
+    
+    public static void getExsistingGame(String filepath) throws GameControlException {
+
+        Game game = null;
+
+        try (FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+
+            game = (Game) input.readObject(); // read the game object from file
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+
+        //close the output file
+        GOTG.setCurrentGame(game); // save in GOTG
+    }
+
+    public static void saveReport(ItemStartLocationsView itemStartLocations, String filePath)
+            throws GameControlException {
+
+        try (PrintWriter writer = new PrintWriter(filePath)) {
+            itemStartLocations.display(writer);
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+}   
+    
+    
+    
+    
+    
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+//        public class QuickSort {
 //
 //        private Item[] inventory;
 //
@@ -287,65 +395,4 @@ public class GameControl {
 //
 //        return scenes;
 //    }
-    public static Player createPlayer(String name) {
 
-        if (name == null) {
-            return null;
-        }
-
-        Player player = new Player();
-        player.setName(name);
-
-        GOTG.setPlayer(player); // save the player
-
-        return player;
-    }
-
-    public static void saveGame(Game game, String filepath)
-            throws GameControlException {
-
-        try (FileOutputStream fops = new FileOutputStream(filepath)) {
-            ObjectOutputStream output = new ObjectOutputStream(fops);
-
-            output.writeObject(game); //write the game object out to file
-        } catch (Exception e) {
-            throw new GameControlException(e.getMessage());
-        }
-    }
-    
-    public static void saveItemLocationReport(ItemLocationReport report, String filepath)
-            throws GameControlException {
-
-        try (FileOutputStream fops = new FileOutputStream(filepath)) {
-            ObjectOutputStream output = new ObjectOutputStream(fops);
-
-            output.writeObject(report); //write the game object out to file
-        } catch (Exception e) {
-            throw new GameControlException(e.getMessage());
-        }
-    }
-
-
-    public static void getExsistingGame(String filepath) throws GameControlException {
-
-        Game game = null;
-
-        try (FileInputStream fips = new FileInputStream(filepath)) {
-            ObjectInputStream input = new ObjectInputStream(fips);
-
-            game = (Game) input.readObject(); // read the game object from file
-        } catch (Exception e) {
-            throw new GameControlException(e.getMessage());
-        }
-
-        //close the output file
-        GOTG.setCurrentGame(game); // save in GOTG
-    }
-
-    private static class Reports {
-
-        public Reports() {
-        }
-    }
-
-}

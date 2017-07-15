@@ -1,4 +1,3 @@
-
 /*
 * Item Class
  */
@@ -17,11 +16,14 @@ public class Item implements Serializable {
     // class instance variables
     private ItemType itemType;
     private String name;
-    private int    weight;
-    private int    quantityInStock;
-    private int    requiredAmount;
-    
-    public Item() {}
+    private int weight;
+    private int quantityInStock;
+    private int requiredAmount;
+    private int itemLocationCol;
+    private int itemLocationRow;
+
+    public Item() {
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -68,7 +70,7 @@ public class Item implements Serializable {
     @Override
     public String toString() {
         return "Inventory{" + "inventoryType=" + itemType + ", quantityInStock=" + quantityInStock
-               + ", requiredAmount=" + requiredAmount + '}';
+                + ", requiredAmount=" + requiredAmount + '}';
     }
 
     public String getName() {
@@ -102,14 +104,29 @@ public class Item implements Serializable {
     public void setRequiredAmount(int requiredAmount) {
         this.requiredAmount = requiredAmount;
     }
-
+    
     public ItemType getItemType() {
         return itemType;
     }
-
+    
     public void setItemType(ItemType itemType) {
         this.itemType = itemType;
     }
     
-}
+    public int getItemLocationCol() {
+        return itemLocationCol;
+    }
 
+    public void setItemLocationCol(int itemLocationCol) {
+        this.itemLocationCol = itemLocationCol;
+    }
+
+    public int getItemLocationRow() {
+        return itemLocationRow;
+    }
+
+    public void setItemLocationRow(int itemLocationRow) {
+        this.itemLocationRow = itemLocationRow;
+    }
+
+}
