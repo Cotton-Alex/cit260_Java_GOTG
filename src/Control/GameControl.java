@@ -182,7 +182,7 @@ public class GameControl {
 
         Item drax_Knives = new Item();
         drax_Knives.setName("Drax's Knives");
-         drax_Knives.setItemType(ItemType.drax_Knives);
+        drax_Knives.setItemType(ItemType.drax_Knives);
         drax_Knives.setItemLocationCol(3);
         drax_Knives.setItemLocationRow(3);
         drax_Knives.setQuantityInStock(0);

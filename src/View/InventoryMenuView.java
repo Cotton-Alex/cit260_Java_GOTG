@@ -105,6 +105,8 @@ public class InventoryMenuView extends View {
         
         ItemStartLocationsView itemStartLocations = new ItemStartLocationsView();
 
+        ItemStartLocationsView itemStartLocations = new ItemStartLocationsView();
+
         try {
             //save the report to the specified file
             GameControl.saveReport(itemStartLocations, filePath);

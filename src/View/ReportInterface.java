@@ -11,8 +11,6 @@ import java.io.PrintWriter;
  *
  * @author alexcotton
  */
-interface ReportInterface {
-    
+public interface ReportInterface {
     public void display(PrintWriter writer);
-    
 }
