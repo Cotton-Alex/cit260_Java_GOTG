@@ -89,13 +89,13 @@ public class Item implements Serializable {
         this.weight = weight;
     }
 
-//    public String getItemType() {
-//        return itemType;
-//    }
+    public String getItemType() {
+        return itemType;
+    }
 
-//    public void setItemType(String itemType) {
-//        this.itemType = itemType;
-//    }
+    public void setItemType(String itemType) {
+        this.itemType = itemType;
+    }
 
     public int getQuantityInStock() {
         return quantityInStock;
@@ -113,9 +113,9 @@ public class Item implements Serializable {
         this.requiredAmount = requiredAmount;
     }
 
-//    public ItemType getItemType() {
-//        return itemType;
-//    }
+    public ItemType getItemType() {
+        return itemType;
+    }
     
     public int getItemLocationCol() {
         return itemLocationCol;
@@ -131,6 +131,10 @@ public class Item implements Serializable {
 
     public void setItemLocationRow(int itemLocationRow) {
         this.itemLocationRow = itemLocationRow;
+    }
+
+    public String getItemName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

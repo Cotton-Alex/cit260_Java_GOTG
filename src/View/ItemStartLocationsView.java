@@ -32,7 +32,7 @@ public class ItemStartLocationsView implements ReportInterface {
         writer.println("COLUMN\tROW\t\tITEM");
         writer.println("--------------------------------------------------------------");
         for (int i = 0; i < ItemType.values().length; i++) {
-            writer.println(items[i].getItemLocationCol() + "\t" + items[i].getItemLocationRow() + "\t\t" + items[i].getItemType());
+            writer.println(items[i].getItemLocationCol() + "\t" + items[i].getItemLocationRow() + "\t\t" + items[i].getItemName());
         }
         writer.println("--------------------------------------------------------------");
 
