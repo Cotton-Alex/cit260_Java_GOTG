@@ -16,10 +16,12 @@ import Model.Scene;
 import Model.SceneType;
 import Model.Time;
 import Exceptions.GameControlException;
+import View.ItemStartLocationsView;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 
 /**
  *
@@ -192,7 +194,87 @@ public class GameControl {
         return inventory;
     }
 
-//    public class QuickSort {
+    public static Player createPlayer(String name) {
+
+        if (name == null) {
+            return null;
+        }
+
+        Player player = new Player();
+        player.setName(name);
+
+        GOTG.setPlayer(player); // save the player
+
+        return player;
+    }
+
+    public static void saveGame(Game game, String filepath)
+            throws GameControlException {
+
+        try (FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+
+            output.writeObject(game); //write the game object out to file
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+//    public static void saveReport(ReportInterface report, String filePath)
+//            throws GameControlException {
+//
+//        try (PrintWriter writer = new PrintWriter(filePath)) {
+//            report.display(writer);
+//        } catch (Exception e) {
+//            throw new GameControlException(e.getMessage());
+//        }
+//        
+//    }
+    
+    public static void getExsistingGame(String filepath) throws GameControlException {
+
+        Game game = null;
+
+        try (FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+
+            game = (Game) input.readObject(); // read the game object from file
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+
+        //close the output file
+        GOTG.setCurrentGame(game); // save in GOTG
+    }
+
+    public static void saveReport(ItemStartLocationsView itemStartLocations, String filePath)
+            throws GameControlException {
+
+        try (PrintWriter writer = new PrintWriter(filePath)) {
+            itemStartLocations.display(writer);
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+}   
+    
+    
+    
+    
+    
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+//        public class QuickSort {
 //
 //        private Item[] inventory;
 //
@@ -287,65 +369,4 @@ public class GameControl {
 //
 //        return scenes;
 //    }
-    public static Player createPlayer(String name) {
 
-        if (name == null) {
-            return null;
-        }
-
-        Player player = new Player();
-        player.setName(name);
-
-        GOTG.setPlayer(player); // save the player
-
-        return player;
-    }
-
-    public static void saveGame(Game game, String filepath)
-            throws GameControlException {
-
-        try (FileOutputStream fops = new FileOutputStream(filepath)) {
-            ObjectOutputStream output = new ObjectOutputStream(fops);
-
-            output.writeObject(game); //write the game object out to file
-        } catch (Exception e) {
-            throw new GameControlException(e.getMessage());
-        }
-    }
-    
-    public static void saveItemLocationReport(ItemLocationReport report, String filepath)
-            throws GameControlException {
-
-        try (FileOutputStream fops = new FileOutputStream(filepath)) {
-            ObjectOutputStream output = new ObjectOutputStream(fops);
-
-            output.writeObject(report); //write the game object out to file
-        } catch (Exception e) {
-            throw new GameControlException(e.getMessage());
-        }
-    }
-
-
-    public static void getExsistingGame(String filepath) throws GameControlException {
-
-        Game game = null;
-
-        try (FileInputStream fips = new FileInputStream(filepath)) {
-            ObjectInputStream input = new ObjectInputStream(fips);
-
-            game = (Game) input.readObject(); // read the game object from file
-        } catch (Exception e) {
-            throw new GameControlException(e.getMessage());
-        }
-
-        //close the output file
-        GOTG.setCurrentGame(game); // save in GOTG
-    }
-
-    private static class Reports {
-
-        public Reports() {
-        }
-    }
-
-}
