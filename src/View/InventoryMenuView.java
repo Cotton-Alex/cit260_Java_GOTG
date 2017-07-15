@@ -27,7 +27,7 @@ public class InventoryMenuView extends View {
                 + "\nS - Ship's Inventory"
                 + "\nC - Display Groot's coin total"
                 + "\nF - List Groot's local companions and what they're carrying"
-                + "\nR - Item Starting Locations Report"
+                + "\nR - Item's Starting Location Report"
                 + "\nQ - Back"
                 + "\n----------------------------------");
     }
@@ -96,16 +96,19 @@ public class InventoryMenuView extends View {
                 + "\n and a list of what they're carrying***");
     }
 
+    //LocationReport:
     private void saveItemLocationReport() {
         //prompt for and get the name of the file to save the report
         String saveMenu = display;
         display = ("\n\nEnter the file path for the file where the report is to be saved.");
         String filePath = this.getInput();
+        
+        ItemStartLocationsView itemStartLocations = new ItemStartLocationsView();
 
         try {
             //save the report to the specified file
-            GameControl.saveItemLocationReport(GOTG.getCurrentGame(), filePath);
-            this.console.println("Galaxy Game successfully saved to " + filePath);
+            GameControl.saveReport(itemStartLocations, filePath);
+            this.console.println("Item Locations Report successfully saved to " + filePath);
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
