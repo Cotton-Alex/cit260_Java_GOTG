@@ -20,8 +20,10 @@ public class Game implements Serializable {
     private Ship ship;
     private Map map;
     private Time time;
+    private Fuel fuel;
     private Item[] inventory;
     private ArrayList<Item> backpack;
+    private Scene[] scenes;
 
     //constructer functions
     public Game() {
@@ -89,6 +91,25 @@ public class Game implements Serializable {
     public void setTime(Time time) {
         this.time = time;
     }
+
+    public Fuel getFuel() {
+        return fuel;
+    }
+
+    public void setFuel(Fuel fuel) {
+        this.fuel = fuel;
+    }
+
+    public Scene[] getScenes() {
+        return scenes;
+    }
+
+    public void setScenes(Scene[] scenes) {
+        this.scenes = scenes;
+    }
+    
+    
+    
 
     public Map getMap() {
         return map;

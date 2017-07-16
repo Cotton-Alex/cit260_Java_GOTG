@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Model.Fuel;
 import Model.Player;
 import GOTG.GOTG;
 import Model.Game;
@@ -42,11 +43,17 @@ public class GameControl {
 
         Time timeRemaning = new Time();
         game.setTime(timeRemaning);
+        
+        Fuel fuelRemaining = new Fuel();
+        game.setFuel(fuelRemaining);
 
 //        Ship ship = new Ship();// create new ship
 //        game.setShip(ship);// save ship in game
         Map map = MapControl.createMap();  //create and initialize new map
         game.setMap(map);  //save map in game
+        
+        Scene[] scenes = MapControl.createScenes();
+        game.setScenes(scenes);
 
         // move actors to starting position in the map
         MapControl.movePlayerToStartingLocation(map);//TODO:get sample code movePlayersToStartingLocation and movePlayer

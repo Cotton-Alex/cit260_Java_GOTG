@@ -20,6 +20,8 @@ public class Scene implements Serializable {
     private String locationsList;
     private Item item;  //of type item not string
     private Boolean sector;
+    private int locationNumber;
+    private int sceneCompleted;
 
     public String getDescription() {
         return description;
@@ -73,6 +75,24 @@ public class Scene implements Serializable {
     public void setItem(Item item) {
         this.item = item;
     }
+
+    public int getLocationNumber() {
+        return locationNumber;
+    }
+
+    public void setLocationNumber(int locationNumber) {
+        this.locationNumber = locationNumber;
+    }
+
+    public int getSceneCompleted() {
+        return sceneCompleted;
+    }
+
+    public void setSceneCompleted(int sceneCompleted) {
+        this.sceneCompleted = sceneCompleted;
+    }
+    
+    
     
 
     public Scene() {
