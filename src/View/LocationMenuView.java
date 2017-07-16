@@ -16,7 +16,7 @@ import Model.SceneType;
  *
  * @author Mike Minassian
  */
-public class LocationMenuView {
+public abstract class LocationMenuView extends View {
     public void SceneChoice(int sceneNumber){
     
     switch (sceneNumber){
@@ -274,6 +274,12 @@ public class LocationMenuView {
     private void Bifrost() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+//    private class console {
+//
+//        public console() {
+//        }
+//    }
 }
 
 
