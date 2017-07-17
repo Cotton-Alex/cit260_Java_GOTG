@@ -16,211 +16,492 @@ import Model.SceneType;
  *
  * @author Mike Minassian
  */
-public abstract class LocationMenuView extends View {
-    public void SceneChoice(int sceneNumber){
-    
-    switch (sceneNumber){
-        case (0) : 
-            this.EarthScene();
-            break;
-        case (1) : 
-            this.StarLordsHome();
-            break;
-        case (2) :
-            this.EarthBar();
-            break;
-        case (3): 
-            this.EarthAvengersHQ();
-            break;
-        case (4):
-            this.HalaScene();
-            break;
-        case (5) : 
-            this.HalaBar();
-            break;
-        case (6) :
-            this.SkrullPalace();
-            break;
-        case (7):
-            this.SkrullHouse();
-            break;
-        case(8):
-            this.XandarScene();
-            break;
-        case (9):
-            this.NovaPrime();
-            break;
-        case (10):
-            this.NovaCommand();
-            break;
-        case (11) :
-            this.Mechanic();
-            break;
-        case (12):
-            this.TheKyln();
-            break;
-        case (13) :
-            this.BossQuarters();
-            break;
-        case (14) :
-            this.PrisonCell();
-            break;
-        case (15) :
-            this.Stockpile();
-            break;
-        case (16) :
-            this.KnowhwereScene();
-            break;
-        case (17) :
-            this.CommandCenter();
-            break;
-        case (18):
-            this.KnowhereBar();
-            break;
-        case (19) :
-            this.MiningBay();
-            break;
-        case (20):
-            this.MorageIVScene();
-            break;
-        case (21) :
-            this.Prison();
-            break;
-        case (22) :
-            this.CollectorsShop();
-            break;
-        case (23) :
-            this.Temple();
-            break;
-        case (24) :
-            this.AsgardScene();
-            break;
-        case (25) :
-            this.HallOfrelics();
-            break;
-        case (26) :
-            this.ThroneRoom();
-            break;
-        case (27) :
-            this.Bifrost();
-            break;
-               
-                  
+public class LocationMenuView extends View {
+
+    public void SceneChoice(int sceneNumber) {
+
+        switch (sceneNumber) {
+            case (0):
+                this.EarthScene();
+                break;
+            case (1):
+                this.StarLordsHome();
+                break;
+            case (2):
+                this.EarthBar();
+                break;
+            case (3):
+                this.EarthAvengersHQ();
+                break;
+            case (4):
+                this.HalaScene();
+                break;
+            case (5):
+                this.HalaBar();
+                break;
+            case (6):
+                this.SkrullPalace();
+                break;
+            case (7):
+                this.SkrullHouse();
+                break;
+            case (8):
+                this.XandarScene();
+                break;
+            case (9):
+                this.NovaPrime();
+                break;
+            case (10):
+                this.NovaCommand();
+                break;
+            case (11):
+                this.Mechanic();
+                break;
+            case (12):
+                this.TheKyln();
+                break;
+            case (13):
+                this.BossQuarters();
+                break;
+            case (14):
+                this.PrisonCell();
+                break;
+            case (15):
+                this.Stockpile();
+                break;
+            case (16):
+                this.KnowhwereScene();
+                break;
+            case (17):
+                this.CommandCenter();
+                break;
+            case (18):
+                this.KnowhereBar();
+                break;
+            case (19):
+                this.MiningBay();
+                break;
+            case (20):
+                this.MorageIVScene();
+                break;
+            case (21):
+                this.Prison();
+                break;
+            case (22):
+                this.CollectorsShop();
+                break;
+            case (23):
+                this.Temple();
+                break;
+            case (24):
+                this.AsgardScene();
+                break;
+            case (25):
+                this.HallOfrelics();
+                break;
+            case (26):
+                this.ThroneRoom();
+                break;
+            case (27):
+                this.Bifrost();
+                break;
+
+        }
     }
-}
 
     private void EarthScene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+        
+        if(items[ItemType.Eye_of_Agamotto.ordinal()].getQuantityInStock() == 1 && items[ItemType.aether.ordinal()].getQuantityInStock() == 1 && items[ItemType.mindStone.ordinal()].getQuantityInStock() == 1 && items[ItemType.orb.ordinal()].getQuantityInStock() == 1 && items[ItemType.soulStone.ordinal()].getQuantityInStock() == 1 & items[ItemType.tesseract.ordinal()].getQuantityInStock() == 1){
+        this.console.println("\n Thantos arrives at earth and finds you waiting "
+                + "           \n waiting to meet him. You see a look of fear in "
+                + "           \n his eyes when he sees the six glowing stones in"
+                + "           \n your hands."
+                + "\n"
+                + "           \n You channel the power of the stones at Thantos!"
+                + "           \n a beam of awesome raw power leaves the stones!"
+                + "           \n there is just a pile of ash left where thantos"
+                + "           \n used to be."
+                + "\n"
+                + "           \n You have save the Galaxy from the threat of "
+                + "           \n Thantos!"
+                + "\n"
+                + "           \n You Win!!");
+        System.exit(0);
+        }else{
+        this.console.println("\n You are on Earth, Starlord's Home Planet.");   
+        }
     }
 
     private void StarLordsHome() {
         Game game = GOTG.getCurrentGame();
         Scene[] scenes = game.getScenes();
-        if(scenes[SceneType.Starlords_Home.ordinal()].getSceneCompleted() == 0){
-        this.console.println("/n this is starlords home, or at least it was.");
-        this.console.println("/n as you look around you find his old walkman"
-                + "/n you feel its a good idea to take it along with you"
-                + "/n"
-                + "/n the Walkman has been added to your inventory");
-        
-        scenes[SceneType.Starlords_Home.ordinal()].setSceneCompleted(1);
-        
+        if (scenes[SceneType.Starlords_Home.ordinal()].getSceneCompleted() == 0) {
+            this.console.println("\n this is starlords home, or at least it was.");
+            this.console.println("\n as you look around you find his old walkman"
+                    + "           \n you feel its a good idea to take it along with "
+                    + "           \n you."
+                    + "\n"
+                    + "           \n The Walkman has been added to your inventory!!");
+
+            scenes[SceneType.Starlords_Home.ordinal()].setSceneCompleted(1);
+
+        } else if (scenes[SceneType.Starlords_Home.ordinal()].getSceneCompleted() == 1) {
+            this.console.println("\n There is nothing else you can find here");
         }
-        else if(scenes[SceneType.Starlords_Home.ordinal()].getSceneCompleted() == 1)
-        this.console.println("/n There is nothing else you can find here");
-                
-        
+
     }
 
     private void EarthBar() {
-        this.console.println("/n As you go around the bar, you talk to some people"
-                            +"/n they tell you that Dr. Strange has the Eye if "
-                + "/n Agamoto somewhere on Knowhere");
+        this.console.println("\n As you go around the bar, you talk to some people"
+                + "\n they tell you that Dr. Strange has the Eye of "
+                + "           \n Agamoto somewhere on Knowhere");
     }
 
     private void EarthAvengersHQ() {
         Game game = GOTG.getCurrentGame();
         Scene[] scenes = game.getScenes();
         Item[] items = game.getInventory();
-        if(scenes[SceneType.Avengers_HQ.ordinal()].getSceneCompleted() == 0){
-        this.console.println("/n This is the Avengers HQ, you walk around and"
-                           + "/n you walk around and find Vision.");
-        
-        this.console.println("/n "
-                           + "/n Vision tells you that the six infinity stones are:"
-                + "/n The Mind Stone"
-                + "/n The Tesseract"
-                + "/n The Aether"
-                + "/n The Soul Stone"
-                + "/n The Eye of Agamotto"
-                + "/n And The Orb");
-        
-        this.console.println("/n Vision will give you the Mind Stone once you have"
-                +            "/n collected the other stones.");
-        
-        scenes[SceneType.Avengers_HQ.ordinal()].setSceneCompleted(1);
-        
-        }
-        else if (scenes[SceneType.Avengers_HQ.ordinal()].getSceneCompleted() == 1){
-            if(items[ItemType.orb.ordinal()].getQuantityInStock() == 1 && items[ItemType.tesseract.ordinal()].getQuantityInStock() == 1 && items[ItemType.aether.ordinal()].getQuantityInStock() == 1 && items[ItemType.soulStone.ordinal()].getQuantityInStock() == 1 && items[ItemType.Eye_of_Agamotto.ordinal()].getQuantityInStock() == 1 ){
-             this.console.println("/n Vision tells you that you have proven yourself worthy"
-                     +            "/n by getting the other stones and give you the Mind Stone! ");
-             
-             this.console.println("/n the Mind Stone has been added to your inventory.");
-             items[ItemType.mindStone.ordinal()].setQuantityInStock(1);
-             scenes[SceneType.Avengers_HQ.ordinal()].setSceneCompleted(2);
+        if (scenes[SceneType.Avengers_HQ.ordinal()].getSceneCompleted() == 0) {
+            this.console.println("\n This is the Avengers HQ, you walk around and"
+                    + "\n you walk around and find Vision.");
+
+            this.console.println("\n "
+                    + "\n Vision tells you that the six infinity stones are:"
+                    + "\n The Mind Stone"
+                    + "\n The Tesseract"
+                    + "\n The Aether"
+                    + "\n The Soul Stone"
+                    + "\n The Eye of Agamotto"
+                    + "\n And The Orb");
+
+            this.console.println("\n Vision will give you the Mind Stone once you have"
+                    + "\n collected the other stones.");
+
+            scenes[SceneType.Avengers_HQ.ordinal()].setSceneCompleted(1);
+
+        } else if (scenes[SceneType.Avengers_HQ.ordinal()].getSceneCompleted() == 1) {
+            if (items[ItemType.orb.ordinal()].getQuantityInStock() == 1 && items[ItemType.tesseract.ordinal()].getQuantityInStock() == 1 && items[ItemType.aether.ordinal()].getQuantityInStock() == 1 && items[ItemType.soulStone.ordinal()].getQuantityInStock() == 1 && items[ItemType.Eye_of_Agamotto.ordinal()].getQuantityInStock() == 1) {
+                this.console.println("\n Vision tells you that you have proven yourself worthy"
+                        + "\n by getting the other stones and give you the Mind Stone! ");
+
+                this.console.println("\n the Mind Stone has been added to your inventory.");
+                items[ItemType.mindStone.ordinal()].setQuantityInStock(1);
+                scenes[SceneType.Avengers_HQ.ordinal()].setSceneCompleted(2);
+            } else {
+                this.console.println("\n Vision tells you to come back after you get"
+                        + "\n all the stones");
             }
-           else
-           this.console.println("/n Vision tells you to come back after you get"
-                   + "/n all the stones");     
-        }
-        else
+        } else {
             this.console.println("/n Vision tells you to end the threat of "
-                    + "/n Thantos now you have all the stones");
+                    + "\n Thantos now you have all the stones");
+        }
     }
 
     private void HalaScene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("\n This is Hala, home of the Skrull.");
     }
 
     private void HalaBar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("\n As you go around the bar, you talk to some people"
+                + "\n they tell you that The Collector has the Aether "
+                + "           \n somewhere on Morag IV.");
     }
 
     private void SkrullPalace() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+
+        switch (scenes[SceneType.Skrull_Palace.ordinal()].getSceneCompleted()) {
+            case 0:
+                if (items[ItemType.knowledge_of_the_soulstone.ordinal()].getQuantityInStock() == 1) {
+                    this.console.println("\n You enter the Skrull Palace and "
+                            + "           \n find Hela. She tells you that Loki"
+                            + "           \n has the Tesseract.");
+
+                    this.console.println("\n Knowing that she is the Soul Stone,"
+                            + "           \n you confront her about it. Hela then"
+                            + "           \n gives up her deception and agrees to"
+                            + "           \n led you her power.");
+
+                    this.console.println("\n You recive the Soul Stone!");
+                    items[ItemType.soulStone.ordinal()].setQuantityInStock(1);
+                    items[ItemType.knowledge_of_the_soulstone.ordinal()].setQuantityInStock(0);
+                    scenes[SceneType.Skrull_Palace.ordinal()].setSceneCompleted(1);
+                    break;
+
+                } else {
+                    this.console.println("\n You enter the Skrull Palace and "
+                            + "           \n find Hela. She tells you that Loki"
+                            + "           \n has the Tesseract.");
+                }
+                break;
+            case 1:
+                this.console.println("\n Hela says there is nothing more she can"
+                        + "           \n do for you.");
+                break;
+        }
     }
 
     private void SkrullHouse() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+
+        switch (scenes[SceneType.Skrull_House.ordinal()].getSceneCompleted()) {
+            case 0:
+                this.console.println("\n You search this strange house and find"
+                        + "           \n some money! You cant argue with that!");
+
+                this.console.println("\n $500 was added to your inventory.");
+                items[ItemType.money.ordinal()].setQuantityInStock(items[ItemType.money.ordinal()].getQuantityInStock() + 500);
+                scenes[SceneType.Skrull_House.ordinal()].setSceneCompleted(1);
+                break;
+            case 1:
+                this.console.println("\n There is nothing more that you can find"
+                        + "           \n here.");
+                break;
+        }
     }
 
     private void XandarScene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("\n This is Xandar, home of the Nova Core.");
     }
 
     private void NovaPrime() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+
+        switch (scenes[SceneType.Nova_Prime.ordinal()].getSceneCompleted()) {
+            case 0:
+                if (items[ItemType.walkman.ordinal()].getQuantityInStock() == 1) {
+                    this.console.println("\n You walk into Nova Prime and find"
+                            + "           \n Irani Rael. You address her "
+                            + "           \n respectfuly and tell her about your "
+                            + "           \n mission."
+                            + "\n"
+                            + "           \n She says that she has the Orb but"
+                            + "           \n she wont give it to you with out "
+                            + "           \n some kind of item that you would "
+                            + "           \n come back for as collateral.");
+
+                    this.console.println("\n To Starlords dismay, you offer her"
+                            + "           \n the walkman as collateral."
+                            + "\n"
+                            + "           \n She then give a command to one of "
+                            + "           \n her men nearby and says to go to"
+                            + "           \n Nova Command to recieve the Orb.");
+                    items[ItemType.walkman.ordinal()].setQuantityInStock(0);
+                    scenes[SceneType.Nova_Command.ordinal()].setSceneCompleted(1);
+                    scenes[SceneType.Nova_Prime.ordinal()].setSceneCompleted(2);
+                    break;
+                } else {
+                    this.console.println("\n You walk into Nova Prime and find"
+                            + "           \n Irani Rael. You address her "
+                            + "           \n respectfuly and tell her about your "
+                            + "           \n mission."
+                            + "\n"
+                            + "           \n She says that she has the Orb but"
+                            + "           \n she wont give it to you with out "
+                            + "           \n some kind of item that you would "
+                            + "           \n come back for as collateral.");
+                    scenes[SceneType.Nova_Prime.ordinal()].setSceneCompleted(1);
+                    break;
+                }
+            case 1:
+                if (items[ItemType.walkman.ordinal()].getQuantityInStock() == 1) {
+                    this.console.println("\n To Starlords dismay, you offer her"
+                            + "           \n the walkman as collateral."
+                            + "\n"
+                            + "           \n She then give a command to one of "
+                            + "           \n her men nearby and says to go to"
+                            + "           \n Nova Command to recieve the Orb.");
+                    items[ItemType.walkman.ordinal()].setQuantityInStock(0);
+                    scenes[SceneType.Nova_Command.ordinal()].setSceneCompleted(1);
+                    scenes[SceneType.Nova_Prime.ordinal()].setSceneCompleted(2);
+                    break;
+                } else {
+                    this.console.println("\n Irani tells you to come back once you"
+                            + "           \n have some collateral.");
+                    break;
+                }
+            case 2:
+                this.console.println("\n Irani says there is nothing more that she "
+                        + "           \n can do for you.");
+                break;
+
+        }
     }
 
     private void NovaCommand() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+
+        switch (scenes[SceneType.Nova_Command.ordinal()].getSceneCompleted()) {
+            case 0:
+                this.console.println("\n The Guard says that you cant be here "
+                        + "           \n and to come back once Irani says its "
+                        + "           \n okay.");
+                break;
+            case 1:
+                this.console.println("\n The Guard tells you that he got word "
+                        + "           \n from Irani to give you the Orb.");
+                this.console.println("\n The Orb has been added to your inventory!");
+                items[ItemType.orb.ordinal()].setQuantityInStock(1);
+                scenes[SceneType.Nova_Command.ordinal()].setSceneCompleted(2);
+                break;
+            case 2:
+                this.console.println("\n The Guard tells you that he already"
+                        + "           \n gave you the Orb and to get lost.");
+                break;
+
+        }
     }
 
     private void Mechanic() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+
+        switch (scenes[SceneType.Mechanic.ordinal()].getSceneCompleted()) {
+            case 0:
+                this.console.println("\n You enter the Mechanics shop and ask him"
+                        + "           \n what he could do for you. He says that"
+                        + "           \n for $500 he can make your ship get "
+                        + "           \n better gas mileage."
+                        + "\n");
+                this.console.println("\n Do you what to pay $500 to cut fuel"
+                        + "           \n cost in half while traveling?"
+                        + "           \n Y for yes or N for no.");
+                String response = this.getInput();
+                response = response.toUpperCase();
+                switch (response) {
+                    case "Y":
+                        if (items[ItemType.money.ordinal()].getQuantityInStock() >= 500) {
+                            items[ItemType.money.ordinal()].setQuantityInStock(items[ItemType.money.ordinal()].getQuantityInStock() - 500);
+                            items[ItemType.eco_Boost.ordinal()].setQuantityInStock(1);
+                            scenes[SceneType.Mechanic.ordinal()].setSceneCompleted(1);
+                            break;
+                        } else {
+                            ErrorView.display(this.getClass().getName(), "\nYou do not have enough money. Try again later");
+                            break;
+                        }
+                    case "N":
+                        break;
+                    default:
+                        ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
+                        break;
+
+                }
+                break;
+            case 1:
+                this.console.println("\n The mechanic says there is nothing more"
+                        + "           \n he can do for you.");
+                break;
+        }
     }
 
     private void TheKyln() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("\n This is The Kyln, Yondu currently controls it.");
     }
 
     private void BossQuarters() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+
+        switch (scenes[SceneType.Boss_Quarters.ordinal()].getSceneCompleted()) {
+            case 0:
+                if (items[ItemType.yondus_Headpiece.ordinal()].getQuantityInStock() == 1) {
+                    this.console.println("\n You find Yondu in his chair and you"
+                            + "           \n joke around and catch up. He tells "
+                            + "           \n you that his headpiece was stolen."
+                            + "           \n he says that if you get if back for "
+                            + "           \n him, then he will tell you where to"
+                            + "           \n find the Soul Stone. "
+                            + "           \n"
+                            + "           \n He says that his headpiece was lost "
+                            + "           \n somewhere on Morag IV where low lives"
+                            + "           \n are kept."
+                            + "\n");
+                    this.console.println("\n You show Youndu the HeadPice. He says"
+                            + "           \n a deal is a deal, the Soul Stone is"
+                            + "           \n Hela herself!");
+
+                    this.console.println("\n You should go confront Hela with your"
+                            + "           \n new found knowledge.");
+                    items[ItemType.yondus_Headpiece.ordinal()].setQuantityInStock(0);
+                    items[ItemType.knowledge_of_the_soulstone.ordinal()].setQuantityInStock(1);
+                    scenes[SceneType.Boss_Quarters.ordinal()].setSceneCompleted(2);
+                    break;
+                } else {
+                    this.console.println("\n You find Yondu in his chair and you"
+                            + "           \n joke around and catch up. He tells "
+                            + "           \n you that his headpiece was stolen."
+                            + "           \n he says that if you get if back for "
+                            + "           \n him, then he will tell you where to"
+                            + "           \n find the Soul Stone. "
+                            + "           \n"
+                            + "           \n He says that his headpiece was lost "
+                            + "           \n somewhere on Morag IV where low lives"
+                            + "           \n are kept."
+                            + "\n");
+                    scenes[SceneType.Boss_Quarters.ordinal()].setSceneCompleted(1);
+                    break;
+
+                }
+            case 1:
+                if (items[ItemType.yondus_Headpiece.ordinal()].getQuantityInStock() == 1) {
+                    this.console.println("\n You show Youndu the HeadPice. He says"
+                            + "           \n a deal is a deal, the Soul Stone is"
+                            + "           \n Hela herself!");
+
+                    this.console.println("\n You should go confront Hela with your"
+                            + "           \n new found knowledge.");
+                    items[ItemType.yondus_Headpiece.ordinal()].setQuantityInStock(0);
+                    items[ItemType.knowledge_of_the_soulstone.ordinal()].setQuantityInStock(1);
+                    scenes[SceneType.Boss_Quarters.ordinal()].setSceneCompleted(2);
+                    break;
+                } else {
+                    this.console.println("\n Yondu says to come back once you get "
+                            + "           \n the headpiece"
+                            + "\n"
+                            + "          \n He says that his headpiece was lost "
+                            + "         \n somewhere on Morag IV where low lives"
+                            + "         \n are kept.");
+                    break;
+                }
+            case 2:
+                this.console.println("\n Yondu says there is nothing more that "
+                        + "           \n he can do for you.");
+
+        }
     }
 
     private void PrisonCell() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+
+        switch (scenes[SceneType.Prison_Cell.ordinal()].getSceneCompleted()) {
+            case 0:
+                this.console.println("\n You search this strange cell and find"
+                        + "           \n some money! You cant argue with that!");
+
+                this.console.println("\n $500 was added to your inventory.");
+                items[ItemType.money.ordinal()].setQuantityInStock(items[ItemType.money.ordinal()].getQuantityInStock() + 500);
+                scenes[SceneType.Prison_Cell.ordinal()].setSceneCompleted(1);
+                break;
+            case 1:
+                this.console.println("\n There is nothing more that you can find"
+                        + "           \n here.");
+                break;
+        }
     }
 
     private void Stockpile() {
@@ -228,51 +509,272 @@ public abstract class LocationMenuView extends View {
     }
 
     private void KnowhwereScene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("\n This is Knowhere, there is a sorcerer somewhere "
+                + "           \n here.");
     }
 
     private void CommandCenter() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+
+        switch (scenes[SceneType.Command_Center.ordinal()].getSceneCompleted()) {
+            case 0:
+                this.console.println("\n You find Doctor Strange pouring over "
+                        + "           \n some strange book. You walk over to him"
+                        + "           \n and tell him about your quest."
+                        + "\n");
+                this.console.println("\n He tells you that saving the Galaxy is"
+                        + "           \n also his responsability and he agrees "
+                        + "           \n to let you use the Eye of Agamotto."
+                        + "\n");
+                this.console.println("\n The Eye of Agamotto was added to your "
+                        + "           \n inventory!");
+                items[ItemType.Eye_of_Agamotto.ordinal()].setQuantityInStock(1);
+                scenes[SceneType.Command_Center.ordinal()].setSceneCompleted(1);
+                break;
+            case 1:
+                this.console.println("\n Strange tells you there is nothing more "
+                        + "           \n he can do for you.");
+                break;
+
+        }
     }
 
     private void KnowhereBar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("\n You go around the bar and talk to some people."
+                + "           \n They tell you that Loki has been spotted in "
+                + "           \n Asgard.");
     }
 
     private void MiningBay() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+
+        switch (scenes[SceneType.Mining_Bay.ordinal()].getSceneCompleted()) {
+            case 0:
+                this.console.println("\n You search this strange mine and find"
+                        + "           \n some money! You cant argue with that!");
+
+                this.console.println("\n $500 was added to your inventory.");
+                items[ItemType.money.ordinal()].setQuantityInStock(items[ItemType.money.ordinal()].getQuantityInStock() + 500);
+                scenes[SceneType.Mining_Bay.ordinal()].setSceneCompleted(1);
+                break;
+            case 1:
+                this.console.println("\n There is nothing more that you can find"
+                        + "           \n here.");
+                break;
+        }
     }
 
     private void MorageIVScene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("\n This is Morage IV, The Collector's shop is "
+                + "           \n found here.");
     }
 
     private void Prison() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+
+        switch (scenes[SceneType.Prison.ordinal()].getSceneCompleted()) {
+            case 0:
+                this.console.println("\n You search this Prison and find"
+                        + "           \n Yondu's Headpiece. how did he lose it "
+                        + "           \n here?");
+
+                this.console.println("\n Yondu's Headpiece was added to your "
+                        + "           \n inventory.");
+                items[ItemType.yondus_Headpiece.ordinal()].setQuantityInStock(1);
+                scenes[SceneType.Prison.ordinal()].setSceneCompleted(1);
+                break;
+            case 1:
+                this.console.println("\n There is nothing more that you can find"
+                        + "           \n here.");
+                break;
+        }
     }
 
     private void CollectorsShop() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+
+        switch (scenes[SceneType.The_Collectors_Shop.ordinal()].getSceneCompleted()) {
+            case 0:
+                if (items[ItemType.yondus_Headpiece.ordinal()].getQuantityInStock() == 1) {
+                    this.console.println("\n You enter the collectors shop and "
+                            + "           \n you begin to look around the shop"
+                            + "           \n you see the Aether in a display case."
+                            + "           \n it isn't long before the Collector"
+                            + "           \n comes out and asks you what you are"
+                            + "           \n doing."
+                            + "\n");
+                    this.console.println("\n You tell the collector about your "
+                            + "           \n mission and ask him to let you "
+                            + "           \n use the Aether. He says he will let "
+                            + "           \n you use it if you get him Drax's"
+                            + "           \n knives."
+                            + "\n");
+                    this.console.println("\n He says you might want to check The"
+                            + "           \n Kyln for them. He said he heard they"
+                            + "           \n have a stockpile of random things."
+                            + "\n");
+                    this.console.println("\n You hand him the knives and he "
+                            + "           \n reluctantly hands over the Aether."
+                            + "\n ");
+                    this.console.println("\n The Aether was added to your "
+                            + "           \n inventory!");
+                    items[ItemType.drax_Knives.ordinal()].setQuantityInStock(0);
+                    items[ItemType.aether.ordinal()].setQuantityInStock(1);
+                    scenes[SceneType.The_Collectors_Shop.ordinal()].setSceneCompleted(2);
+                    break;
+
+                } else {
+                    this.console.println("\n You enter the collectors shop and "
+                            + "           \n you begin to look around the shop"
+                            + "           \n you see the Aether in a display case."
+                            + "           \n it isn't long before the Collector"
+                            + "           \n comes out and asks you what you are"
+                            + "           \n doing."
+                            + "\n");
+                    this.console.println("\n You tell the collector about your "
+                            + "           \n mission and ask him to let you "
+                            + "           \n use the Aether. He says he will let "
+                            + "           \n you use it if you get him Drax's"
+                            + "           \n knives."
+                            + "\n");
+                    this.console.println("\n He says you might want to check The"
+                            + "           \n Kyln for them. He said he heard they"
+                            + "           \n have a stockpile of random things."
+                            + "\n");
+                    scenes[SceneType.The_Collectors_Shop.ordinal()].setSceneCompleted(1);
+                    break;
+                }
+            case 1:
+                if (items[ItemType.yondus_Headpiece.ordinal()].getQuantityInStock() == 1) {
+                    this.console.println("\n You hand him the knives and he "
+                            + "           \n reluctantly hands over the Aether."
+                            + "\n ");
+                    this.console.println("\n The Aether was added to your "
+                            + "           \n inventory!");
+                    items[ItemType.drax_Knives.ordinal()].setQuantityInStock(0);
+                    items[ItemType.aether.ordinal()].setQuantityInStock(1);
+                    scenes[SceneType.The_Collectors_Shop.ordinal()].setSceneCompleted(2);
+                    break;
+                } else {
+                    this.console.println("\n The Collector tells you to come back"
+                            + "           \n when you have the knives"
+                            + "\n");
+                    this.console.println("\n He says you might want to check The"
+                            + "           \n Kyln for them. He said he heard they"
+                            + "           \n have a stockpile of random things."
+                            + "\n");
+                    break;
+                }
+            case 2:
+                this.console.println("\n The Collector says that there is nothing"
+                        + "           \n more he can do for you.");
+                break;
+        }
     }
 
     private void Temple() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("\n Starlord tells you of the time he visited this "
+                + "           \n temple and found the Orb."
+                + "\n");
+        this.console.println("\n Didn't he leave the Orb with Nova Core?");
     }
 
     private void AsgardScene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("\n This is Asgard, once home to Thor.");
     }
 
     private void HallOfrelics() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+
+        switch (scenes[SceneType.Hall_of_Relics.ordinal()].getSceneCompleted()) {
+            case 0:
+                this.console.println("\n You come to a locked door but you can"
+                        + "           \n see the Tesseract through the door."
+                        + "\n");
+                this.console.println("\n You better go talk to whoever is "
+                        + "           \n in charge of this place");
+                break;
+            case 1:
+                this.console.println("\n You put the Vault key in the lock and "
+                        + "           \n the door openes. You grab the Tesseract."
+                        + "\n");
+                this.console.println("\n The Tesseract has been added to your"
+                        + "           \n inventory!");
+                items[ItemType.tesseract.ordinal()].setQuantityInStock(1);
+                items[ItemType.vault_Key.ordinal()].setQuantityInStock(0);
+                scenes[SceneType.Hall_of_Relics.ordinal()].setSceneCompleted(2);
+                break;
+            case 2:
+                this.console.println("\n You alread got the Tesseract, you shouldn't"
+                        + "           \n take anything else here.");
+                break;
+        }
     }
 
     private void ThroneRoom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+
+        switch (scenes[SceneType.Throne_Room.ordinal()].getSceneCompleted()) {
+            case 0:
+                this.console.println("\n You enter the throne room to find Loki"
+                        + "           \n sitting on the throne. You tell Loki "
+                        + "           \n about your quest."
+                        + "\n"
+                        + "           \n He says that he wants Thantos dead too"
+                        + "           \n so that he will stop hunting him down."
+                        + "           \n he will let you take the Vault Key to"
+                        + "           \n get the Tesseract from the Hall of Relics."
+                        + "\n");
+                this.console.println("\n The Vault Key has been added to your "
+                        + "           \n inventory");
+                items[ItemType.vault_Key.ordinal()].setQuantityInStock(1);
+                scenes[SceneType.Throne_Room.ordinal()].setSceneCompleted(1);
+                scenes[SceneType.Hall_of_Relics.ordinal()].setSceneCompleted(1);
+                break;
+            case 1:
+                this.console.println("\n Loki tells you to leave before he "
+                        + "           \n changes his mind on wanting to help you.");
+                break;
+
+        }
     }
 
     private void Bifrost() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("\n This Place lets you move to any sector"
+                + "           \n free of fuel and time."
+                + "\n"
+                + "           \n Would you like to move (Y/N)");
+        String response = this.getInput();
+        response = response.toUpperCase();
+        switch (response) {
+            case "Y":
+                StarMapMenuView StarMapView = new StarMapMenuView();
+                StarMapView.displayStarMap();
+                MapView mapView = new MapView();
+                mapView.setSectorJump(Boolean.TRUE);
+                mapView.display();
+                StarMapView.displayStarMap();
+                break;
+            
+            case "N":
+                break;
+            
+            default:
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
+                break;
+        
     }
 
 //    private class console {
@@ -282,4 +784,8 @@ public abstract class LocationMenuView extends View {
 //    }
 }
 
-
+    @Override
+    public boolean doAction(String menu) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}

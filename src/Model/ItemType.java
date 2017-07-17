@@ -22,6 +22,9 @@ public enum ItemType {
     drax_Knives,
     vault_Key,
     walkman,
-    fuel;
+    fuel,
+    money;
+    
+            
     
 }

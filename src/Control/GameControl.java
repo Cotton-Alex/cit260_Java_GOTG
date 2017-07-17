@@ -223,6 +223,15 @@ public class GameControl {
         fuel.setQuantityInStock(100); //Todo: set staring fuel
         fuel.setRequiredAmount(0);
         inventory[ItemType.fuel.ordinal()] = fuel;
+        
+        Item money = new Item();
+        money.setName("Money");
+        money.setItemLocationCol(0);
+        money.setItemLocationRow(0);
+        money.setWeight(0);
+        money.setQuantityInStock(300); 
+        money.setRequiredAmount(0);
+        inventory[ItemType.money.ordinal()] = money;
 
         return inventory;
     }

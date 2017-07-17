@@ -121,19 +121,15 @@ public class StarMapMenuView extends View {
      private void interactWithCurrentScene() {
         Scene scene = GOTG.getCurrentGame().getMap().getCurrentScene();
          console.println("You have arrived at " + scene.getName());
-        if (scene.getItem()!= null){
-             String saveMenu = display;
-        display = ("You look around the room and find " + scene.getItem().getName() + ". \nWould you like to pick it up?  (Y/N)");
-        String response = this.getInput();
-        display = saveMenu;
-        if (response.toUpperCase()=="Y"){
-            GOTG.getCurrentGame().addToBackpack(scene.getItem());
-            scene.setItem(null);
+        
+        LocationMenuView locationMenu = new LocationMenuView(); 
+        locationMenu.SceneChoice(scene.getLocationNumber());
+        
         }
             
-        }
+        
             
-    }
+    
 
     private void fuelAndTimeAmount() {
         this.console.println("*** Display the current level of fuel"
