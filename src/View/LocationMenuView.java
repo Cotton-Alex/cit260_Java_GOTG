@@ -116,7 +116,7 @@ public class LocationMenuView extends View {
         
         if(items[ItemType.Eye_of_Agamotto.ordinal()].getQuantityInStock() == 1 && items[ItemType.aether.ordinal()].getQuantityInStock() == 1 && items[ItemType.mindStone.ordinal()].getQuantityInStock() == 1 && items[ItemType.orb.ordinal()].getQuantityInStock() == 1 && items[ItemType.soulStone.ordinal()].getQuantityInStock() == 1 & items[ItemType.tesseract.ordinal()].getQuantityInStock() == 1){
         this.console.println("\n Thantos arrives at earth and finds you waiting "
-                + "           \n waiting to meet him. You see a look of fear in "
+                + "           \n to meet him. You see a look of fear in "
                 + "           \n his eyes when he sees the six glowing stones in"
                 + "           \n your hands."
                 + "\n"
