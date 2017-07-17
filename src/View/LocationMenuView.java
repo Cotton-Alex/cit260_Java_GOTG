@@ -649,7 +649,7 @@ public class LocationMenuView extends View {
 
         switch (scenes[SceneType.The_Collectors_Shop.ordinal()].getSceneCompleted()) {
             case 0:
-                if (items[ItemType.yondus_Headpiece.ordinal()].getQuantityInStock() == 1) {
+                if (items[ItemType.drax_Knives.ordinal()].getQuantityInStock() == 1) {
                     this.console.println("\n You enter the collectors shop and "
                             + "           \n you begin to look around the shop"
                             + "           \n you see the Aether in a display case."
@@ -699,7 +699,7 @@ public class LocationMenuView extends View {
                     break;
                 }
             case 1:
-                if (items[ItemType.yondus_Headpiece.ordinal()].getQuantityInStock() == 1) {
+                if (items[ItemType.drax_Knives.ordinal()].getQuantityInStock() == 1) {
                     this.console.println("\n You hand him the knives and he "
                             + "           \n reluctantly hands over the Aether."
                             + "\n ");
