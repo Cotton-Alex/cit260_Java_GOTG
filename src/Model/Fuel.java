@@ -5,11 +5,13 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Justin
  */
-public class Fuel {
+public class Fuel implements Serializable {
     
     private int fuelRemaining;
 
