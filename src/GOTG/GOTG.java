@@ -5,6 +5,7 @@ package GOTG;
 
 import Model.Player;
 import Model.Game;
+import View.MainMenuView;
 import View.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,48 +28,53 @@ public class GOTG {
 
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
-    
+
     private static PrintWriter logFile = null;
 
 //********************************************************************************************************************
 //     01 MAIN - the start
 //********************************************************************************************************************
     public static void main(String[] args) {
-        
+
         try {
             GOTG.inFile = new BufferedReader(new InputStreamReader(System.in));
             GOTG.outFile = new PrintWriter(System.out, true);
-            
+
             // open log file
-            String filePath= "log.txt";
+            String filePath = "log.txt";
             GOTG.logFile = new PrintWriter(filePath);
 
+            MainMenuView mainMenuView = new MainMenuView();
+
+            // Display the main menu view
+            mainMenuView.display();
+
             //StartProgramView startProgramView = new StartProgramView();
-            StartProgramView startProgramView = new StartProgramView();
-            startProgramView.displayStartProgramView();
-            return;
+//            StartProgramView startProgramView = new StartProgramView();
+//            startProgramView.displayStartProgramView();
+
         } catch (Throwable te) {
             System.out.println(te.getMessage());
-            te.printStackTrace();
-        }
-        
-        finally{
+        } finally {
             try {
-                if (GOTG.inFile != null)
+                if (GOTG.inFile != null) {
                     GOTG.inFile.close();
-                
-                if (GOTG.outFile != null)
+                }
+
+                if (GOTG.outFile != null) {
                     GOTG.outFile.close();
-                
-                if (GOTG.logFile != null)
+                }
+
+                if (GOTG.logFile != null) {
                     GOTG.logFile.close();
+                }
             } catch (IOException ex) {
                 System.out.println("Error closing files");
                 return;
             }
-            
+
         }
-        
+
     }
 
     public static Game getCurrentGame() {
@@ -111,7 +117,6 @@ public class GOTG {
         GOTG.logFile = logFile;
     }
 
-    
     private static class player {
 
         public player() {

@@ -8,6 +8,8 @@ package View;
 
 import Control.GameControl;
 import GOTG.GOTG;
+import Model.Player;
+import Model.Game;
 //import java.util.Scanner;
 
 /**
@@ -65,11 +67,38 @@ public class MainMenuView extends View {
         // create a new game
         GameControl.createNewGame(GOTG.getPlayer());
 
+        //StartProgramView startProgramView = new StartProgramView();
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
+
         //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+//        GameMenuView gameMenu = new GameMenuView();
+//        gameMenu.display();
     }
 
+//    private void startExistingGame() {
+//        // prompt for and get the name of the file to save the game in
+//        this.console.println("\n\nEnter the file path for file where the game is to be saved");
+//
+//        String filePath = this.getInput();
+//
+//        this.console.println("1");
+//        try {
+//            //start a saved game
+//            GameControl.getExsistingGame(filePath);
+//            this.console.println("2");
+//            Game game = GOTG.getCurrentGame();
+//            this.console.println("3");
+//            Player player = GOTG.getPlayer();
+//
+//            String playerName = player.getName();
+//            this.console.println("4");
+//            this.displayNextView(playerName);
+//            this.console.println("5");
+//        } catch (Exception ex) {
+//            ErrorView.display("MainMenuView", ex.getMessage());
+//        }
+//    }
     private void startExistingGame() {
         // prompt for and get the name of the file to save the game in
         this.console.println("\n\nEnter the file path for file where the game is to be saved");
@@ -88,6 +117,43 @@ public class MainMenuView extends View {
         gameMenu.display();
     }
 
+//    private void displayNextView(String playerName) {
+//        this.console.println("6");
+//        this.console.println(
+//                "\n=========================================================="
+//                + "\nHey, " + playerName + "."
+//                + "\nBack again for more?"
+//                + "\n=========================================================="
+//        );
+//        // Create MainMenuObject
+//        this.console.println("7");
+//        MainMenuView mainMenuView = new MainMenuView();
+//        this.console.println("1");
+//        // Display the main menu view
+//        mainMenuView.display();
+//    }
+//    private void startExistingGame() {
+//        // prompt for and get the name of the file to save the game in
+//        this.console.println("\n\nEnter the file path for file where the game is to be saved");
+//
+//        String filePath = this.getInput();
+//
+//        try {
+//            //start a saved game
+//            GameControl.getExsistingGame(filePath);
+//        } catch (Exception ex) {
+//            ErrorView.display("MainMenuView", ex.getMessage());
+//        }
+//        String playerName = Player.getName
+//        );
+//        this.console.println(playerName);
+//        // display the game menu
+//        GameMenuView gameMenu = new GameMenuView();
+//        gameMenu.display();
+//    }
+    // display the game menu
+//        GameMenuView gameMenu = new GameMenuView();
+//        gameMenu.display();
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayHelpMenuView();
