@@ -136,7 +136,7 @@ public class StartProgramView extends View {
             +"\n=========================================================="
         );
         // Create MainMenuObject
-        MainMenuView mainMenuView = new MainMenuView();
+        GameMenuView mainMenuView = new GameMenuView();
 
         // Display the main menu view
         mainMenuView.display();

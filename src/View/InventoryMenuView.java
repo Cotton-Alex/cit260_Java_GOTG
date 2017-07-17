@@ -65,21 +65,20 @@ public class InventoryMenuView extends View {
         int j = 0;
         Game game = GOTG.getCurrentGame();
 
-        if (game.getInventory() == null) {
-            ErrorView.display(this.getClass().getName(), "inventory has not yet been initialized");
-        }
+        
 
         Item[] items = game.getInventory();
 
         for (int i = 0; i < ItemType.values().length; i++) {
             if (items[i].getQuantityInStock() >= 1) {
-                System.out.println(items[i].getItemType()); // Fix Output
+                this.console.println(items[i].getItemType()); // Fix Output
                 j++;
             }
         }
-        if (j == 0) {
-            ErrorView.display(this.getClass().getName(), "you have no items in your inventory"); //Fix Error
+        if (j == 0){
+            this.console.println("\n You have no items in your inventory.");
         }
+       
     }
 
     private void shipsInventory() {

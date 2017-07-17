@@ -138,6 +138,7 @@ public class LocationMenuView extends View {
     private void StarLordsHome() {
         Game game = GOTG.getCurrentGame();
         Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
         if (scenes[SceneType.Starlords_Home.ordinal()].getSceneCompleted() == 0) {
             this.console.println("\n this is starlords home, or at least it was.");
             this.console.println("\n as you look around you find his old walkman"
@@ -147,6 +148,7 @@ public class LocationMenuView extends View {
                     + "           \n The Walkman has been added to your inventory!!");
 
             scenes[SceneType.Starlords_Home.ordinal()].setSceneCompleted(1);
+            items[ItemType.walkman.ordinal()].setQuantityInStock(1);
 
         } else if (scenes[SceneType.Starlords_Home.ordinal()].getSceneCompleted() == 1) {
             this.console.println("\n There is nothing else you can find here");
@@ -386,6 +388,8 @@ public class LocationMenuView extends View {
                             items[ItemType.money.ordinal()].setQuantityInStock(items[ItemType.money.ordinal()].getQuantityInStock() - 500);
                             items[ItemType.eco_Boost.ordinal()].setQuantityInStock(1);
                             scenes[SceneType.Mechanic.ordinal()].setSceneCompleted(1);
+                            this.console.println("\n The Eco-Boost has been installed"
+                                    + "           \n on your ship.");
                             break;
                         } else {
                             ErrorView.display(this.getClass().getName(), "\nYou do not have enough money. Try again later");
@@ -505,7 +509,49 @@ public class LocationMenuView extends View {
     }
 
     private void Stockpile() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = GOTG.getCurrentGame();
+        Scene[] scenes = game.getScenes();
+        Item[] items = game.getInventory();
+
+        switch (scenes[SceneType.Stockpile.ordinal()].getSceneCompleted()) {
+            case 0:
+                this.console.println("\n You enter the Stockpile and Find one of"
+                        + "           \n Yondu's men guarding his treasure."
+                        + "           \n He says that for $500 he will steal"
+                        + "           \n Drax's Knives for you. "
+                        
+                        + "\n");
+                this.console.println("\n Do you what to pay $500 to get Drax's Knives?"
+                    
+                        + "           \n Y for yes or N for no.");
+                String response = this.getInput();
+                response = response.toUpperCase();
+                switch (response) {
+                    case "Y":
+                        if (items[ItemType.money.ordinal()].getQuantityInStock() >= 500) {
+                            items[ItemType.money.ordinal()].setQuantityInStock(items[ItemType.money.ordinal()].getQuantityInStock() - 500);
+                            items[ItemType.drax_Knives.ordinal()].setQuantityInStock(1);
+                            scenes[SceneType.Stockpile.ordinal()].setSceneCompleted(1);
+                            this.console.println("\n You recive Drax's Knives");
+                                   
+                            break;
+                        } else {
+                            ErrorView.display(this.getClass().getName(), "\nYou do not have enough money. Try again later");
+                            break;
+                        }
+                    case "N":
+                        break;
+                    default:
+                        ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
+                        break;
+
+                }
+                break;
+            case 1:
+                this.console.println("\n The Man says there is nothing more"
+                        + "           \n he can do for you.");
+                break;
+        }
     }
 
     private void KnowhwereScene() {
