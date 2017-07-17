@@ -71,7 +71,7 @@ public class InventoryMenuView extends View {
 
         for (int i = 0; i < ItemType.values().length; i++) {
             if (items[i].getQuantityInStock() >= 1) {
-                this.console.println(items[i].getItemType()); // Fix Output
+                this.console.println(items[i].getName()); 
                 j++;
             }
         }

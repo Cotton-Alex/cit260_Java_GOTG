@@ -217,6 +217,7 @@ public class GameControl {
 
         Item fuel = new Item();
         fuel.setName("fuel");
+        fuel.setItemType(ItemType.fuel);
         fuel.setItemLocationCol(0);
         fuel.setItemLocationRow(0);
         fuel.setWeight(0);
