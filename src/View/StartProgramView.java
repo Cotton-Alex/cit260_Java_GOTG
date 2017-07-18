@@ -7,13 +7,14 @@ package View;
 
 import Control.GameControl;
 import Model.Player;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
  *
  * @author alexcotton
  */
-public class StartProgramView extends View {
+public final class StartProgramView extends View {
 
     public void displayStartProgramView() {
 
@@ -36,7 +37,7 @@ public class StartProgramView extends View {
     }
 
     private String getPlayersName() {
-       ; // get infile for keyboard
+        // get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; //initialize to not valid
         try {
@@ -52,13 +53,13 @@ public class StartProgramView extends View {
             }
             break; // end the loop
         }
-        } catch (Exception e) {
+        } catch (IOException e) {
             ErrorView.display(this.getClass().getName(),"Error reading input: " + e.getMessage());
         }
         return value; // return the value entered
     }
 
-    private String promptMessage;
+    private final String promptMessage;
 
     public StartProgramView() {
         this.promptMessage = "\nPlease enter your name: ";
@@ -109,6 +110,7 @@ public class StartProgramView extends View {
         );
     }
 
+    @Override
     public boolean doAction(String playersName) {  //originally was public
         if (playersName.length() < 2) { //if the players name is less than 2 characters
             ErrorView.display(this.getClass().getName(),"\nInvalid players name: "
@@ -127,7 +129,7 @@ public class StartProgramView extends View {
 
         return true; //success!
     }
-
+    
     private void displayNextView(Player player) {
         this.console.println(
              "\n=========================================================="

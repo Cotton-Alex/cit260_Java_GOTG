@@ -107,7 +107,8 @@ public class StarMapMenuView extends View {
         MapView mapView = new MapView();
         mapView.setSectorJump(Boolean.TRUE);
         mapView.display();
-        displayStarMap();
+        interactWithCurrentScene();
+        //displayStarMap();
     }
      private void moveToSite() {
         displayStarMap();

@@ -13,6 +13,7 @@ import Model.ItemType;
 import Model.Map;
 import Model.Scene;
 import Model.SceneType;
+import Model.Time;
 
 /**
  *
@@ -42,17 +43,38 @@ public class MapControl {
         return map;
     }
 
+//    private static class Time.timeRemaining extends Time {
+//
+//        public static void timeRemaining() {
+//        }
+//    }
     public static void movePlayerToStartingLocation(Map map) {
         // If starting location is not supposed to be 0,0 then use the correct values here.
         try {
-            movePlayer(map, 0, 0); // TODO: maybe instead of 0,0 you can select a different starting location
+            movePlayerToStart(map, 0, 0); // TODO: maybe instead of 0,0 you can select a different starting location
         } catch (MapControlExceptions mce) {
             //we are not going to do anything here
         }
     }
 
+    public static void movePlayerToStart(Map map, int row, int column)
+            throws MapControlExceptions {
+
+        if (map == null) {
+            throw new MapControlExceptions("You dont have a map initialized.");
+        }
+        if (row < 0 || row >= map.getRowCount() || column < 0 || column >= map.getColumnCount()) {
+            throw new MapControlExceptions("You are trying to fly off the edge of the Galaxy.");
+        }
+        map.setCurrentLocation(map.getLocations()[row][column]);
+        map.getCurrentLocation().setVisited(true);
+        map.setCurrentRow(row);
+        map.setCurrentColumn(column);
+    }
+
     public static void movePlayer(Map map, int row, int column)
             throws MapControlExceptions {
+
         if (map == null) {
             throw new MapControlExceptions("You dont have a map initialized.");
         }
@@ -60,11 +82,35 @@ public class MapControl {
             throw new MapControlExceptions("You are trying to fly off the edge of the Galaxy.");
         }
 
-        map.setCurrentLocation(map.getLocations()[row][column]);
-        map.getCurrentLocation().setVisited(true);
-        map.setCurrentRow(row);
-        map.setCurrentColumn(column);
+        if (row == map.getCurrentRow()) {
+            if (column != map.getCurrentColumn()) {
+                //Time.setTimeElapsed = (Time.timeElapsed + 1);
+                Time.timeElapsed += 1;
+                Time.timeRemaining = (Time.totalTime - Time.timeElapsed);
+                int timeRemaining = Time.getTimeRemaining();
 
+                map.setCurrentLocation(map.getLocations()[row][column]);
+                map.getCurrentLocation().setVisited(true);
+                map.setCurrentRow(row);
+                map.setCurrentColumn(column);
+                
+                System.out.println("You have " + Time.getTimeRemaining() + " hours left.");
+            }
+        }
+
+        if (column == map.getCurrentColumn() && row != map.getCurrentRow()) {
+            //Time.setTimeElapsed = (Time.timeElapsed + 1);
+            Time.timeElapsed += 8;
+            Time.timeRemaining = (Time.totalTime - Time.timeElapsed - 1);
+            int timeRemaining = Time.getTimeRemaining();
+
+            map.setCurrentLocation(map.getLocations()[row][column]);
+            map.getCurrentLocation().setVisited(true);
+            map.setCurrentRow(row);
+            map.setCurrentColumn(column);
+            
+            System.out.println("You have " + Time.getTimeRemaining() + " hours left.");
+        }
     }
 
     //TODO add create sceens function
@@ -353,6 +399,7 @@ public class MapControl {
 
         return scenes;
     }
+
 }
 //public void SceneChoice(int sceneNumber){
 //    

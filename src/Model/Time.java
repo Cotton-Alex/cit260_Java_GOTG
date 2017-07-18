@@ -12,25 +12,47 @@ import java.io.Serializable;
  * @author Justin
  */
 public class Time implements Serializable {
-    
-    public int timeRemaining;
 
-    public int getTimeRemaining() {
+    public static int getTimeElapsed;
+    public static int setTimeElapsed;
+
+    
+    /**
+     *
+     */
+    public static int totalTime;
+    public static int timeElapsed;
+    public static int timeRemaining = (totalTime - timeElapsed);
+    
+    public int getTimeElapsed() {
+        return timeElapsed;
+    }
+    
+    public void setTimeElapsed(int timeElapsed) {
+        Time.timeElapsed = timeElapsed;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public static int getTimeRemaining() {
         return timeRemaining;
     }
 
+    /**
+     *
+     * @param timeRemaining
+     */
     public void setTimeRemaining(int timeRemaining) {
-        this.timeRemaining = timeRemaining;
-    }
-
-    public Time() {
-        
+        Time.timeRemaining = timeRemaining;
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 41 * hash + this.timeRemaining;
+        hash = 41 * hash + Time.timeRemaining;
+        hash = 41 * hash + Time.timeElapsed;
         return hash;
     }
 
@@ -46,10 +68,7 @@ public class Time implements Serializable {
             return false;
         }
         final Time other = (Time) obj;
-        if (this.timeRemaining != other.timeRemaining) {
-            return false;
-        }
-        return true;
+        return Time.timeRemaining == Time.timeRemaining;
     }
 
     @Override

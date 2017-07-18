@@ -14,7 +14,9 @@ import java.util.ArrayList;
  */
 public class Game implements Serializable {
 
-    private double totalTime;
+    private int totalTime;
+    private int currentTime;
+    private int timeElapsed;
     private int noPeople;
     private Player player;
     private Ship ship;
@@ -27,9 +29,7 @@ public class Game implements Serializable {
 
     //constructer functions
     public Game() {
-        backpack = new ArrayList<Item>();
-        
-        
+        backpack = new ArrayList<Item>();  
     }
     //getter and setter functions
 
@@ -44,14 +44,30 @@ public class Game implements Serializable {
         this.backpack = backpack;
     }
 
-    public double getTotalTime() {
+    public int getTotalTime() {
         return totalTime;
     }
 
-    public void setTotalTime(double totalTime) {
+    public void setTotalTime(int totalTime) {
         this.totalTime = totalTime;
     }
 
+    public double getcurrentTime() {
+        return currentTime;
+    }
+
+    public void setCurrentTime(int currentTime) {
+        this.currentTime = currentTime;
+    }
+    
+    public int getTimeElapsed() {
+        return timeElapsed;
+    }
+    
+    public void setTimeElapsed(int timeElapsed) {
+        this.timeElapsed = timeElapsed;
+    }
+    
     public int getNoPeople() {
         return noPeople;
     }
@@ -108,9 +124,6 @@ public class Game implements Serializable {
         this.scenes = scenes;
     }
     
-    
-    
-
     public Map getMap() {
         return map;
     }

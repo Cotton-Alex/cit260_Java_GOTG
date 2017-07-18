@@ -43,7 +43,7 @@ public class GOTG {
             // open log file
             String filePath = "log.txt";
             GOTG.logFile = new PrintWriter(filePath);
-
+            
             MainMenuView mainMenuView = new MainMenuView();
 
             // Display the main menu view
