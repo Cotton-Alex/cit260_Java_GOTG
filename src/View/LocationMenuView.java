@@ -121,8 +121,8 @@ public class LocationMenuView extends View {
                 + "           \n your hands."
                 + "\n"
                 + "           \n You channel the power of the stones at Thantos!"
-                + "           \n a beam of awesome raw power leaves the stones!"
-                + "           \n there is just a pile of ash left where thantos"
+                + "           \n A beam of awesome raw power leaves the stones!"
+                + "           \n There is just a pile of ash left where Thantos"
                 + "           \n used to be."
                 + "\n"
                 + "           \n You have save the Galaxy from the threat of "
@@ -166,39 +166,54 @@ public class LocationMenuView extends View {
         Game game = GOTG.getCurrentGame();
         Scene[] scenes = game.getScenes();
         Item[] items = game.getInventory();
-        if (scenes[SceneType.Avengers_HQ.ordinal()].getSceneCompleted() == 0) {
-            this.console.println("\n This is the Avengers HQ, you walk around and"
-                    + "\n you walk around and find Vision.");
-
-            this.console.println("\n "
-                    + "\n Vision tells you that the six infinity stones are:"
-                    + "\n The Mind Stone"
-                    + "\n The Tesseract"
-                    + "\n The Aether"
-                    + "\n The Soul Stone"
-                    + "\n The Eye of Agamotto"
-                    + "\n And The Orb");
-
-            this.console.println("\n Vision will give you the Mind Stone once you have"
-                    + "\n collected the other stones.");
-
-            scenes[SceneType.Avengers_HQ.ordinal()].setSceneCompleted(1);
-
-        } else if (scenes[SceneType.Avengers_HQ.ordinal()].getSceneCompleted() == 1) {
-            if (items[ItemType.orb.ordinal()].getQuantityInStock() == 1 && items[ItemType.tesseract.ordinal()].getQuantityInStock() == 1 && items[ItemType.aether.ordinal()].getQuantityInStock() == 1 && items[ItemType.soulStone.ordinal()].getQuantityInStock() == 1 && items[ItemType.Eye_of_Agamotto.ordinal()].getQuantityInStock() == 1) {
-                this.console.println("\n Vision tells you that you have proven yourself worthy"
-                        + "\n by getting the other stones and give you the Mind Stone! ");
-
-                this.console.println("\n the Mind Stone has been added to your inventory.");
-                items[ItemType.mindStone.ordinal()].setQuantityInStock(1);
-                scenes[SceneType.Avengers_HQ.ordinal()].setSceneCompleted(2);
-            } else {
-                this.console.println("\n Vision tells you to come back after you get"
-                        + "\n all the stones");
-            }
-        } else {
-            this.console.println("/n Vision tells you to end the threat of "
-                    + "\n Thantos now you have all the stones");
+        switch (scenes[SceneType.Avengers_HQ.ordinal()].getSceneCompleted()) {
+            case 0:
+                 if (items[ItemType.orb.ordinal()].getQuantityInStock() == 1 && items[ItemType.tesseract.ordinal()].getQuantityInStock() == 1 && items[ItemType.aether.ordinal()].getQuantityInStock() == 1 && items[ItemType.soulStone.ordinal()].getQuantityInStock() == 1 && items[ItemType.Eye_of_Agamotto.ordinal()].getQuantityInStock() == 1) {
+                    this.console.println("\n Vision tells you that you have proven yourself worthy"
+                            + "\n by getting the other stones and give you the Mind Stone! ");
+                    
+                    this.console.println("\n the Mind Stone has been added to your inventory.");
+                    items[ItemType.mindStone.ordinal()].setQuantityInStock(1);
+                    scenes[SceneType.Avengers_HQ.ordinal()].setSceneCompleted(2);
+                }else{
+                this.console.println("\n This is the Avengers HQ, you walk around and"
+                        + "\n you walk around and find Vision.");
+                this.console.println("\n "
+                        + "\n Vision tells you that the six infinity stones are:"
+                        + "\n The Mind Stone"
+                        + "\n The Tesseract"
+                        + "\n The Aether"
+                        + "\n The Soul Stone"
+                        + "\n The Eye of Agamotto"
+                        + "\n And The Orb");
+                this.console.println("\n Vision will give you the Mind Stone once you have"
+                        + "\n collected the other stones.");
+                scenes[SceneType.Avengers_HQ.ordinal()].setSceneCompleted(1);
+                break;
+                 }
+            case 1:
+                if (items[ItemType.orb.ordinal()].getQuantityInStock() == 1 && items[ItemType.tesseract.ordinal()].getQuantityInStock() == 1 && items[ItemType.aether.ordinal()].getQuantityInStock() == 1 && items[ItemType.soulStone.ordinal()].getQuantityInStock() == 1 && items[ItemType.Eye_of_Agamotto.ordinal()].getQuantityInStock() == 1) {
+                    this.console.println("\n Vision tells you that you have proven yourself worthy"
+                            + "\n by getting the other stones and give you the Mind Stone! ");
+                    
+                    this.console.println("\n the Mind Stone has been added to your inventory.");
+                    items[ItemType.mindStone.ordinal()].setQuantityInStock(1);
+                    scenes[SceneType.Avengers_HQ.ordinal()].setSceneCompleted(2);
+                } else {
+                    this.console.println("\n Vision tells you to come back after you get"
+                            + "\n all the stones"
+                            + "\n he also reminds you that the stones are:"
+                            + "\n The Mind Stone"
+                            + "\n The Tesseract"
+                            + "\n The Aether"
+                            + "\n The Soul Stone"
+                            + "\n The Eye of Agamotto"
+                            + "\n And The Orb");
+                }   break;
+            case 2:
+                this.console.println("/n Vision tells you to end the threat of "
+                        + "\n Thantos now you have all the stones");
+                break;
         }
     }
 

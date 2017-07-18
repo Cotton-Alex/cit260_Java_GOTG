@@ -68,10 +68,12 @@ public class InventoryMenuView extends View {
         
 
         Item[] items = game.getInventory();
-
+this.console.print("" + "Items" );
+this.console.print("      " + "      " + "Amount\n");
         for (int i = 0; i < ItemType.values().length; i++) {
             if (items[i].getQuantityInStock() >= 1) {
-                this.console.println(items[i].getName()); 
+                this.console.print("" + items[i].getName());
+                this.console.print("      " + "      " + items[i].getQuantityInStock() + "\n");
                 j++;
             }
         }
