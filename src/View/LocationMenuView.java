@@ -119,18 +119,18 @@ public class LocationMenuView extends View {
         Item[] items = game.getInventory();
         
         if(items[ItemType.Eye_of_Agamotto.ordinal()].getQuantityInStock() == 1 && items[ItemType.aether.ordinal()].getQuantityInStock() == 1 && items[ItemType.mindStone.ordinal()].getQuantityInStock() == 1 && items[ItemType.orb.ordinal()].getQuantityInStock() == 1 && items[ItemType.soulStone.ordinal()].getQuantityInStock() == 1 & items[ItemType.tesseract.ordinal()].getQuantityInStock() == 1){
-        this.console.println("\n Thantos arrives at earth and finds you waiting "
+        this.console.println("\n Thanos arrives at earth and finds you waiting "
                 + "           \n to meet him. You see a look of fear in "
                 + "           \n his eyes when he sees the six glowing stones in"
                 + "           \n your hands."
                 + "\n"
-                + "           \n You channel the power of the stones at Thantos!"
+                + "           \n You channel the power of the stones at Thanos!"
                 + "           \n A beam of awesome raw power leaves the stones!"
-                + "           \n There is just a pile of ash left where Thantos"
+                + "           \n There is just a pile of ash left where Thanos"
                 + "           \n used to be."
                 + "\n"
                 + "           \n You have save the Galaxy from the threat of "
-                + "           \n Thantos!"
+                + "           \n Thanos!"
                 + "\n"
                 + "           \n You Win!!");
         System.exit(0);
@@ -144,8 +144,9 @@ public class LocationMenuView extends View {
         Scene[] scenes = game.getScenes();
         Item[] items = game.getInventory();
         if (scenes[SceneType.Starlords_Home.ordinal()].getSceneCompleted() == 0) {
-            this.console.println("\n this is starlords home, or at least it was.");
+            this.console.println("\n This is starlords home, or at least it was before Yondu and his crew picked him up.");
             this.console.println("\n As you look around you find his old walkman!"
+                    + "           \n A huge feeling of nostalgia washes over Starlord and a big grin on his face!"
                     + "           \n You feel its a good idea to take it along with "
                     + "           \n you."
                     + "\n"
@@ -161,9 +162,12 @@ public class LocationMenuView extends View {
     }
 
     private void EarthBar() {
-        this.console.println("\n As you go around the bar, you talk to some people."
-                + "\n They tell you that Dr. Strange has the Eye of "
-                + "           \n Agamoto somewhere on Knowhere");
+        this.console.println("\n You look around the bar and everything seems normal."
+                + "\n You lock eyes with a woman in the corner who has a concerned look on her face."
+                + "\n After pulling her to the back room, she changes before your eyes reveals that she is a skrull."
+                + "\n She pleads for you to not tell of her precense here and will tell you anything you want."
+                + "\n You tell her who you are looking for she tells you that "
+                + "\n Dr. Strange has the Eye of Agamoto somewhere on Knowhere");
     }
 
     private void EarthAvengersHQ() {
@@ -180,16 +184,16 @@ public class LocationMenuView extends View {
                     items[ItemType.mindStone.ordinal()].setQuantityInStock(1);
                     scenes[SceneType.Avengers_HQ.ordinal()].setSceneCompleted(2);
                 }else{
-                this.console.println("\n This is the Avengers HQ, you walk around and"
-                        + "\n you walk around and find Vision.");
+                this.console.println("\n This is the Avengers HQ, home of Earth's Mightiest Heros."
+                        + "\n You enter the facility and are greeted by Vision.");
                 this.console.println("\n "
-                        + "\n Vision tells you that the six infinity stones are:"
+                        + "\n Vision the six Infinity Stone to you:"
                         + "\n The Mind Stone"
-                        + "\n The Tesseract"
-                        + "\n The Aether"
+                        + "\n The Tesseract or Space Stone"
+                        + "\n The Aether or Reality Stone"
                         + "\n The Soul Stone"
-                        + "\n The Eye of Agamotto"
-                        + "\n And The Orb");
+                        + "\n The Eye of Agamotto or Time Stone"
+                        + "\n And The Orb or Power Stone");
                 this.console.println("\n Vision will give you the Mind Stone once you have"
                         + "\n collected the other stones.");
                 scenes[SceneType.Avengers_HQ.ordinal()].setSceneCompleted(1);
@@ -197,8 +201,8 @@ public class LocationMenuView extends View {
                  }
             case 1:
                 if (items[ItemType.orb.ordinal()].getQuantityInStock() == 1 && items[ItemType.tesseract.ordinal()].getQuantityInStock() == 1 && items[ItemType.aether.ordinal()].getQuantityInStock() == 1 && items[ItemType.soulStone.ordinal()].getQuantityInStock() == 1 && items[ItemType.Eye_of_Agamotto.ordinal()].getQuantityInStock() == 1) {
-                    this.console.println("\n Vision tells you that you have proven yourself worthy"
-                            + "\n by getting the other stones and give you the Mind Stone! ");
+                    this.console.println("\n Vision senses you that you have proven yourself worthy"
+                            + "\n by getting the other stones and presents you with the Mind Stone! ");
                     
                     this.console.println("\n the Mind Stone has been added to your inventory.");
                     items[ItemType.mindStone.ordinal()].setQuantityInStock(1);
@@ -208,21 +212,21 @@ public class LocationMenuView extends View {
                             + "\n all the stones"
                             + "\n he also reminds you that the stones are:"
                             + "\n The Mind Stone"
-                            + "\n The Tesseract"
-                            + "\n The Aether"
+                            + "\n The Tesseract or Space Stone"
+                            + "\n The Aether or Reality Stone"
                             + "\n The Soul Stone"
-                            + "\n The Eye of Agamotto"
-                            + "\n And The Orb");
+                            + "\n The Eye of Agamotto or Time Stone"
+                            + "\n And The Orb or Power Stone");
                 }   break;
             case 2:
                 this.console.println("/n Vision tells you to end the threat of "
-                        + "\n Thantos now you have all the stones");
+                        + "\n Thanos now you have all the stones");
                 break;
         }
     }
 
     private void HalaScene() {
-        this.console.println("\n This is Hala, home of the Skrull.");
+        this.console.println("\n This is Hala, home of the shape shifting Skrull.");
     }
 
     private void HalaBar() {
@@ -239,14 +243,15 @@ public class LocationMenuView extends View {
         switch (scenes[SceneType.Skrull_Palace.ordinal()].getSceneCompleted()) {
             case 0:
                 if (items[ItemType.knowledge_of_the_soulstone.ordinal()].getQuantityInStock() == 1) {
-                    this.console.println("\n You enter the Skrull Palace and "
-                            + "           \n find Hela. She tells you that Loki"
-                            + "           \n has the Tesseract.");
+                    this.console.println("\n You enter the Skrull Palace, the place seems deserted. "
+                            + "           \n Suddenly, you are greeted with Hela's Presence."
+                            + "           \n She tells you that Loki has the Tesseract and sits on the Throne of Asgard.");
 
                     this.console.println("\n Knowing that she is the Soul Stone,"
-                            + "           \n you confront her about it. Hela then"
+                            + "           \n you confront her about it. She treatens to throw you to"
+                            + "           \n to the depths of Niflheim.  You don't stand down and Hela"
                             + "           \n gives up her deception and agrees to"
-                            + "           \n led you her power.");
+                            + "           \n lend you her power.");
 
                     this.console.println("\n You recive the Soul Stone!");
                     items[ItemType.soulStone.ordinal()].setQuantityInStock(1);
@@ -255,14 +260,13 @@ public class LocationMenuView extends View {
                     break;
 
                 } else {
-                    this.console.println("\n You enter the Skrull Palace and "
-                            + "           \n find Hela. She tells you that Loki"
-                            + "           \n has the Tesseract.");
+                    this.console.println("\n You enter the Skrull Palace, the place seems deserted. "
+                            + "           \n Suddenly, you are greeted with Hela's Presence."
+                            + "           \n She tells you that Loki has the Tesseract and sits on the Throne of Asgard.");
                 }
                 break;
             case 1:
-                this.console.println("\n Hela says there is nothing more she can"
-                        + "           \n do for you.");
+                this.console.println("\n Hela says there is nothing more to discuss");
                 break;
         }
     }
@@ -289,7 +293,7 @@ public class LocationMenuView extends View {
     }
 
     private void XandarScene() {
-        this.console.println("\n This is Xandar, home of the Nova Core.");
+        this.console.println("\n This is Xandar, home of the Nova Core and shining light of the Galaxy.");
     }
 
     private void NovaPrime() {
@@ -306,16 +310,16 @@ public class LocationMenuView extends View {
                             + "           \n mission."
                             + "\n"
                             + "           \n She says that she has the Orb but"
-                            + "           \n she wont give it to you with out "
+                            + "           \n she won't give it to you with out "
                             + "           \n some kind of item that you would "
                             + "           \n come back for as collateral.");
 
-                    this.console.println("\n To Starlords dismay, you offer her"
+                    this.console.println("\n With a bit of whining from Starlord, you offer her"
                             + "           \n the walkman as collateral."
                             + "\n"
-                            + "           \n She then give a command to one of "
-                            + "           \n her men nearby and says to go to"
-                            + "           \n Nova Command to recieve the Orb.");
+                            + "           \n She then gives a command to one of "
+                            + "           \n her men nearby to retrieve the item from the Vault."
+                            + "           \n You accompany them and receive the Orb");
                     items[ItemType.walkman.ordinal()].setQuantityInStock(0);
                     scenes[SceneType.Nova_Command.ordinal()].setSceneCompleted(1);
                     scenes[SceneType.Nova_Prime.ordinal()].setSceneCompleted(2);
@@ -327,7 +331,7 @@ public class LocationMenuView extends View {
                             + "           \n mission."
                             + "\n"
                             + "           \n She says that she has the Orb but"
-                            + "           \n she wont give it to you with out "
+                            + "           \n she won't give it to you with out "
                             + "           \n some kind of item that you would "
                             + "           \n come back for as collateral.");
                     scenes[SceneType.Nova_Prime.ordinal()].setSceneCompleted(1);
@@ -335,12 +339,12 @@ public class LocationMenuView extends View {
                 }
             case 1:
                 if (items[ItemType.walkman.ordinal()].getQuantityInStock() == 1) {
-                    this.console.println("\n To Starlords dismay, you offer her"
+                    this.console.println("\n With a bit of whining from Starlord, you offer her"
                             + "           \n the walkman as collateral."
                             + "\n"
                             + "           \n She then give a command to one of "
-                            + "           \n her men nearby and says to go to"
-                            + "           \n Nova Command to recieve the Orb.");
+                            + "           \n her men nearby to retrieve the item from the Vault."
+                            + "           \n You accompany them and receive the Orb.");
                     items[ItemType.walkman.ordinal()].setQuantityInStock(0);
                     scenes[SceneType.Nova_Command.ordinal()].setSceneCompleted(1);
                     scenes[SceneType.Nova_Prime.ordinal()].setSceneCompleted(2);
@@ -352,7 +356,8 @@ public class LocationMenuView extends View {
                 }
             case 2:
                 this.console.println("\n Irani says there is nothing more that she "
-                        + "           \n can do for you.");
+                        + "           \n can do for you.  Nova command has a strict policy"
+                        + "           \n about giving out Omega level weapons");
                 break;
 
         }
@@ -365,9 +370,9 @@ public class LocationMenuView extends View {
 
         switch (scenes[SceneType.Nova_Command.ordinal()].getSceneCompleted()) {
             case 0:
-                this.console.println("\n The Guard says that you cant be here "
-                        + "           \n and to come back once Irani says its "
-                        + "           \n okay.");
+                this.console.println("\n The Guard says that authorized personel"
+                        + "           \n are only allowed, and to come back once"
+                        + "           \n Irani gives the word.");
                 break;
             case 1:
                 this.console.println("\n The Guard tells you that he got word "
@@ -396,7 +401,7 @@ public class LocationMenuView extends View {
                         + "           \n for $500 he can make your ship get "
                         + "           \n better gas mileage."
                         + "\n");
-                this.console.println("\n Do you what to pay $500 to cut fuel"
+                this.console.println("\n Do you want to pay $500 to cut fuel"
                         + "           \n cost in half while traveling?"
                         + "           \n Y for yes or N for no.");
                 String response = this.getInput();
@@ -411,7 +416,7 @@ public class LocationMenuView extends View {
                                     + "           \n on your ship.");
                             break;
                         } else {
-                            ErrorView.display(this.getClass().getName(), "\nYou do not have enough money. Try again later");
+                            ErrorView.display(this.getClass().getName(), "\nYou do not have enough money. Come back later");
                             break;
                         }
                     case "N":
@@ -430,7 +435,9 @@ public class LocationMenuView extends View {
     }
 
     private void TheKyln() {
-        this.console.println("\n This is The Kyln, Yondu currently controls it.");
+        this.console.println("\n This is The Kyln.  A galactic prison that"
+                            +"\n that holds some of the worst criminals in the universe."
+                            +"\n It is currently under the control of Yondu.");
     }
 
     private void BossQuarters() {
@@ -501,7 +508,7 @@ public class LocationMenuView extends View {
                 }
             case 2:
                 this.console.println("\n Yondu says there is nothing more that "
-                        + "           \n he can do for you.");
+                        + "           \n he can do for you, boy.");
 
         }
     }
@@ -574,7 +581,8 @@ public class LocationMenuView extends View {
     }
 
     private void KnowhwereScene() {
-        this.console.println("\n This is Knowhere, there is a sorcerer somewhere "
+        this.console.println("\n This is Knowhere, the skull of a dead Celestial being"
+                + "           \n on the edge of the universe. There is a sorcerer somewhere"
                 + "           \n here.");
     }
 
@@ -608,8 +616,8 @@ public class LocationMenuView extends View {
 
     private void KnowhereBar() {
         this.console.println("\n You go around the bar and talk to some people."
-                + "           \n They tell you that Loki has been spotted in "
-                + "           \n Asgard.");
+                + "           \n You overhear a story of how Loki has taken over for Odin"
+                + "           \n and is currently on the throne of Asgard.");
     }
 
     private void MiningBay() {
@@ -671,16 +679,16 @@ public class LocationMenuView extends View {
                 if (items[ItemType.drax_Knives.ordinal()].getQuantityInStock() == 1) {
                     this.console.println("\n You enter the collectors shop and "
                             + "           \n you begin to look around the shop"
-                            + "           \n you see the Aether in a display case."
-                            + "           \n it isn't long before the Collector"
+                            + "           \n and see the Aether in a display case."
+                            + "           \n It isn't long before Taneleer Tivan, the Collector himself"
                             + "           \n comes out and asks you what you are"
                             + "           \n doing."
                             + "\n");
                     this.console.println("\n You tell the collector about your "
                             + "           \n mission and ask him to let you "
-                            + "           \n use the Aether. He says he will let "
-                            + "           \n you use it if you get him Drax's"
-                            + "           \n knives."
+                            + "           \n use the Aether. He thinks over your request"
+                            + "           \n and realizes his collection is lacking a piece,"
+                            + "           \n Drax's knives."
                             + "\n");
                     this.console.println("\n He says you might want to check The"
                             + "           \n Kyln for them. He said he heard they"
@@ -700,15 +708,15 @@ public class LocationMenuView extends View {
                     this.console.println("\n You enter the collectors shop and "
                             + "           \n you begin to look around the shop"
                             + "           \n you see the Aether in a display case."
-                            + "           \n it isn't long before the Collector"
+                            + "           \n It isn't long before Taneleer Tivan, the Collector himself"
                             + "           \n comes out and asks you what you are"
                             + "           \n doing."
                             + "\n");
                     this.console.println("\n You tell the collector about your "
                             + "           \n mission and ask him to let you "
-                            + "           \n use the Aether. He says he will let "
-                            + "           \n you use it if you get him Drax's"
-                            + "           \n knives."
+                            + "           \n use the Aether. He thinks over your request"
+                            + "           \n and realizes his collection is lacking a piece,"
+                            + "           \n Drax's knives."
                             + "\n");
                     this.console.println("\n He says you might want to check The"
                             + "           \n Kyln for them. He said he heard they"
@@ -753,7 +761,7 @@ public class LocationMenuView extends View {
     }
 
     private void AsgardScene() {
-        this.console.println("\n This is Asgard, once home to Thor.");
+        this.console.println("\n This is Asgard, home to Thor, Odinson.");
     }
 
     private void HallOfrelics() {
@@ -763,8 +771,9 @@ public class LocationMenuView extends View {
 
         switch (scenes[SceneType.Hall_of_Relics.ordinal()].getSceneCompleted()) {
             case 0:
-                this.console.println("\n You come to a locked door but you can"
-                        + "           \n see the Tesseract through the door."
+                this.console.println("\n You come to a large Oak door, stonger than"
+                        + "           \n any steel you have ever seen in the Galaxy."
+                        + "           \n Through the crack you can see the Tesseract."
                         + "\n");
                 this.console.println("\n You better go talk to whoever is "
                         + "           \n in charge of this place");
@@ -793,11 +802,13 @@ public class LocationMenuView extends View {
 
         switch (scenes[SceneType.Throne_Room.ordinal()].getSceneCompleted()) {
             case 0:
-                this.console.println("\n You enter the throne room to find Loki"
-                        + "           \n sitting on the throne. You tell Loki "
-                        + "           \n about your quest."
+                this.console.println("\n You enter the throne room to find Odin"
+                        + "           \n sitting on the throne. You tell him of "
+                        + "           \n your quest."
                         + "\n"
-                        + "           \n He says that he wants Thantos dead too"
+                        + "           \n He begins to laugh hysterically and changes"
+                        + "           \n into his true from, Loki master of mischeif."
+                        + "           \n He says that he wants Thanos dead too"
                         + "           \n so that he will stop hunting him down."
                         + "           \n he will let you take the Vault Key to"
                         + "           \n get the Tesseract from the Hall of Relics."
@@ -817,7 +828,10 @@ public class LocationMenuView extends View {
     }
 
     private void Bifrost() {
-        this.console.println("\n This Place lets you move to any sector"
+        this.console.println("\n Heimdall welcomes you to the Bifrost."
+                + "           \n He infroms you that Thor knows of your quest and"
+                + "           \n has granted you access to the resources of Asgard."
+                + "           \n This Place lets you move to any sector."
                 + "           \n free of fuel and time."
                 + "\n"
                 + "           \n Would you like to move (Y/N)");
