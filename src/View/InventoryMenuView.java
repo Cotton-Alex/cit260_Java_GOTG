@@ -26,7 +26,7 @@ public class InventoryMenuView extends View {
                 + "\nG - Groot's Inventory"
                 + "\nS - Ship's Inventory"
                 + "\nC - Display Groot's coin total"
-                + "\nF - List Groot's local companions and what they're carrying"
+                + "\nF - Inventory Report"
                 + "\nR - Item's Starting Location Report"
                 + "\nQ - Back"
                 + "\n----------------------------------");
@@ -48,7 +48,7 @@ public class InventoryMenuView extends View {
                 this.coinInventory();
                 break;
             case "F":
-                this.friendsInventory();
+                this.saveInventoryReport();
                 break;
             case "R":
                 this.saveItemLocationReport();
@@ -62,26 +62,51 @@ public class InventoryMenuView extends View {
     }
 
     private void grootsInventory() {
-        int j = 0;
+StringBuilder line;
         Game game = GOTG.getCurrentGame();
-
-        
-
         Item[] items = game.getInventory();
-this.console.print("" + "Items" );
-this.console.print("      " + "      " + "Amount\n");
+        this.console.println(
+                "--------------------------------------------------------------\n"
+                + "|                    Inventory Items                    |\n"
+                + "--------------------------------------------------------------");
+        this.console.println("Amount\t\tItem");
+        this.console.println("--------------------------------------------------------------");
         for (int i = 0; i < ItemType.values().length; i++) {
-            if (items[i].getQuantityInStock() >= 1) {
-                this.console.print("" + items[i].getName());
-                this.console.print("      " + "      " + items[i].getQuantityInStock() + "\n");
-                j++;
-            }
-        }
-        if (j == 0){
-            this.console.println("\n You have no items in your inventory.");
-        }
-       
+            this.console.println(items[i].getQuantityInStock() +  "\t\t" + items[i].getName());
+}
+        this.console.println("--------------------------------------------------------------");
+
     }
+
+
+
+
+
+
+
+
+
+
+//        int j = 0;
+//        Game game = GOTG.getCurrentGame();
+//
+//        
+//
+//        Item[] items = game.getInventory();
+//this.console.print("" + "Items" );
+//this.console.print("      " + "      " + "Amount\n");
+//        for (int i = 0; i < ItemType.values().length; i++) {
+//            if (items[i].getQuantityInStock() >= 1) {
+//                this.console.print("" + items[i].getName());
+//                this.console.print("      " + "      " + items[i].getQuantityInStock() + "\n");
+//                j++;
+//            }
+//        }
+//        if (j == 0){
+//            this.console.println("\n You have no items in your inventory.");
+//        }
+       
+    
 
     private void shipsInventory() {
         System.out.println(
@@ -92,9 +117,22 @@ this.console.print("      " + "      " + "Amount\n");
         System.out.println("*** Display the total coins Groot is carrying ***");
     }
 
-    private void friendsInventory() {
-        System.out.println("*** Display a list of friends working with Groot"
-                + "\n and a list of what they're carrying***");
+    private void saveInventoryReport() {
+        //prompt for and get the name of the file to save the report
+        String saveMenu = display;
+        display = ("\n\nEnter the file path for the file where the report is to be saved.");
+        String filePath = this.getInput();
+        
+        InventoryItemsView inventoryItems = new InventoryItemsView();
+
+        try {
+            //save the report to the specified file
+            GameControl.saveInventoryReport(inventoryItems, filePath);
+            this.console.println("Inventory Report successfully saved to " + filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        display = saveMenu;
     }
 
     //LocationReport:

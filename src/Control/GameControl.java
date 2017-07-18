@@ -18,6 +18,7 @@ import Model.SceneType;
 import Model.Time;
 import Exceptions.GameControlException;
 import View.ItemStartLocationsView;
+import View.InventoryItemsView;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -295,6 +296,15 @@ public class GameControl {
 
         try (PrintWriter writer = new PrintWriter(filePath)) {
             itemStartLocations.display(writer);
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+    public static void saveInventoryReport(InventoryItemsView inventoryItems, String filePath)
+            throws GameControlException {
+
+        try (PrintWriter writer = new PrintWriter(filePath)) {
+            inventoryItems.display(writer);
         } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
