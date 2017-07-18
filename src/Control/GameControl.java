@@ -42,9 +42,13 @@ public class GameControl {
         Item[] inventory = GameControl.createInventory();
         game.setInventory(inventory);
 
-        Time timeRemaning = new Time();
-        game.setTime(timeRemaning);
+//        Time timeRemaning = new Time();
+//        game.setTime(timeRemaning);
+
+//        Time.timeRemaining = 100;
         
+        Time.totalTime = 98;
+
         Fuel fuelRemaining = new Fuel();
         game.setFuel(fuelRemaining);
 
