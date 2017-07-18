@@ -56,7 +56,7 @@ public class MapView extends View {
                             return false;
                         }
                         if (!sectorJump && map.getCurrentRow() != row) {
-                            ErrorView.display(this.getClass().getName(),"You need your ship tp travel to another sector. Your ship is back at the dock. ");
+                            ErrorView.display(this.getClass().getName(),"You need your ship to travel to another sector. Your ship is back at the dock. ");
                             return false;
                         }
                         try {

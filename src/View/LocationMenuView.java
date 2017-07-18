@@ -5,10 +5,14 @@
  */
 package View;
 
+import Control.MapControl;
+import Exceptions.MapControlExceptions;
 import GOTG.GOTG;
 import Model.Game;
 import Model.Item;
 import Model.ItemType;
+import Model.Location;
+import Model.Map;
 import Model.Scene;
 import Model.SceneType;
 
@@ -141,8 +145,8 @@ public class LocationMenuView extends View {
         Item[] items = game.getInventory();
         if (scenes[SceneType.Starlords_Home.ordinal()].getSceneCompleted() == 0) {
             this.console.println("\n this is starlords home, or at least it was.");
-            this.console.println("\n as you look around you find his old walkman"
-                    + "           \n you feel its a good idea to take it along with "
+            this.console.println("\n As you look around you find his old walkman!"
+                    + "           \n You feel its a good idea to take it along with "
                     + "           \n you."
                     + "\n"
                     + "           \n The Walkman has been added to your inventory!!");
@@ -157,8 +161,8 @@ public class LocationMenuView extends View {
     }
 
     private void EarthBar() {
-        this.console.println("\n As you go around the bar, you talk to some people"
-                + "\n they tell you that Dr. Strange has the Eye of "
+        this.console.println("\n As you go around the bar, you talk to some people."
+                + "\n They tell you that Dr. Strange has the Eye of "
                 + "           \n Agamoto somewhere on Knowhere");
     }
 
@@ -222,8 +226,8 @@ public class LocationMenuView extends View {
     }
 
     private void HalaBar() {
-        this.console.println("\n As you go around the bar, you talk to some people"
-                + "\n they tell you that The Collector has the Aether "
+        this.console.println("\n As you go around the bar, you talk to some people."
+                + "\n They tell you that The Collector has the Aether "
                 + "           \n somewhere on Morag IV.");
     }
 
@@ -823,9 +827,9 @@ public class LocationMenuView extends View {
             case "Y":
                 StarMapMenuView StarMapView = new StarMapMenuView();
                 StarMapView.displayStarMap();
-                MapView mapView = new MapView();
-                mapView.setSectorJump(Boolean.TRUE);
-                mapView.display();
+                
+                
+                displayB();
                 StarMapView.displayStarMap();
                 break;
             
@@ -844,9 +848,62 @@ public class LocationMenuView extends View {
 //        }
 //    }
 }
+    public void displayB() {
+        Game game = GOTG.getCurrentGame(); // retreive the game
+        Map map = game.getMap(); // retreive the map from game
+        Location[][] locations = map.getLocations(); // retreive the locations from map
+        
+
+        super.display();
+    }
+    public boolean doActionB(String mapOption) {
+        mapOption = mapOption.toUpperCase();
+        Game game = GOTG.getCurrentGame(); // retreive the game
+        Map map = game.getMap(); // retreive the map from game
+        Location[][] locations = map.getLocations(); // retreive the locations from map
+        for (int row = 0; row < locations.length; row++) {
+            for (int column = 0; column < locations[row].length; column++) {
+                if (locations[row][column].getScene() != null) {
+                    if (mapOption.equals(locations[row][column].getScene().getSymbol())) {
+                        
+                        try {
+                            MapControl.movePlayer(map, row, column);
+                            return true;
+                        } catch (MapControlExceptions mce) {
+                            this.console.println(mce.getMessage());
+                        }
+                    }
+
+                }
+            }
+        }
+        ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try Again later");
+        return false;
+    }
 
     @Override
-    public boolean doAction(String menu) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean doAction(String mapOption) {
+        mapOption = mapOption.toUpperCase();
+        Game game = GOTG.getCurrentGame(); // retreive the game
+        Map map = game.getMap(); // retreive the map from game
+        Location[][] locations = map.getLocations(); // retreive the locations from map
+        for (int row = 0; row < locations.length; row++) {
+            for (int column = 0; column < locations[row].length; column++) {
+                if (locations[row][column].getScene() != null) {
+                    if (mapOption.equals(locations[row][column].getScene().getSymbol())) {
+                        
+                        try {
+                            MapControl.movePlayer(map, row, column);
+                            return true;
+                        } catch (MapControlExceptions mce) {
+                            this.console.println(mce.getMessage());
+                        }
+                    }
+
+                }
+            }
+        }
+        ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try Again later");
+        return false;
     }
 }
