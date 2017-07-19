@@ -26,7 +26,7 @@ public class InventoryItemsView implements ReportInterface {
         Item[] items = game.getInventory();
         writer.println(
                 "--------------------------------------------------------------\n"
-                + "|                    Item Start Locations                    |\n"
+                + "|                    Item Inventory                    |\n"
                 + "--------------------------------------------------------------");
         writer.println("AMOUNT\t\tITEM");
         writer.println("--------------------------------------------------------------");
