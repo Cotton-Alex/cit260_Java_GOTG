@@ -134,7 +134,12 @@ public final class StartProgramView extends View {
         this.console.println(
              "\n=========================================================="
             +"\nWelcome to Guardians of the Galaxy, " + player.getName() + "."
-            +"\nBuckle up, it's gonna be a bumpy ride."
+            +"\nThanos is on his way to steal all of the infinity stones."
+            +"\nWith all that power he'll be able to control everything."
+            +"\nHe's going to be here in 4 days... that only 96 hours."
+            +"\nYou need to go get the stones before Thanos arrives"
+            +"\nand take them to back to Earth where they can be kept safe."
+            +"\nBuckle up " + player.getName() + ", it's gonna be a bumpy ride."
             +"\n=========================================================="
         );
         // Create MainMenuObject

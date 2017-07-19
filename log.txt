@@ -1,5 +1,0 @@
-View.MapView - 
-Invalid value: value can not be blank
-View.MapView - 
-Invalid value: value can not be blank
-View.MapView - You can't jump sectors without being at a dock

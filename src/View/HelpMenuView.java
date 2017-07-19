@@ -100,41 +100,42 @@ public class HelpMenuView extends View {
     private void goalOfTheGame() {
         this.console.println(
                 "*** The goal of the game is to travel the"
-                + " realms as baby groot in search of the 5"
-                + " infinity stones to beat Thantos before"
-                + " the time runs out. If you gather all 5 "
-                + " before the time runs out, you win. ***");
+                + "\nrealms as baby groot in search of the 6"
+                + "\ninfinity stones to beat Thantos before"
+                + "\nthe time runs out. If you gather all 6 "
+                + "\nbefore the time runs out, you win. ***");
     }
 
     private void howToMove() {
         this.console.println(
-                "*** you move by using the map to travel between realms."
-                + " You do this by entering a sector and a quadrant "
-                + " in the map to travel, traveling takes fuel and "
-                + " time. the map displays your current location "
-                + " with a star. ***"); 
+                "*** You move by using the map to travel between realms."
+                + "\nYou do this by entering a sector and a quadrant "
+                + "\nin the map to travel, traveling takes fuel and "
+                + "\ntime. the map displays your current location "
+                + "\nwith a star. ***"); 
     }
 
     private void gatheringItems() {
         this.console.println("*** You will need to gather items throught the game."
-                + " these items can be used to get different infinity stones"
-                + " or give you an edge in your quest. Search sectors to"
-                + " find different items. When you find one, there will"
-                + " be an option to add it to your inventory ***");
+                + "\nthese items can be used to get different infinity stones"
+                + "\nor give you an edge in your quest. Search sectors to"
+                + "\nfind different items. When you find one, there will"
+                + "\nbe an option to add it to your inventory ***");
     }
 
     private void gatheringInfinityStones() {
         this.console.println("*** You will find the infinity stones throught the"
-                + "galaxy. When you come accross one, you will add it to"
-                + "your collection that you have so far. find all 5 and"
-                + "you win. ***"); 
+                + "\ngalaxy. When you come accross one, you will add it to"
+                + "\nyour collection that you have so far. find all 6 and"
+                + "\nyou win. ***"); 
     }
+    
     private void fuelAndTime() {
         this.console.println("*** Fuel and time and used throught the game for"
-                + "traveling and different actions. You can replenish your"
-                + "fuel by visiting a fuel station but time is limited. you"
-                + "cannot get time back after it has been spent. if you run"
-                + "out of time before you get all the infinity stones, then"
-                + "you loose the game ***");
+                + "\ntraveling and different actions. You can replenish your"
+                + "\nfuel by visiting a fuel station but time is limited. you"
+                + "\ncannot get time back after it has been spent. if you run"
+                + "\nout of time before you get all the infinity stones, then"
+                + "\nyou loose the game ***");
     }
 }
